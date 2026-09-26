@@ -1,0 +1,14 @@
+.data/
+node_modules/
+.env
+.env.*
+!.env.example
+*.sqlite*
+*.gguf
+*.safetensors
+*.bin
+.DS_Store
+coverage/
+artifacts/
+AGENTS.md
+IMPLEMENTATION_BRIEF.md

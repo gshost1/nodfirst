@@ -1,0 +1,94 @@
+{
+  "date": "2026-09-26T21:13:42.427Z",
+  "node": "v26.7.0",
+  "platform": "darwin/arm64",
+  "inference": "Real local Ollama; no mocks or cloud calls",
+  "checks": [
+    "Policy-backed checklist, real judgment, coordinator denied, admin approval, exactly one local action, repeated decision denied",
+    "Second real judgment and admin rejection create no action",
+    "Ordinary no-exception onboarding completes without a model; adding a synthetic hire persists",
+    "Actual server process stopped and restarted; all domain records and audit entries retained; demo session reset"
+  ],
+  "model": {
+    "provider": "ollama",
+    "model": "qwen2.5:3b",
+    "baseUrl": "http://127.0.0.1:11434",
+    "available": true
+  },
+  "approvedJudgment": {
+    "id": "ca50efb0-52fe-4976-8bb7-bce61446b562",
+    "workflowId": "84860ecb-d1f0-4b08-a8d7-31da8d8fd568",
+    "provider": "ollama",
+    "model": "qwen2.5:3b",
+    "route": "people_ops",
+    "confidence": 1,
+    "reason": "I need to know whether the home office stipend applies to the monitor I already bought.",
+    "uncertain": false,
+    "durationMs": 2108,
+    "createdAt": "2026-09-26T21:13:45.007Z"
+  },
+  "rejectedJudgment": {
+    "id": "1237f618-01a7-46ea-9d1b-11f8e3e0ea91",
+    "workflowId": "d4d535af-3531-432e-bb7f-8ec94eacf62c",
+    "provider": "ollama",
+    "model": "qwen2.5:3b",
+    "route": "security",
+    "confidence": 1,
+    "reason": "Please enable it before my first shift.",
+    "uncertain": false,
+    "durationMs": 1752,
+    "createdAt": "2026-09-26T21:13:47.065Z"
+  },
+  "counts": {
+    "employees": 5,
+    "workflows": 3,
+    "tasks": 12,
+    "judgments": 2,
+    "approvals": 2,
+    "actions": 1,
+    "jobs": 2,
+    "audit": 20
+  },
+  "approvalAudit": [
+    {
+      "id": "63b30aa9-40fb-45d7-a0e9-253c4e60db1f",
+      "workflowId": "d4d535af-3531-432e-bb7f-8ec94eacf62c",
+      "actor": "Maya Chen (admin)",
+      "action": "approval.rejected",
+      "details": {
+        "approvalId": "6a46433a-1d73-4710-8c5b-929a2c376bc2",
+        "reason": "Reject sensitive access request in this local demonstration.",
+        "taskId": "0222c211-92f7-4270-a05d-8213990aaaa4"
+      },
+      "createdAt": "2026-09-26T21:13:48.056Z"
+    },
+    {
+      "id": "c7985e27-6e22-40e6-ae16-4743e9f55ec8",
+      "workflowId": "84860ecb-d1f0-4b08-a8d7-31da8d8fd568",
+      "actor": "Maya Chen (admin)",
+      "action": "action.created",
+      "details": {
+        "actionId": "d6474b0b-558e-4b53-8160-e861359914b7",
+        "approvalId": "afa1bfd9-09f4-4526-b5cc-a7aad3ac1162",
+        "approvedBy": "Maya Chen (admin)",
+        "owner": "People Operations",
+        "title": "Follow up on Avery Chen's onboarding exception",
+        "localOnly": true
+      },
+      "createdAt": "2026-09-26T21:13:45.026Z"
+    },
+    {
+      "id": "dd32c2ff-0e14-4e55-877b-716318c9c923",
+      "workflowId": "84860ecb-d1f0-4b08-a8d7-31da8d8fd568",
+      "actor": "Maya Chen (admin)",
+      "action": "approval.approved",
+      "details": {
+        "approvalId": "afa1bfd9-09f4-4526-b5cc-a7aad3ac1162",
+        "reason": "Reviewed ambiguous equipment request; create a local follow-up for a human.",
+        "taskId": "96b95583-4747-4a8a-87bd-a93d46ae4c2e"
+      },
+      "createdAt": "2026-09-26T21:13:45.026Z"
+    }
+  ],
+  "result": "PASS"
+}

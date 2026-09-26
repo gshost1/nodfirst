@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-26T21:15:16.433Z",
+  "employee": "Theo Okafor",
+  "exception": "I need help connecting my company laptop to the standard VPN and setting up the approved authenticator app.",
+  "expectedRoute": "it",
+  "actual": {
+    "provider": "ollama",
+    "model": "qwen2.5:3b",
+    "route": "security",
+    "confidence": 1,
+    "reason": "I need help connecting my company laptop to the standard VPN and setting up the approved authenticator app.",
+    "uncertain": false,
+    "durationMs": 1968
+  },
+  "note": "One illustrative case, not a routing accuracy benchmark. All exceptions require admin review regardless of model confidence."
+}
