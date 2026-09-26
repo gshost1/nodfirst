@@ -1,0 +1,5959 @@
+[
+ {
+  "id": "sap-survey-001",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9755448421907603,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.0241,
+    "payroll": 0.9755,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.014210815262303216,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"increase\", \"euros\", \"salary increase\"."
+  }
+ },
+ {
+  "id": "sap-survey-003",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9996134662955036,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9996,
+    "payroll": 0.0004,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.974709053444561,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"time\", \"time off\", \"due\"."
+  }
+ },
+ {
+  "id": "sap-survey-021",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9974581491535007,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9975,
+    "payroll": 0.0022,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9923788688514161,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-022",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8575447567472195,
+   "probabilities": {
+    "it": 0.0034,
+    "people_ops": 0.8575,
+    "payroll": 0.1355,
+    "security": 0.0024,
+    "uncertain": 0.0012
+   },
+   "category": "complaint",
+   "sensitive": 0.7365327579002986,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"about\", \"all\", \"age\", \"about age\"."
+  }
+ },
+ {
+  "id": "sap-survey-027",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9740458603274452,
+   "probabilities": {
+    "it": 0.0012,
+    "people_ops": 0.0235,
+    "payroll": 0.974,
+    "security": 0.0008,
+    "uncertain": 0.0004
+   },
+   "category": "expense_refund",
+   "sensitive": 0.007446751322546513,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"attached\", \"find attached\", \"find\"."
+  }
+ },
+ {
+  "id": "sap-survey-032",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9897123673023096,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9897,
+    "payroll": 0.0102,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.5558218433704666,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"day\", \"change\", \"hospital\"."
+  }
+ },
+ {
+  "id": "sap-survey-035",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9866866694862938,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9867,
+    "payroll": 0.0132,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9960860004465997,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"because\", \"he\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-036",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9960928706157246,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0038,
+    "payroll": 0.9961,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9959627533160345,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"pay\", \"gender\"."
+  }
+ },
+ {
+  "id": "sap-survey-039",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9661970627822832,
+   "probabilities": {
+    "it": 0.0022,
+    "people_ops": 0.9662,
+    "payroll": 0.0285,
+    "security": 0.0023,
+    "uncertain": 0.0008
+   },
+   "category": "policy_info",
+   "sensitive": 0.17425999704439143,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"stay\", \"move\", \"going\", \"coming\"."
+  }
+ },
+ {
+  "id": "sap-survey-057",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.7845593289230427,
+   "probabilities": {
+    "it": 0.0025,
+    "people_ops": 0.2122,
+    "payroll": 0.7846,
+    "security": 0.0005,
+    "uncertain": 0.0003
+   },
+   "category": "expense_refund",
+   "sensitive": 0.27345948819074917,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"refund\", \"not\", \"salary not\"."
+  }
+ },
+ {
+  "id": "sap-survey-061",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9276326491658727,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9276,
+    "payroll": 0.0721,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.4209681337608482,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"information\", \"like\", \"request\", \"make\"."
+  }
+ },
+ {
+  "id": "sap-survey-064",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9938476438792507,
+   "probabilities": {
+    "it": 0.0006,
+    "people_ops": 0.9938,
+    "payroll": 0.0052,
+    "security": 0.0002,
+    "uncertain": 0.0002
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.6770501268586814,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"day\", \"due\", \"day off\"."
+  }
+ },
+ {
+  "id": "sap-survey-067",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9491782597911405,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.0504,
+    "payroll": 0.9492,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.03309642948903166,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"salary raise\", \"company\"."
+  }
+ },
+ {
+  "id": "sap-survey-068",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9977345577146027,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9977,
+    "payroll": 0.0018,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9490224278256838,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"take\", \"day\", \"doctor\"."
+  }
+ },
+ {
+  "id": "sap-survey-070",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9951665404203075,
+   "probabilities": {
+    "it": 0.0004,
+    "people_ops": 0.9952,
+    "payroll": 0.0042,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "schedule_change",
+   "sensitive": 0.15219363827089402,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"because\", \"shift\", \"day\", \"change\"."
+  }
+ },
+ {
+  "id": "sap-survey-083",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9989131208902937,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9989,
+    "payroll": 0.001,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9973488197810016,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"time\", \"some\", \"time off\"."
+  }
+ },
+ {
+  "id": "sap-survey-088",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9460014839256846,
+   "probabilities": {
+    "it": 0.0019,
+    "people_ops": 0.0502,
+    "payroll": 0.946,
+    "security": 0.001,
+    "uncertain": 0.0009
+   },
+   "category": "expense_refund",
+   "sensitive": 0.027733896566614437,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"flight\", \"airport\", \"international\"."
+  }
+ },
+ {
+  "id": "sap-survey-089",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8429109030720889,
+   "probabilities": {
+    "it": 0.0024,
+    "people_ops": 0.8429,
+    "payroll": 0.1518,
+    "security": 0.0017,
+    "uncertain": 0.0012
+   },
+   "category": "policy_info",
+   "sensitive": 0.014759602844357036,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"july\", \"months\", \"one\", \"provide\"."
+  }
+ },
+ {
+  "id": "sap-survey-102",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.97054074718427,
+   "probabilities": {
+    "it": 0.0004,
+    "people_ops": 0.9705,
+    "payroll": 0.0285,
+    "security": 0.0003,
+    "uncertain": 0.0003
+   },
+   "category": "complaint",
+   "sensitive": 0.944830707736202,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"time\", \"colleague\", \"months\", \"about\"."
+  }
+ },
+ {
+  "id": "sap-survey-106",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9870303084278059,
+   "probabilities": {
+    "it": 0.0012,
+    "people_ops": 0.0106,
+    "payroll": 0.987,
+    "security": 0.0008,
+    "uncertain": 0.0003
+   },
+   "category": "expense_refund",
+   "sensitive": 0.006975949595356167,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"ticket\", \"flight\", \"attached\", \"money\"."
+  }
+ },
+ {
+  "id": "sap-survey-109",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9977622613755439,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9978,
+    "payroll": 0.0016,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9841800606303922,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"starting\"."
+  }
+ },
+ {
+  "id": "sap-survey-110",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9777975579362688,
+   "probabilities": {
+    "it": 0.0005,
+    "people_ops": 0.9778,
+    "payroll": 0.0213,
+    "security": 0.0002,
+    "uncertain": 0.0002
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.3365951186336462,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"due\", \"cannot\", \"work\", \"son\"."
+  }
+ },
+ {
+  "id": "sap-survey-121",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.7941365218293466,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.7941,
+    "payroll": 0.2054,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9702925092146711,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"colleague\", \"he\", \"cannot\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-124",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9992028802416404,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9992,
+    "payroll": 0.0007,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9740158116103094,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"take\", \"colleague\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-130",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9917891904045858,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9918,
+    "payroll": 0.0077,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "policy_info",
+   "sensitive": 0.03249425631322826,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"family\", \"about\", \"about accomodation\"."
+  }
+ },
+ {
+  "id": "sap-survey-135",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9333122224305946,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.0663,
+    "payroll": 0.9333,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.09242714624339718,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"increase\", \"salary increase\", \"discussion\"."
+  }
+ },
+ {
+  "id": "sap-survey-142",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9992251570487014,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0007,
+    "payroll": 0.9992,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.00030752139637174017,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"travel\", \"ticket\", \"ask refund\"."
+  }
+ },
+ {
+  "id": "sap-survey-143",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9986038954686292,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9986,
+    "payroll": 0.0012,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "schedule_change",
+   "sensitive": 0.027965231630488724,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"medical\", \"change\", \"due\"."
+  }
+ },
+ {
+  "id": "sap-survey-146",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9996641793662072,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9997,
+    "payroll": 0.0003,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.997637232469635,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-147",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9933011025928628,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9933,
+    "payroll": 0.0064,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9843809772086837,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"some\", \"due\"."
+  }
+ },
+ {
+  "id": "sap-survey-156",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.6835672658069628,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.6836,
+    "payroll": 0.3162,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9936328225372414,
+   "uncertain": true,
+   "reason": "Strongest cues for people_ops: \"colleague\", \"any\", \"about\", \"next\"."
+  }
+ },
+ {
+  "id": "sap-survey-165",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9899991951442942,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.99,
+    "payroll": 0.01,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9547353490770293,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"time\"."
+  }
+ },
+ {
+  "id": "sap-survey-168",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9852973591227712,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9853,
+    "payroll": 0.0147,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.04430348653228756,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"colleague\", \"information\", \"information about\"."
+  }
+ },
+ {
+  "id": "sap-survey-174",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.8532107623731029,
+   "probabilities": {
+    "it": 0.0008,
+    "people_ops": 0.145,
+    "payroll": 0.8532,
+    "security": 0.0006,
+    "uncertain": 0.0004
+   },
+   "category": "expense_refund",
+   "sensitive": 0.008712476497719042,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"flight\", \"request refund\", \"frankfurt\"."
+  }
+ },
+ {
+  "id": "sap-survey-175",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9645598689063954,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.0349,
+    "payroll": 0.9646,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.9784675549266884,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"pay\", \"gender\", \"male\"."
+  }
+ },
+ {
+  "id": "sap-survey-182",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9955209868023848,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9955,
+    "payroll": 0.0041,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "schedule_change",
+   "sensitive": 0.006556953761608476,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"day\", \"change\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-187",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9456960204434144,
+   "probabilities": {
+    "it": 0.0042,
+    "people_ops": 0.9457,
+    "payroll": 0.0448,
+    "security": 0.0037,
+    "uncertain": 0.0016
+   },
+   "category": "complaint",
+   "sensitive": 0.9282943043090119,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"next\", \"should\", \"what\"."
+  }
+ },
+ {
+  "id": "sap-survey-195",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9994148064230626,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9994,
+    "payroll": 0.0004,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9925026226749536,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"take\", \"time\", \"some\"."
+  }
+ },
+ {
+  "id": "sap-survey-202",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9832441419071988,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0166,
+    "payroll": 0.9832,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.03920301556906344,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"salary raise\", \"euros\"."
+  }
+ },
+ {
+  "id": "sap-survey-206",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9748686784316188,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.0246,
+    "payroll": 0.9749,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.9567908616252546,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gender\", \"paid\", \"more\"."
+  }
+ },
+ {
+  "id": "sap-survey-207",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.989373253755083,
+   "probabilities": {
+    "it": 0.0013,
+    "people_ops": 0.9894,
+    "payroll": 0.0082,
+    "security": 0.0008,
+    "uncertain": 0.0004
+   },
+   "category": "policy_info",
+   "sensitive": 0.06573538181114923,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"help\", \"months\", \"share\"."
+  }
+ },
+ {
+  "id": "sap-survey-210",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.999364437847097,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9994,
+    "payroll": 0.0005,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9970999746505234,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"sick\", \"take\"."
+  }
+ },
+ {
+  "id": "sap-survey-214",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9997875593252393,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9998,
+    "payroll": 0.0001,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.988834539326344,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"leave\", \"time\", \"time off\"."
+  }
+ },
+ {
+  "id": "sap-survey-219",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9953940528780353,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0045,
+    "payroll": 0.9954,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0018166763315234711,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"plane\", \"plane ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-224",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9975107502588503,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9975,
+    "payroll": 0.0024,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9478817485942762,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"day\", \"any\", \"day off\"."
+  }
+ },
+ {
+  "id": "sap-survey-232",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.7351020407874564,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.7351,
+    "payroll": 0.2647,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9334193330206041,
+   "uncertain": true,
+   "reason": "Strongest cues for people_ops: \"advance\", \"like\", \"work\", \"situation\"."
+  }
+ },
+ {
+  "id": "sap-survey-241",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9954873250176328,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9955,
+    "payroll": 0.0044,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.11007243641487802,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"help\", \"starting\"."
+  }
+ },
+ {
+  "id": "sap-survey-242",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9992466534108512,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9992,
+    "payroll": 0.0007,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.994385502265082,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"able\"."
+  }
+ },
+ {
+  "id": "sap-survey-252",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9985716964234174,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9986,
+    "payroll": 0.0011,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "schedule_change",
+   "sensitive": 0.022348993999620134,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"shift\", \"day\", \"change\"."
+  }
+ },
+ {
+  "id": "sap-survey-255",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9916638263300451,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9917,
+    "payroll": 0.0081,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.8697321000486707,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"starting\", \"days off\"."
+  }
+ },
+ {
+  "id": "sap-survey-257",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9981452237271815,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0017,
+    "payroll": 0.9981,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.00028742670775858505,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"plane\", \"plane ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-259",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9951211578028664,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0048,
+    "payroll": 0.9951,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.017273177453671455,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"increase\", \"raise\", \"salary raise\"."
+  }
+ },
+ {
+  "id": "sap-survey-002",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9090440212172124,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.909,
+    "payroll": 0.0905,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "complaint",
+   "sensitive": 0.8405199866836385,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"because\", \"colleague\", \"hope\", \"advance\"."
+  }
+ },
+ {
+  "id": "sap-survey-005",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9762334581326748,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0235,
+    "payroll": 0.9762,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.013184310922114867,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"plane\", \"ticket\", \"plane ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-007",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9954004715890907,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9954,
+    "payroll": 0.0041,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "schedule_change",
+   "sensitive": 0.11218806804874519,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"time\", \"shift\", \"change\", \"period\"."
+  }
+ },
+ {
+  "id": "sap-survey-008",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9716466624637429,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9716,
+    "payroll": 0.0283,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.007150410715847437,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"help\", \"about\", \"any\"."
+  }
+ },
+ {
+  "id": "sap-survey-012",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.5015846117633874,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.4978,
+    "payroll": 0.5016,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.1553526702152665,
+   "uncertain": true,
+   "reason": "Strongest cues for payroll: \"salary\", \"years\", \"ask\", \"kindly\"."
+  }
+ },
+ {
+  "id": "sap-survey-019",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.6585660380638795,
+   "probabilities": {
+    "it": 0.0005,
+    "people_ops": 0.6586,
+    "payroll": 0.3398,
+    "security": 0.0008,
+    "uncertain": 0.0003
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.488255925971917,
+   "uncertain": true,
+   "reason": "Strongest cues for people_ops: \"like\", \"week\", \"all\", \"possible\"."
+  }
+ },
+ {
+  "id": "sap-survey-025",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8632769516617554,
+   "probabilities": {
+    "it": 0.0056,
+    "people_ops": 0.8633,
+    "payroll": 0.1283,
+    "security": 0.0022,
+    "uncertain": 0.0007
+   },
+   "category": "policy_info",
+   "sensitive": 0.27958177837873677,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"help\", \"all\", \"get\"."
+  }
+ },
+ {
+  "id": "sap-survey-031",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9996456803279984,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0003,
+    "payroll": 0.9996,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0001361359040322176,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"flight\", \"plane\", \"ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-037",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9948761762850921,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9949,
+    "payroll": 0.005,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9584132601055203,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"leave\", \"day\", \"due\", \"issues\"."
+  }
+ },
+ {
+  "id": "sap-survey-038",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.5137356316378836,
+   "probabilities": {
+    "it": 0.0048,
+    "people_ops": 0.5137,
+    "payroll": 0.477,
+    "security": 0.0033,
+    "uncertain": 0.0012
+   },
+   "category": "compensation",
+   "sensitive": 0.9135146080399625,
+   "uncertain": true,
+   "reason": "Strongest cues for people_ops: \"don\", \"going\", \"out\", \"colleagues\"."
+  }
+ },
+ {
+  "id": "sap-survey-040",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9404049140035666,
+   "probabilities": {
+    "it": 0.0005,
+    "people_ops": 0.9404,
+    "payroll": 0.0583,
+    "security": 0.0005,
+    "uncertain": 0.0003
+   },
+   "category": "policy_info",
+   "sensitive": 0.024717831202903058,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"stay\", \"information\", \"next\", \"weeks\"."
+  }
+ },
+ {
+  "id": "sap-survey-041",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9896205795506391,
+   "probabilities": {
+    "it": 0.0012,
+    "people_ops": 0.9896,
+    "payroll": 0.0082,
+    "security": 0.0006,
+    "uncertain": 0.0004
+   },
+   "category": "schedule_change",
+   "sensitive": 0.01628090639271137,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"change\", \"july\", \"cannot\", \"work\"."
+  }
+ },
+ {
+  "id": "sap-survey-044",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9059723244580937,
+   "probabilities": {
+    "it": 0.0005,
+    "people_ops": 0.906,
+    "payroll": 0.0932,
+    "security": 0.0003,
+    "uncertain": 0.0001
+   },
+   "category": "complaint",
+   "sensitive": 0.9319462310793478,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"colleague\", \"about\", \"starting\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-063",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9909791409105594,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.0087,
+    "payroll": 0.991,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "expense_refund",
+   "sensitive": 0.009236065822107599,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"travel\", \"flight\", \"ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-069",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.7668211216309946,
+   "probabilities": {
+    "it": 0.0047,
+    "people_ops": 0.7668,
+    "payroll": 0.221,
+    "security": 0.0032,
+    "uncertain": 0.0043
+   },
+   "category": "policy_info",
+   "sensitive": 0.04602625936403509,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"any\", \"one\", \"one month\", \"month\"."
+  }
+ },
+ {
+  "id": "sap-survey-072",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9887365065946807,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9887,
+    "payroll": 0.0112,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.8614572265866643,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"time\", \"time off\", \"change\"."
+  }
+ },
+ {
+  "id": "sap-survey-073",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9978400600850944,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9978,
+    "payroll": 0.0021,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9746134130909906,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-078",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9844192652093582,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9844,
+    "payroll": 0.0148,
+    "security": 0.0004,
+    "uncertain": 0.0001
+   },
+   "category": "schedule_change",
+   "sensitive": 0.019444264216319958,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"because\", \"change\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-087",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9991970163915889,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9992,
+    "payroll": 0.0008,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9948182426143589,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"some\", \"time\"."
+  }
+ },
+ {
+  "id": "sap-survey-090",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9927615874901154,
+   "probabilities": {
+    "it": 0.0022,
+    "people_ops": 0.0029,
+    "payroll": 0.9928,
+    "security": 0.0015,
+    "uncertain": 0.0006
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0028623200203970597,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"flight\", \"tickets\", \"get\"."
+  }
+ },
+ {
+  "id": "sap-survey-091",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9917342090037675,
+   "probabilities": {
+    "it": 0.0011,
+    "people_ops": 0.9917,
+    "payroll": 0.0059,
+    "security": 0.0008,
+    "uncertain": 0.0004
+   },
+   "category": "policy_info",
+   "sensitive": 0.31579616723071724,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"months\", \"about\", \"stay\"."
+  }
+ },
+ {
+  "id": "sap-survey-095",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9238460772099014,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0759,
+    "payroll": 0.9238,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.0513662028296905,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"pay\", \"raise\", \"asking\"."
+  }
+ },
+ {
+  "id": "sap-survey-103",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9871324600291884,
+   "probabilities": {
+    "it": 0.0007,
+    "people_ops": 0.9871,
+    "payroll": 0.0116,
+    "security": 0.0004,
+    "uncertain": 0.0002
+   },
+   "category": "complaint",
+   "sensitive": 0.9904362854980573,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"day\", \"issue\", \"work\", \"problem\"."
+  }
+ },
+ {
+  "id": "sap-survey-111",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9323783796259454,
+   "probabilities": {
+    "it": 0.0031,
+    "people_ops": 0.9324,
+    "payroll": 0.0616,
+    "security": 0.0021,
+    "uncertain": 0.0007
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.2710622403126214,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"july\", \"june\", \"personal\", \"working\"."
+  }
+ },
+ {
+  "id": "sap-survey-113",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9956115306715349,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9956,
+    "payroll": 0.004,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9765831094259808,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"leave\", \"doctor\", \"stay\"."
+  }
+ },
+ {
+  "id": "sap-survey-116",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.8312822593341052,
+   "probabilities": {
+    "it": 0.0019,
+    "people_ops": 0.1646,
+    "payroll": 0.8313,
+    "security": 0.0013,
+    "uncertain": 0.001
+   },
+   "category": "expense_refund",
+   "sensitive": 0.09323065576517926,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"pay\", \"flight\", \"ticket\", \"when\"."
+  }
+ },
+ {
+  "id": "sap-survey-127",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.7529471574626503,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.2469,
+    "payroll": 0.7529,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9809443424176892,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"gender\", \"company\"."
+  }
+ },
+ {
+  "id": "sap-survey-128",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9847378613494575,
+   "probabilities": {
+    "it": 0.0012,
+    "people_ops": 0.9847,
+    "payroll": 0.0122,
+    "security": 0.0013,
+    "uncertain": 0.0005
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.8241037772818547,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"need take\", \"personal\", \"need\"."
+  }
+ },
+ {
+  "id": "sap-survey-138",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9856070051859912,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9856,
+    "payroll": 0.0142,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.11321491039158409,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"months\", \"next\", \"support\"."
+  }
+ },
+ {
+  "id": "sap-survey-144",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.998913177627049,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0009,
+    "payroll": 0.9989,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0003767657125486843,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"travel\", \"ticket\", \"airport\"."
+  }
+ },
+ {
+  "id": "sap-survey-150",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9947763943984294,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9948,
+    "payroll": 0.0045,
+    "security": 0.0003,
+    "uncertain": 0.0001
+   },
+   "category": "schedule_change",
+   "sensitive": 0.006287527823174696,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"change\", \"due\", \"close\"."
+  }
+ },
+ {
+  "id": "sap-survey-151",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9805037376543048,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.0192,
+    "payroll": 0.9805,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.01180038904588268,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"salary raise\", \"euros\"."
+  }
+ },
+ {
+  "id": "sap-survey-152",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9979873675651202,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.998,
+    "payroll": 0.002,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.991907736816255,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-161",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9770331296203378,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.977,
+    "payroll": 0.0229,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9206292523135843,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"time\", \"about\", \"due\", \"information\"."
+  }
+ },
+ {
+  "id": "sap-survey-167",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9996010714610231,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9996,
+    "payroll": 0.0004,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9975168875131889,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"take\", \"days\", \"time\"."
+  }
+ },
+ {
+  "id": "sap-survey-171",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9999280898477644,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9999,
+    "payroll": 0.0001,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9990532821574459,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"days\", \"sick\", \"leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-173",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9753821663433686,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9754,
+    "payroll": 0.0241,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "policy_info",
+   "sensitive": 0.10804381457111585,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"months\", \"information\", \"should\"."
+  }
+ },
+ {
+  "id": "sap-survey-177",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9955478781750091,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0044,
+    "payroll": 0.9955,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.989258924978816,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"male\", \"more\"."
+  }
+ },
+ {
+  "id": "sap-survey-178",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9913897630934456,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0085,
+    "payroll": 0.9914,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.003957194447428244,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"travel\", \"plane\", \"ticket\", \"plane ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-184",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9962820956309398,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9963,
+    "payroll": 0.0034,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "schedule_change",
+   "sensitive": 0.007119382645563388,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"day\", \"shift\", \"change\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-189",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9246315329642772,
+   "probabilities": {
+    "it": 0.0023,
+    "people_ops": 0.9246,
+    "payroll": 0.0713,
+    "security": 0.0009,
+    "uncertain": 0.0008
+   },
+   "category": "complaint",
+   "sensitive": 0.6122041830441911,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"because\", \"due\", \"not\", \"team\"."
+  }
+ },
+ {
+  "id": "sap-survey-198",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9989469180723382,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9989,
+    "payroll": 0.001,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.984027569609946,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"family\", \"days off\"."
+  }
+ },
+ {
+  "id": "sap-survey-204",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.7328162154066273,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.2671,
+    "payroll": 0.7328,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.08102768298861533,
+   "uncertain": true,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"salary raise\", \"request salary\"."
+  }
+ },
+ {
+  "id": "sap-survey-213",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9997542235768834,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9998,
+    "payroll": 0.0002,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9964916350289649,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-215",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.7848365348008128,
+   "probabilities": {
+    "it": 0.0004,
+    "people_ops": 0.7848,
+    "payroll": 0.2136,
+    "security": 0.0008,
+    "uncertain": 0.0003
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.7047118340113286,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"leave\", \"starting\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-218",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9624888622900863,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9625,
+    "payroll": 0.0371,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "policy_info",
+   "sensitive": 0.07631434163676995,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"months\", \"about\", \"stay\", \"information\"."
+  }
+ },
+ {
+  "id": "sap-survey-221",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9997935996586162,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0002,
+    "payroll": 0.9998,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9939555457614683,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"pay\", \"pay gap\"."
+  }
+ },
+ {
+  "id": "sap-survey-223",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9906184017025128,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0093,
+    "payroll": 0.9906,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.00228046434671006,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"plane\", \"ticket\", \"plane ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-229",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9988907915695693,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9989,
+    "payroll": 0.0011,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9944043487392635,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"take\", \"some\", \"able\"."
+  }
+ },
+ {
+  "id": "sap-survey-240",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.974387442040563,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9744,
+    "payroll": 0.0255,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9436694265309516,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"because\", \"colleague\", \"about\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-243",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9628808104822579,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9629,
+    "payroll": 0.0369,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "policy_info",
+   "sensitive": 0.1196867756150394,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"period\", \"any\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-250",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9993027162002787,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9993,
+    "payroll": 0.0005,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9926429964726738,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-004",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9467832646960943,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9468,
+    "payroll": 0.0532,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9787115587649314,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"leave\", \"colleague\", \"help\"."
+  }
+ },
+ {
+  "id": "sap-survey-006",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.998770834583075,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0012,
+    "payroll": 0.9988,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0002732975398399947,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"travel\", \"ticket\", \"plane\"."
+  }
+ },
+ {
+  "id": "sap-survey-010",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9963751389315418,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9964,
+    "payroll": 0.0033,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.8663584060985562,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"day\", \"day off\", \"medical\"."
+  }
+ },
+ {
+  "id": "sap-survey-017",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9680782559764043,
+   "probabilities": {
+    "it": 0.0007,
+    "people_ops": 0.9681,
+    "payroll": 0.0307,
+    "security": 0.0003,
+    "uncertain": 0.0003
+   },
+   "category": "policy_info",
+   "sensitive": 0.08875143976236363,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"any\", \"move\", \"all\"."
+  }
+ },
+ {
+  "id": "sap-survey-026",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.502791090573918,
+   "probabilities": {
+    "it": 0.0028,
+    "people_ops": 0.4915,
+    "payroll": 0.5028,
+    "security": 0.0019,
+    "uncertain": 0.001
+   },
+   "category": "compensation",
+   "sensitive": 0.9519742547794462,
+   "uncertain": true,
+   "reason": "Strongest cues for payroll: \"gender\", \"about\", \"all\", \"about gender\"."
+  }
+ },
+ {
+  "id": "sap-survey-033",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.5915260016100368,
+   "probabilities": {
+    "it": 0.0004,
+    "people_ops": 0.4076,
+    "payroll": 0.5915,
+    "security": 0.0004,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.18515393862365004,
+   "uncertain": true,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"increase\", \"colleagues\"."
+  }
+ },
+ {
+  "id": "sap-survey-042",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.867247545284316,
+   "probabilities": {
+    "it": 0.0036,
+    "people_ops": 0.1283,
+    "payroll": 0.8672,
+    "security": 0.0006,
+    "uncertain": 0.0003
+   },
+   "category": "expense_refund",
+   "sensitive": 0.04260503693693548,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"travel\", \"ticket\", \"plane\", \"plane ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-043",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9757365733074588,
+   "probabilities": {
+    "it": 0.0029,
+    "people_ops": 0.9757,
+    "payroll": 0.0183,
+    "security": 0.002,
+    "uncertain": 0.001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.4788101123336621,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"october\", \"thursday\", \"friday\", \"colleagues\"."
+  }
+ },
+ {
+  "id": "sap-survey-045",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9939214430567324,
+   "probabilities": {
+    "it": 0.0007,
+    "people_ops": 0.9939,
+    "payroll": 0.0052,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9647035520106229,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"day\", \"able\", \"come\", \"work\"."
+  }
+ },
+ {
+  "id": "sap-survey-047",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9427137378451775,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9427,
+    "payroll": 0.057,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9195761845383031,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"help\", \"like\", \"don\"."
+  }
+ },
+ {
+  "id": "sap-survey-048",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9668135740061999,
+   "probabilities": {
+    "it": 0.0024,
+    "people_ops": 0.9668,
+    "payroll": 0.0281,
+    "security": 0.0017,
+    "uncertain": 0.0011
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.34138635042826015,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"come\", \"very\", \"need\", \"back\"."
+  }
+ },
+ {
+  "id": "sap-survey-049",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8895877100427199,
+   "probabilities": {
+    "it": 0.0017,
+    "people_ops": 0.8896,
+    "payroll": 0.1039,
+    "security": 0.0039,
+    "uncertain": 0.0009
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.42843077657762435,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"cannot\", \"now\", \"should\"."
+  }
+ },
+ {
+  "id": "sap-survey-066",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9978474659771781,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.0018,
+    "payroll": 0.9978,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.9982912007758266,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"gap\", \"pay\", \"gender\", \"pay gap\"."
+  }
+ },
+ {
+  "id": "sap-survey-071",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.998005747953769,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0017,
+    "payroll": 0.998,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0008372175867791895,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"plane\", \"plane ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-074",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9974123357855205,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9974,
+    "payroll": 0.0025,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.015346611702092445,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"colleague\", \"months\"."
+  }
+ },
+ {
+  "id": "sap-survey-075",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9986853383012305,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9987,
+    "payroll": 0.0013,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9958487536264067,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"time\", \"time off\", \"some\"."
+  }
+ },
+ {
+  "id": "sap-survey-092",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9938334954412197,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9938,
+    "payroll": 0.0056,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9599034863287461,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-093",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9938732298688072,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9939,
+    "payroll": 0.0059,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "schedule_change",
+   "sensitive": 0.041480965837766795,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"change\", \"because\", \"like\"."
+  }
+ },
+ {
+  "id": "sap-survey-094",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9743281869205911,
+   "probabilities": {
+    "it": 0.0006,
+    "people_ops": 0.9743,
+    "payroll": 0.0243,
+    "security": 0.0006,
+    "uncertain": 0.0002
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.8685850299079675,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"next\", \"like\", \"spend\", \"peter\"."
+  }
+ },
+ {
+  "id": "sap-survey-097",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9938144504712202,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0061,
+    "payroll": 0.9938,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.01432432054214896,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"increase\", \"salary increase\", \"last\"."
+  }
+ },
+ {
+  "id": "sap-survey-098",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9281840020554217,
+   "probabilities": {
+    "it": 0.0033,
+    "people_ops": 0.065,
+    "payroll": 0.9282,
+    "security": 0.0023,
+    "uncertain": 0.0012
+   },
+   "category": "expense_refund",
+   "sensitive": 0.048108303663595725,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"euros\", \"asking\"."
+  }
+ },
+ {
+  "id": "sap-survey-100",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9690528775560404,
+   "probabilities": {
+    "it": 0.0005,
+    "people_ops": 0.9691,
+    "payroll": 0.0296,
+    "security": 0.0006,
+    "uncertain": 0.0002
+   },
+   "category": "policy_info",
+   "sensitive": 0.02533285556650117,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"stay\", \"months\", \"period\"."
+  }
+ },
+ {
+  "id": "sap-survey-112",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8678807207545087,
+   "probabilities": {
+    "it": 0.0024,
+    "people_ops": 0.8679,
+    "payroll": 0.128,
+    "security": 0.0011,
+    "uncertain": 0.0007
+   },
+   "category": "complaint",
+   "sensitive": 0.912557978139648,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"because\", \"colleague\", \"him\", \"he\"."
+  }
+ },
+ {
+  "id": "sap-survey-118",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9853483075448662,
+   "probabilities": {
+    "it": 0.0005,
+    "people_ops": 0.9853,
+    "payroll": 0.0137,
+    "security": 0.0003,
+    "uncertain": 0.0002
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.8555724260246312,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"day\", \"because\", \"doctor\"."
+  }
+ },
+ {
+  "id": "sap-survey-129",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9957373404041749,
+   "probabilities": {
+    "it": 0.0005,
+    "people_ops": 0.9957,
+    "payroll": 0.0034,
+    "security": 0.0003,
+    "uncertain": 0.0001
+   },
+   "category": "schedule_change",
+   "sensitive": 0.07162479399651085,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"change\", \"attend\", \"situation\"."
+  }
+ },
+ {
+  "id": "sap-survey-131",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9797662816033034,
+   "probabilities": {
+    "it": 0.0004,
+    "people_ops": 0.0195,
+    "payroll": 0.9798,
+    "security": 0.0003,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.9853774904726539,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"gap\", \"pay\", \"gender\", \"pay gap\"."
+  }
+ },
+ {
+  "id": "sap-survey-132",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.5671464519192796,
+   "probabilities": {
+    "it": 0.0041,
+    "people_ops": 0.4244,
+    "payroll": 0.5671,
+    "security": 0.0029,
+    "uncertain": 0.0015
+   },
+   "category": "expense_refund",
+   "sensitive": 0.09395135883850302,
+   "uncertain": true,
+   "reason": "Strongest cues for payroll: \"trip\", \"reimbursement\", \"find\", \"service\"."
+  }
+ },
+ {
+  "id": "sap-survey-134",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9651762420556191,
+   "probabilities": {
+    "it": 0.0015,
+    "people_ops": 0.9652,
+    "payroll": 0.0321,
+    "security": 0.0008,
+    "uncertain": 0.0004
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9426586339212234,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"colleague\", \"hope\", \"house\"."
+  }
+ },
+ {
+  "id": "sap-survey-145",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9767912657704513,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9768,
+    "payroll": 0.0231,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.005752547352837662,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"months\", \"next\"."
+  }
+ },
+ {
+  "id": "sap-survey-148",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9994722555686868,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0005,
+    "payroll": 0.9995,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.00028068743497139636,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"travel\", \"ticket\", \"attached\"."
+  }
+ },
+ {
+  "id": "sap-survey-153",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9933393212567778,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9933,
+    "payroll": 0.0058,
+    "security": 0.0004,
+    "uncertain": 0.0001
+   },
+   "category": "schedule_change",
+   "sensitive": 0.03731537745369811,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"change\", \"due\", \"medical\"."
+  }
+ },
+ {
+  "id": "sap-survey-155",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9935295930513669,
+   "probabilities": {
+    "it": 0.0005,
+    "people_ops": 0.9935,
+    "payroll": 0.0055,
+    "security": 0.0003,
+    "uncertain": 0.0002
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9915356124589569,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"starting\", \"medical\"."
+  }
+ },
+ {
+  "id": "sap-survey-158",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9946535457689218,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0053,
+    "payroll": 0.9947,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.0742697566919761,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"increase\", \"salary raise\"."
+  }
+ },
+ {
+  "id": "sap-survey-172",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9830462890803543,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.983,
+    "payroll": 0.0163,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "complaint",
+   "sensitive": 0.9634105871267797,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"colleague\", \"like\", \"don\", \"he\"."
+  }
+ },
+ {
+  "id": "sap-survey-176",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9991089012597143,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9991,
+    "payroll": 0.0008,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9694700831829768,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"time\", \"some\", \"some time\"."
+  }
+ },
+ {
+  "id": "sap-survey-181",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9956938098166276,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9957,
+    "payroll": 0.0042,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9558600937633621,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-183",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9988129414246053,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9988,
+    "payroll": 0.0011,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.0035637283964251036,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"months\", \"help\"."
+  }
+ },
+ {
+  "id": "sap-survey-191",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9136573156947165,
+   "probabilities": {
+    "it": 0.0007,
+    "people_ops": 0.9137,
+    "payroll": 0.085,
+    "security": 0.0005,
+    "uncertain": 0.0002
+   },
+   "category": "complaint",
+   "sensitive": 0.9618808742905077,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"advance\", \"all\", \"complaint\", \"necessary\"."
+  }
+ },
+ {
+  "id": "sap-survey-192",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9849406681399253,
+   "probabilities": {
+    "it": 0.0007,
+    "people_ops": 0.0138,
+    "payroll": 0.9849,
+    "security": 0.0004,
+    "uncertain": 0.0001
+   },
+   "category": "expense_refund",
+   "sensitive": 0.015808758405199276,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"flight\", \"travel\", \"get refund\"."
+  }
+ },
+ {
+  "id": "sap-survey-194",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9965783393173635,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.0029,
+    "payroll": 0.9966,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.9950579165025194,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"pay\", \"gender\"."
+  }
+ },
+ {
+  "id": "sap-survey-200",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9998901012414918,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9999,
+    "payroll": 0,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "schedule_change",
+   "sensitive": 0.03169656895782103,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"take\", \"day\", \"shift\"."
+  }
+ },
+ {
+  "id": "sap-survey-203",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.980880276018495,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9809,
+    "payroll": 0.0189,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9745924688002346,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"days off\", \"next\"."
+  }
+ },
+ {
+  "id": "sap-survey-216",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.996668511547266,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9967,
+    "payroll": 0.0032,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9620882927311264,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"time\", \"time off\", \"some\"."
+  }
+ },
+ {
+  "id": "sap-survey-225",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9913225535674702,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0085,
+    "payroll": 0.9913,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9783557787808285,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"pay\", \"gender\"."
+  }
+ },
+ {
+  "id": "sap-survey-227",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9940896272445734,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9941,
+    "payroll": 0.0058,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.010892980341050622,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"months\", \"next\"."
+  }
+ },
+ {
+  "id": "sap-survey-228",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9611139303067793,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0388,
+    "payroll": 0.9611,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.039306683679620195,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"salary raise\", \"euros\"."
+  }
+ },
+ {
+  "id": "sap-survey-231",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9951119117535535,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9951,
+    "payroll": 0.0048,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9288244964513079,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"take\", \"some\"."
+  }
+ },
+ {
+  "id": "sap-survey-234",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9992798648623694,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9993,
+    "payroll": 0.0004,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9911392739143454,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-235",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9801134920785813,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0197,
+    "payroll": 0.9801,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0019633757046369276,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"plane\", \"plane ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-245",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9451861585047714,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9452,
+    "payroll": 0.0544,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "complaint",
+   "sensitive": 0.9789046381761476,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"colleague\", \"any\", \"like\", \"work\"."
+  }
+ },
+ {
+  "id": "sap-survey-253",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9837175832199428,
+   "probabilities": {
+    "it": 0.0004,
+    "people_ops": 0.9837,
+    "payroll": 0.0155,
+    "security": 0.0002,
+    "uncertain": 0.0002
+   },
+   "category": "policy_info",
+   "sensitive": 0.016221998777860114,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"help\", \"one\"."
+  }
+ },
+ {
+  "id": "sap-survey-258",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9993695052652811,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9994,
+    "payroll": 0.0004,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9977155931244649,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-009",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9962387705777666,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9962,
+    "payroll": 0.0033,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.915534500361142,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"day\", \"medical\", \"day off\"."
+  }
+ },
+ {
+  "id": "sap-survey-011",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9220899835515818,
+   "probabilities": {
+    "it": 0.0064,
+    "people_ops": 0.9221,
+    "payroll": 0.067,
+    "security": 0.0029,
+    "uncertain": 0.0015
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.7490583899266425,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"close\", \"all\", \"him\", \"collegue\"."
+  }
+ },
+ {
+  "id": "sap-survey-013",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9358230708675863,
+   "probabilities": {
+    "it": 0.0004,
+    "people_ops": 0.0634,
+    "payroll": 0.9358,
+    "security": 0.0002,
+    "uncertain": 0.0002
+   },
+   "category": "expense_refund",
+   "sensitive": 0.01103726083232981,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"plane\", \"last\", \"trip\", \"ask\"."
+  }
+ },
+ {
+  "id": "sap-survey-015",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9811248213018627,
+   "probabilities": {
+    "it": 0.0024,
+    "people_ops": 0.9811,
+    "payroll": 0.0152,
+    "security": 0.0008,
+    "uncertain": 0.0004
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.3200567719524301,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"day\", \"attend\", \"ask\", \"funeral\"."
+  }
+ },
+ {
+  "id": "sap-survey-016",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.8242431691787593,
+   "probabilities": {
+    "it": 0.0023,
+    "people_ops": 0.17,
+    "payroll": 0.8242,
+    "security": 0.0023,
+    "uncertain": 0.0012
+   },
+   "category": "compensation",
+   "sensitive": 0.6827046644336207,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"ticket\", \"gender\", \"about\"."
+  }
+ },
+ {
+  "id": "sap-survey-020",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8641316499345266,
+   "probabilities": {
+    "it": 0.0042,
+    "people_ops": 0.8641,
+    "payroll": 0.1259,
+    "security": 0.0042,
+    "uncertain": 0.0015
+   },
+   "category": "policy_info",
+   "sensitive": 0.023399763874860275,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"next\", \"all\", \"january\"."
+  }
+ },
+ {
+  "id": "sap-survey-030",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8193618138486648,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.8194,
+    "payroll": 0.1805,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.48377952014733083,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"colleague\", \"like\", \"good\", \"not\"."
+  }
+ },
+ {
+  "id": "sap-survey-046",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9599508465779348,
+   "probabilities": {
+    "it": 0.0005,
+    "people_ops": 0.0391,
+    "payroll": 0.96,
+    "security": 0.0004,
+    "uncertain": 0.0001
+   },
+   "category": "expense_refund",
+   "sensitive": 0.01418860240026261,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"flight\", \"business\", \"phoenix\"."
+  }
+ },
+ {
+  "id": "sap-survey-050",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9612204899237812,
+   "probabilities": {
+    "it": 0.0036,
+    "people_ops": 0.9612,
+    "payroll": 0.0314,
+    "security": 0.0025,
+    "uncertain": 0.0013
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.6931915115077375,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"period\", \"advance\", \"understanding\", \"difficult\"."
+  }
+ },
+ {
+  "id": "sap-survey-051",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.6000705029086029,
+   "probabilities": {
+    "it": 0.0075,
+    "people_ops": 0.6001,
+    "payroll": 0.3885,
+    "security": 0.0029,
+    "uncertain": 0.0011
+   },
+   "category": "compensation",
+   "sensitive": 0.510128519355881,
+   "uncertain": true,
+   "reason": "Strongest cues for people_ops: \"hope\", \"not\", \"understand\", \"hope understand\"."
+  }
+ },
+ {
+  "id": "sap-survey-052",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.7884802422447773,
+   "probabilities": {
+    "it": 0.0109,
+    "people_ops": 0.7885,
+    "payroll": 0.1806,
+    "security": 0.0154,
+    "uncertain": 0.0045
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.6109050520357039,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"visit\", \"need\", \"car\"."
+  }
+ },
+ {
+  "id": "sap-survey-056",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8644060327381038,
+   "probabilities": {
+    "it": 0.0016,
+    "people_ops": 0.8644,
+    "payroll": 0.1329,
+    "security": 0.0008,
+    "uncertain": 0.0004
+   },
+   "category": "compensation",
+   "sensitive": 0.7862252588024369,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"cannot\", \"event\", \"advance\", \"wedding\"."
+  }
+ },
+ {
+  "id": "sap-survey-058",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9989036637134034,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9989,
+    "payroll": 0.001,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9905468079470393,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-060",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8628055434150226,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.8628,
+    "payroll": 0.1366,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "complaint",
+   "sensitive": 0.9193954037955361,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"about\", \"work\", \"like\", \"complaint\"."
+  }
+ },
+ {
+  "id": "sap-survey-076",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9835272747799755,
+   "probabilities": {
+    "it": 0.0012,
+    "people_ops": 0.9835,
+    "payroll": 0.0136,
+    "security": 0.0006,
+    "uncertain": 0.001
+   },
+   "category": "policy_info",
+   "sensitive": 0.03090841103994022,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"colleague\", \"help\", \"one\", \"month\"."
+  }
+ },
+ {
+  "id": "sap-survey-077",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.8950604422797179,
+   "probabilities": {
+    "it": 0.0004,
+    "people_ops": 0.1041,
+    "payroll": 0.8951,
+    "security": 0.0004,
+    "uncertain": 0.0001
+   },
+   "category": "expense_refund",
+   "sensitive": 0.06848692257674659,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"flight\", \"ask refund\", \"ask\"."
+  }
+ },
+ {
+  "id": "sap-survey-080",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9993551557608328,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9994,
+    "payroll": 0.0006,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9977243651997332,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"some\", \"time\", \"time off\"."
+  }
+ },
+ {
+  "id": "sap-survey-082",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9963640998160426,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0036,
+    "payroll": 0.9964,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9959430461368752,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"pay\", \"paid\"."
+  }
+ },
+ {
+  "id": "sap-survey-096",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9988287468834557,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9988,
+    "payroll": 0.0009,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.8005844392027425,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"take\", \"time\", \"change\"."
+  }
+ },
+ {
+  "id": "sap-survey-099",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9890794947821129,
+   "probabilities": {
+    "it": 0.0019,
+    "people_ops": 0.0071,
+    "payroll": 0.9891,
+    "security": 0.0013,
+    "uncertain": 0.0007
+   },
+   "category": "expense_refund",
+   "sensitive": 0.007282936106726431,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"san\", \"juan\"."
+  }
+ },
+ {
+  "id": "sap-survey-101",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9975726681236141,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9976,
+    "payroll": 0.0023,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.919864900424428,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"take\", \"time\"."
+  }
+ },
+ {
+  "id": "sap-survey-104",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9980162855589912,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.998,
+    "payroll": 0.0016,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9939697809354898,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-115",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.8035223210686848,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.1954,
+    "payroll": 0.8035,
+    "security": 0.0005,
+    "uncertain": 0.0002
+   },
+   "category": "compensation",
+   "sensitive": 0.04491564217934569,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"request salary\", \"request\", \"manager\"."
+  }
+ },
+ {
+  "id": "sap-survey-119",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9778936788159993,
+   "probabilities": {
+    "it": 0.002,
+    "people_ops": 0.9779,
+    "payroll": 0.0183,
+    "security": 0.001,
+    "uncertain": 0.0008
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.17254635897967538,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"stay\", \"work\", \"need\"."
+  }
+ },
+ {
+  "id": "sap-survey-120",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9503338959983599,
+   "probabilities": {
+    "it": 0.0028,
+    "people_ops": 0.9503,
+    "payroll": 0.0447,
+    "security": 0.0016,
+    "uncertain": 0.0005
+   },
+   "category": "complaint",
+   "sensitive": 0.8987160670175904,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"team\", \"coming\", \"what\", \"several\"."
+  }
+ },
+ {
+  "id": "sap-survey-123",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9920818096888037,
+   "probabilities": {
+    "it": 0.0008,
+    "people_ops": 0.9921,
+    "payroll": 0.0067,
+    "security": 0.0003,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9879345190261811,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"leave\", \"because\", \"doctor\", \"today\"."
+  }
+ },
+ {
+  "id": "sap-survey-133",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9771083218202332,
+   "probabilities": {
+    "it": 0.001,
+    "people_ops": 0.9771,
+    "payroll": 0.0205,
+    "security": 0.001,
+    "uncertain": 0.0004
+   },
+   "category": "schedule_change",
+   "sensitive": 0.012632475950590182,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"exam\", \"tuesday\", \"ask\"."
+  }
+ },
+ {
+  "id": "sap-survey-136",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9129982800482119,
+   "probabilities": {
+    "it": 0.0009,
+    "people_ops": 0.0844,
+    "payroll": 0.913,
+    "security": 0.0006,
+    "uncertain": 0.0011
+   },
+   "category": "expense_refund",
+   "sensitive": 0.023433778945893956,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"ticket\", \"last\", \"find\", \"reimbursement\"."
+  }
+ },
+ {
+  "id": "sap-survey-137",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9972622087596422,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9973,
+    "payroll": 0.0026,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.998077628033452,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"some\", \"time\", \"time off\"."
+  }
+ },
+ {
+  "id": "sap-survey-149",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9988884599950197,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.001,
+    "payroll": 0.9989,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0002578109979211064,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"travel\", \"attached\"."
+  }
+ },
+ {
+  "id": "sap-survey-154",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9831900589445299,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9832,
+    "payroll": 0.0167,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.0186666421072751,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"about\", \"hope\"."
+  }
+ },
+ {
+  "id": "sap-survey-157",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9820056078850014,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.018,
+    "payroll": 0.982,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9979666540312175,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"gender\", \"male\"."
+  }
+ },
+ {
+  "id": "sap-survey-160",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9979144399870674,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9979,
+    "payroll": 0.002,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9691156891083249,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-164",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9979213038382734,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9979,
+    "payroll": 0.002,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "schedule_change",
+   "sensitive": 0.07729024879529311,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"shift\", \"change\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-166",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9947050749156439,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0052,
+    "payroll": 0.9947,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.04219842121021716,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"increase\", \"difference\", \"salary increase\"."
+  }
+ },
+ {
+  "id": "sap-survey-179",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9930763700175792,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9931,
+    "payroll": 0.0068,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9713248817109049,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"due\", \"issues\", \"next\"."
+  }
+ },
+ {
+  "id": "sap-survey-180",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.966142874100848,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9661,
+    "payroll": 0.0336,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9408468902992954,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"hope\", \"help\", \"issue\"."
+  }
+ },
+ {
+  "id": "sap-survey-185",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9986964647667126,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9987,
+    "payroll": 0.0012,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.0030676508906230136,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"about\", \"help\"."
+  }
+ },
+ {
+  "id": "sap-survey-196",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9983933448285779,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0015,
+    "payroll": 0.9984,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9985478938733496,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"pay\", \"explanation\"."
+  }
+ },
+ {
+  "id": "sap-survey-199",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9861060899903871,
+   "probabilities": {
+    "it": 0.0009,
+    "people_ops": 0.012,
+    "payroll": 0.9861,
+    "security": 0.0006,
+    "uncertain": 0.0003
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0006204125236632974,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"flight\", \"business\", \"trip\"."
+  }
+ },
+ {
+  "id": "sap-survey-201",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9991995013094783,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9992,
+    "payroll": 0.0006,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.998144032408178,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-205",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9975766918875741,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9976,
+    "payroll": 0.0024,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9657299851181635,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"time\", \"colleague\", \"about\"."
+  }
+ },
+ {
+  "id": "sap-survey-208",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9972246631903984,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9972,
+    "payroll": 0.0025,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9764739907402743,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"time\", \"time off\"."
+  }
+ },
+ {
+  "id": "sap-survey-217",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9970497778202979,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.997,
+    "payroll": 0.0027,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.8784807174596796,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"stay\", \"family\", \"close\"."
+  }
+ },
+ {
+  "id": "sap-survey-226",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9978051731371573,
+   "probabilities": {
+    "it": 0.0007,
+    "people_ops": 0.9978,
+    "payroll": 0.0009,
+    "security": 0.0004,
+    "uncertain": 0.0001
+   },
+   "category": "schedule_change",
+   "sensitive": 0.03595545823238796,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"shift\", \"cannot\", \"monday\", \"possible\"."
+  }
+ },
+ {
+  "id": "sap-survey-230",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9779618899211696,
+   "probabilities": {
+    "it": 0.001,
+    "people_ops": 0.978,
+    "payroll": 0.0199,
+    "security": 0.0007,
+    "uncertain": 0.0004
+   },
+   "category": "policy_info",
+   "sensitive": 0.25698277787715557,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"months\", \"stay\", \"visit\"."
+  }
+ },
+ {
+  "id": "sap-survey-233",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9937754968101103,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.006,
+    "payroll": 0.9938,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.12322931920286409,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"euros\", \"asking\"."
+  }
+ },
+ {
+  "id": "sap-survey-236",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9985494087982543,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9985,
+    "payroll": 0.0014,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9945966936944765,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-239",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9994973585178005,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0005,
+    "payroll": 0.9995,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0004121726221243075,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"travel\", \"plane\"."
+  }
+ },
+ {
+  "id": "sap-survey-244",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9994401964514805,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9994,
+    "payroll": 0.0005,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9968400478457924,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"days\", \"some\", \"able\"."
+  }
+ },
+ {
+  "id": "sap-survey-251",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8508593215892366,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.8509,
+    "payroll": 0.1485,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "complaint",
+   "sensitive": 0.6294262432089694,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"issue\", \"next\", \"should\"."
+  }
+ },
+ {
+  "id": "sap-survey-256",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9955188453750711,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0044,
+    "payroll": 0.9955,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9824374499495497,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"gap\", \"pay\", \"explanation\", \"pay gap\"."
+  }
+ },
+ {
+  "id": "sap-survey-014",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9599732519137434,
+   "probabilities": {
+    "it": 0.0022,
+    "people_ops": 0.96,
+    "payroll": 0.0363,
+    "security": 0.0011,
+    "uncertain": 0.0004
+   },
+   "category": "complaint",
+   "sensitive": 0.961342493715618,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"able\", \"all\", \"manager\", \"not\"."
+  }
+ },
+ {
+  "id": "sap-survey-018",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9984400670163632,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9984,
+    "payroll": 0.0013,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9812092415410949,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-023",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8859587159034363,
+   "probabilities": {
+    "it": 0.003,
+    "people_ops": 0.886,
+    "payroll": 0.11,
+    "security": 0.0005,
+    "uncertain": 0.0005
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.5903823576470938,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"all\", \"office\", \"not\", \"september\"."
+  }
+ },
+ {
+  "id": "sap-survey-024",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9926633933813191,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0072,
+    "payroll": 0.9927,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0009608492981083206,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"attached\", \"ask refund\", \"find attached\"."
+  }
+ },
+ {
+  "id": "sap-survey-028",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.8284653191231437,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.1711,
+    "payroll": 0.8285,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "compensation",
+   "sensitive": 0.7908872554100327,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gender\", \"same\", \"let know\"."
+  }
+ },
+ {
+  "id": "sap-survey-029",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.956806430098579,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9568,
+    "payroll": 0.0428,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.163073869738028,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"months\", \"help\", \"any\", \"about\"."
+  }
+ },
+ {
+  "id": "sap-survey-034",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9861907972017838,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9862,
+    "payroll": 0.0134,
+    "security": 0.0002,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9645900803057985,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"because\", \"like\", \"behaviour\"."
+  }
+ },
+ {
+  "id": "sap-survey-053",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9313758902845575,
+   "probabilities": {
+    "it": 0.0194,
+    "people_ops": 0.0289,
+    "payroll": 0.9314,
+    "security": 0.0134,
+    "uncertain": 0.0069
+   },
+   "category": "expense_refund",
+   "sensitive": 0.02547584613285675,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"money\", \"bank\", \"took\", \"bank account\"."
+  }
+ },
+ {
+  "id": "sap-survey-054",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.533939820678471,
+   "probabilities": {
+    "it": 0.0014,
+    "people_ops": 0.5339,
+    "payroll": 0.4634,
+    "security": 0.0008,
+    "uncertain": 0.0005
+   },
+   "category": "compensation",
+   "sensitive": 0.11233187247441814,
+   "uncertain": true,
+   "reason": "Strongest cues for people_ops: \"change\", \"all\", \"go\", \"during\"."
+  }
+ },
+ {
+  "id": "sap-survey-055",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8315295871895606,
+   "probabilities": {
+    "it": 0.0038,
+    "people_ops": 0.8315,
+    "payroll": 0.16,
+    "security": 0.0026,
+    "uncertain": 0.0021
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.6949695400915676,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"may\", \"son\", \"need\", \"least\"."
+  }
+ },
+ {
+  "id": "sap-survey-059",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9973646189909245,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9974,
+    "payroll": 0.0026,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9227730964357251,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"sick leave\", \"day\"."
+  }
+ },
+ {
+  "id": "sap-survey-062",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9978735104301302,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9979,
+    "payroll": 0.0021,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9890442396224592,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"some\", \"time\", \"time off\"."
+  }
+ },
+ {
+  "id": "sap-survey-065",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9979701402058857,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.998,
+    "payroll": 0.0019,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "schedule_change",
+   "sensitive": 0.01341511828716543,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"change\", \"shift\", \"like\", \"request\"."
+  }
+ },
+ {
+  "id": "sap-survey-079",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9917449489232568,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9917,
+    "payroll": 0.0077,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "policy_info",
+   "sensitive": 0.011269294401076841,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"months\", \"information\"."
+  }
+ },
+ {
+  "id": "sap-survey-081",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9939759911954331,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.994,
+    "payroll": 0.0056,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9679665634410815,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"some\", \"time\", \"time off\"."
+  }
+ },
+ {
+  "id": "sap-survey-084",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9917357030599322,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.0079,
+    "payroll": 0.9917,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "expense_refund",
+   "sensitive": 0.001716065060703562,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"travel\", \"plane\"."
+  }
+ },
+ {
+  "id": "sap-survey-085",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9678774707551872,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9679,
+    "payroll": 0.0321,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "complaint",
+   "sensitive": 0.9815673484008814,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"due\", \"like\", \"peter\"."
+  }
+ },
+ {
+  "id": "sap-survey-086",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9954031229398345,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0045,
+    "payroll": 0.9954,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9871047664115449,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"gap\", \"pay\", \"pay gap\", \"gender pay\"."
+  }
+ },
+ {
+  "id": "sap-survey-105",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9812722889968313,
+   "probabilities": {
+    "it": 0.0015,
+    "people_ops": 0.0158,
+    "payroll": 0.9813,
+    "security": 0.0011,
+    "uncertain": 0.0003
+   },
+   "category": "expense_refund",
+   "sensitive": 0.011052949571895355,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"ticket\", \"flight\", \"paid\", \"trip\"."
+  }
+ },
+ {
+  "id": "sap-survey-107",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9993694129805396,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9994,
+    "payroll": 0.0004,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9977788922048707,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-108",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9742916878311069,
+   "probabilities": {
+    "it": 0.0016,
+    "people_ops": 0.9743,
+    "payroll": 0.0231,
+    "security": 0.0006,
+    "uncertain": 0.0004
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.5899792674170482,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"time\", \"change\", \"need take\"."
+  }
+ },
+ {
+  "id": "sap-survey-114",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9976421731432208,
+   "probabilities": {
+    "it": 0.0004,
+    "people_ops": 0.9976,
+    "payroll": 0.0017,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.4279152182239211,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"day\", \"day off\", \"next\"."
+  }
+ },
+ {
+  "id": "sap-survey-117",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.623808747657335,
+   "probabilities": {
+    "it": 0.0213,
+    "people_ops": 0.3328,
+    "payroll": 0.6238,
+    "security": 0.0146,
+    "uncertain": 0.0075
+   },
+   "category": "compensation",
+   "sensitive": 0.12624198770528658,
+   "uncertain": true,
+   "reason": "Strongest cues for payroll: \"euro\", \"wage\", \"november\"."
+  }
+ },
+ {
+  "id": "sap-survey-122",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8553142752212666,
+   "probabilities": {
+    "it": 0.0077,
+    "people_ops": 0.8553,
+    "payroll": 0.1328,
+    "security": 0.0033,
+    "uncertain": 0.0009
+   },
+   "category": "complaint",
+   "sensitive": 0.9417632560207428,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"should\", \"peter\", \"team\", \"not\"."
+  }
+ },
+ {
+  "id": "sap-survey-125",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9873668575267784,
+   "probabilities": {
+    "it": 0.0002,
+    "people_ops": 0.9874,
+    "payroll": 0.0121,
+    "security": 0.0001,
+    "uncertain": 0.0002
+   },
+   "category": "policy_info",
+   "sensitive": 0.007304742744750737,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"accomodation\", \"about\", \"about accomodation\", \"since\"."
+  }
+ },
+ {
+  "id": "sap-survey-126",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9946861447703995,
+   "probabilities": {
+    "it": 0.0006,
+    "people_ops": 0.9947,
+    "payroll": 0.0044,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9731660463854835,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"stay\", \"able\", \"tomorrow\", \"today\"."
+  }
+ },
+ {
+  "id": "sap-survey-139",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9958738815787153,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9959,
+    "payroll": 0.004,
+    "security": 0.0001,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.28176990300609583,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"change\", \"colleague\", \"shift\"."
+  }
+ },
+ {
+  "id": "sap-survey-140",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9979570564262735,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.998,
+    "payroll": 0.002,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9712957798354432,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"some\", \"time\", \"time off\"."
+  }
+ },
+ {
+  "id": "sap-survey-141",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.6635371409244679,
+   "probabilities": {
+    "it": 0.0078,
+    "people_ops": 0.3239,
+    "payroll": 0.6635,
+    "security": 0.0034,
+    "uncertain": 0.0013
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0854173129807562,
+   "uncertain": true,
+   "reason": "Strongest cues for payroll: \"ticket\", \"flight\", \"business\", \"year\"."
+  }
+ },
+ {
+  "id": "sap-survey-159",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8000002937026223,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.8,
+    "payroll": 0.2,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.022119823617372972,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"change\", \"months\", \"come\"."
+  }
+ },
+ {
+  "id": "sap-survey-162",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9706203652539563,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0293,
+    "payroll": 0.9706,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9860720672341766,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"gender\", \"more\"."
+  }
+ },
+ {
+  "id": "sap-survey-163",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9986429846614944,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9986,
+    "payroll": 0.0013,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.995975117668476,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"sick\", \"leave\", \"take\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-169",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.7236356940345242,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.2763,
+    "payroll": 0.7236,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.03363317995053657,
+   "uncertain": true,
+   "reason": "Strongest cues for payroll: \"flight\", \"business\", \"trip\", \"reimbursement\"."
+  }
+ },
+ {
+  "id": "sap-survey-170",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9993530259557313,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9994,
+    "payroll": 0.0006,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.4403885421404775,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"time\", \"change\", \"shift\"."
+  }
+ },
+ {
+  "id": "sap-survey-186",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9783009502786448,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9783,
+    "payroll": 0.0211,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "complaint",
+   "sensitive": 0.9389887226960398,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"colleague\", \"help\", \"hope\", \"very\"."
+  }
+ },
+ {
+  "id": "sap-survey-188",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9928772824745283,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.9929,
+    "payroll": 0.0067,
+    "security": 0.0001,
+    "uncertain": 0.0001
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.8326678229242933,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"able\", \"next\", \"attend\", \"advance\"."
+  }
+ },
+ {
+  "id": "sap-survey-190",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9959917555838894,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.004,
+    "payroll": 0.996,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.018795054164190705,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"increase\", \"salary raise\"."
+  }
+ },
+ {
+  "id": "sap-survey-193",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9406466951733661,
+   "probabilities": {
+    "it": 0.0043,
+    "people_ops": 0.9406,
+    "payroll": 0.0499,
+    "security": 0.003,
+    "uncertain": 0.0022
+   },
+   "category": "policy_info",
+   "sensitive": 0.0600581146313784,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"one\", \"house\", \"all\", \"year\"."
+  }
+ },
+ {
+  "id": "sap-survey-197",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9983718211777093,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0016,
+    "payroll": 0.9984,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.9979621166335666,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"gap\", \"pay\", \"pay gap\"."
+  }
+ },
+ {
+  "id": "sap-survey-209",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9999577924989999,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 1,
+    "payroll": 0,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9999189298815355,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"take\"."
+  }
+ },
+ {
+  "id": "sap-survey-211",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9989095452203786,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9989,
+    "payroll": 0.001,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.99419879118087,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"some\", \"leave\", \"take\"."
+  }
+ },
+ {
+  "id": "sap-survey-212",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9969842907439684,
+   "probabilities": {
+    "it": 0.0003,
+    "people_ops": 0.0024,
+    "payroll": 0.997,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "expense_refund",
+   "sensitive": 0.0007963361734147841,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"travel\", \"airport\", \"refund travel\"."
+  }
+ },
+ {
+  "id": "sap-survey-220",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.8282196514410582,
+   "probabilities": {
+    "it": 0.0029,
+    "people_ops": 0.8282,
+    "payroll": 0.1662,
+    "security": 0.0017,
+    "uncertain": 0.001
+   },
+   "category": "complaint",
+   "sensitive": 0.9669407499333146,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"colleague\", \"he\", \"good\", \"not\"."
+  }
+ },
+ {
+  "id": "sap-survey-222",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9989214921911191,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9989,
+    "payroll": 0.001,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9969028680169175,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"some\", \"take\", \"time\"."
+  }
+ },
+ {
+  "id": "sap-survey-237",
+  "expected": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9868662650307722,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.9869,
+    "payroll": 0.013,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "policy_info",
+   "sensitive": 0.026868116584147565,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"some\", \"accomodation\", \"months\", \"information\"."
+  }
+ },
+ {
+  "id": "sap-survey-238",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9991576587983553,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9992,
+    "payroll": 0.0008,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.990847796539135,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"days\", \"sick\", \"leave\", \"sick leave\"."
+  }
+ },
+ {
+  "id": "sap-survey-246",
+  "expected": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9999746161335283,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 1,
+    "payroll": 0,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "leave_life_event",
+   "sensitive": 0.9993358558641878,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"off\", \"sick\", \"some\", \"take\"."
+  }
+ },
+ {
+  "id": "sap-survey-247",
+  "expected": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9672230504297572,
+   "probabilities": {
+    "it": 0.0001,
+    "people_ops": 0.0326,
+    "payroll": 0.9672,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "compensation",
+   "sensitive": 0.029277526055520402,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"salary\", \"raise\", \"salary raise\", \"company\"."
+  }
+ },
+ {
+  "id": "sap-survey-248",
+  "expected": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9992413463549359,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.9992,
+    "payroll": 0.0007,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "schedule_change",
+   "sensitive": 0.011050086713872956,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"take\", \"change\", \"shift\", \"help\"."
+  }
+ },
+ {
+  "id": "sap-survey-249",
+  "expected": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "predicted": {
+   "route": "payroll",
+   "confidence": 0.9998572816540736,
+   "probabilities": {
+    "it": 0,
+    "people_ops": 0.0001,
+    "payroll": 0.9999,
+    "security": 0,
+    "uncertain": 0
+   },
+   "category": "expense_refund",
+   "sensitive": 0.00004575624882276333,
+   "uncertain": false,
+   "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"plane\", \"plane ticket\"."
+  }
+ },
+ {
+  "id": "sap-survey-254",
+  "expected": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "predicted": {
+   "route": "people_ops",
+   "confidence": 0.9068985310783212,
+   "probabilities": {
+    "it": 0.0007,
+    "people_ops": 0.9069,
+    "payroll": 0.0921,
+    "security": 0.0002,
+    "uncertain": 0.0001
+   },
+   "category": "complaint",
+   "sensitive": 0.9470598416579901,
+   "uncertain": false,
+   "reason": "Strongest cues for people_ops: \"help\", \"issue\", \"like\", \"work\"."
+  }
+ }
+]

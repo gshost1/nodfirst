@@ -1,0 +1,2969 @@
+{
+ "license": "SAP rows: Apache-2.0, Copyright SAP SE (https://github.com/SAP/hr-request-data-set). Daybreak seeds: MIT.",
+ "labeling": "Daybreak route/category/sensitive labels are mapped from the SAP category and sub-category; see docs/EVALUATION.md.",
+ "mapping": {
+  "Salary / Salary raise": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false
+  },
+  "Salary / Gender pay gap": {
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true
+  },
+  "Refund / Refund travel": {
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false
+  },
+  "Life event / Health issues": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "Life event / Personal issues": {
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true
+  },
+  "Ask information / Accommodation": {
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false
+  },
+  "Complaint / complaint": {
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true
+  },
+  "Timetable change / Shift change": {
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false
+  }
+ },
+ "description": "Training data for the offline baseline: SAP handwritten tickets, Daybreak seeds, and the SAP survey tickets.",
+ "examples": [
+  {
+   "id": "sap-handwritten-000",
+   "text": "Hello, I would like to stay home the 2nd of August for a medical consultation. Is it possible?",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-001",
+   "text": "Dear Amelie, I would like to take a vacation day the next Monday for a visit to the hospital, could you handle it? Thank you in advance",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-002",
+   "text": "Dear Mark, tomorrow I cannot come to work because I don't feel too well, can I take the day off?",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-003",
+   "text": "Hi, I would like to take two days off the first week of Avril. Best regards, John",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-004",
+   "text": "Dear Sir/Madame, I am positive to COVID and I cannot come to work for the next days. I don't exactly know when I will be able to return to work. Aaron",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-005",
+   "text": "I want to take the day off on the first day of next week for an heart operation . If it is an issue please let me know, Fred",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-006",
+   "text": "Could I stay at home next Monday? I have a visit to the doctor that I cannot reschedule. Can this create any problem to anyone in the office? ",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-007",
+   "text": "Dear Sir/Madame, next week I have an operation at the hospital so I won't be able to come to the office form Monday to Thursday. Thanks in advance for taking care of my request, Matthew",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-008",
+   "text": "Dear Anne, I would like to have the day off on the 10/10/2021 for medical reasons. Best regards, Gabriel",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-009",
+   "text": "I cannot come to work tomorrow because yesterday I had an accident and right now I am at the hospital. I feel well, but I would like to take at least two days off. Best regards, Thomas",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-010",
+   "text": "Dear Madame, I would like to take the morning off on the 03/05 for a dental visit, could you take care of the request? Thanks very much, Mark",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-011",
+   "text": "Dear Mark, I believe that I deserve a salary raise for how many hours I'm working each week",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-012",
+   "text": "I think I well earned an increase of salary of atleast the 10% because of my loyalty to the company. Best regards, Max",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-013",
+   "text": "Hello, I'm writing this mail to request a pay raise of 8% due to the uprising inflation over the last few months",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-014",
+   "text": "Dear William, I think my salary is a little bit lower compared to the industry standard. Could we set up a meeting to talk about this?",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-015",
+   "text": "Hi Charles, during the last few months my responsibilities have been increasing, but my salary is still the same as when I joined the company. If it remain the same I could start looking out for different options...",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-016",
+   "text": "Dear Kevin, I'd like a wage raise to $50,000 gross, which I think has been due for a lot of time",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-017",
+   "text": "Dear George, could you put a good word during the annual meeting about the salary raise we discussed last week? Thanks, Pam",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-018",
+   "text": "I believe that I'm not earning what I deserve and if the situation does not change I could leave the company very soon",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-019",
+   "text": "Dear Patrick, I write this email to officially request a raise of at least the 20% not negotiable ",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-020",
+   "text": "Hello, I want the wage increase which was promised to me before the start of next semester. I know the company can afford it, and I know that new hires receive almost the same compensation as me. Let me know, Noah",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-021",
+   "text": "Dear Mark, I've just discovered that John has an higher salary than mine even if we have the same responsibilities. Could I receive an explanation?",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-022",
+   "text": "Dear HR, after an anonymous poll we discovered that male collegues are in average paid the 15% more than their female counterparts. This is unacceptable!",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-023",
+   "text": "Why females are paid considerably less than males in our office? If this situation isn't solved by next month I will officially report it ",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-024",
+   "text": "Can you explain why I'm being paid less than Ralph? I sincerly cannot understand the reasoning behind this decision",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-025",
+   "text": "I discovered that there is a considerably large gender wage gap in our office and this is outrageous in 2020!",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-026",
+   "text": "Dear Sir, I noticed looking at George's paycheck that he is being given more bonuses than me. Could I have an explanation?",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-027",
+   "text": "Hi, I discovered that my male collegues are paid more than me and this is an unfair situation which can lead to legal consequences",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-028",
+   "text": "I want to make it known that my male colleagues have been given more benefits than me, withhout any particular reason",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-029",
+   "text": "Can I know why Colin is paid the 5% more than me? Best regards, Julie",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-030",
+   "text": "Dear Sir/Madame, I'd like to take a vacation from the 20th of July to the 2nd of August. Is there any problem? Best regards, Frank",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-031",
+   "text": "Is it a problem if I take the next week off? It has been a while since I haven't been on vacation, so I hope this won't create any problem to the team. Thomas",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-032",
+   "text": "Dear George, yesterday one of close relatives passed away and this morning there is the funeral, so I would like to take today off. I hope you understand, Joffrey",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-033",
+   "text": "Dear Sir/Madame, next week there is the gruaduation of my son on Wednesday, so I would like to take thaday off. Best regards, Patrick",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-034",
+   "text": "Dear Anne, I recently divorced from my husband and I would like to take some time off to straighten my head. I accumulated many vacation days so it shouldn't be an issue. Kind regards, Laura",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-035",
+   "text": "Hello, This night there has been an attempted robbery at my house, and I have to go to the police this morning. I hope it is not a problem if today I don,t come to the office, Julian",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-036",
+   "text": "Dear Madame, during this period I'm moving house and it's taking more time than expected. Can I take tomorrow off?",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-037",
+   "text": "Dear Sir, next week on the 20/10/2022 I have an university exam so I won't be able to come to work. I hope it's not an issue. Thanks in advance, Sophia",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-038",
+   "text": "Dear John, recently a close friend passed away and I am not feeling really good mentally. I would like to take some days off if there aren't any issues",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-039",
+   "text": "Dear Raymond, this week I am reuniting with my family after a long time, so I would like to take tomorrow and the day after as vacation days. Best regards, Addison",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-040",
+   "text": "Dear HR, Jason has been doing comments about my religion that makes me uncomfortable. Could you have a talk with him?",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-041",
+   "text": "Dear Emma, I am fed up with Jeffrey, he is creating a toxic work environment",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-042",
+   "text": "Dear Jerry, I would like to discuss with someone about the roles problem that there is in the office right now. It is impossible to understand each others duties without well defined roles and it's not a new problem",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-043",
+   "text": "Dear HR, i want to report a racist accident in which my supervisor was involved. I don't want to be too specific before any investigation is done, but I hope there will be some repercussions",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-044",
+   "text": "Dear Madame, I want to report that Mark has used a derogatory term talking about me. If you need it,I have proofs",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-045",
+   "text": "Dear Sir, I cannot believe that I cannot come to work because of my disability. I believe that the company should be more concerned about the issues that people in my condition can face. Best, Caroline",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-046",
+   "text": "Dear Tyler, I think that in the office older people are discriminated because of our age by some young people. They don't include us during reunions and they don't share any info with us",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-047",
+   "text": "Dear Janet, I want to report that yesterday, during the company's event I was touched without my consent by a company's director. I expect that this person will be fired, there isn't any other possible end to this story. Hannah",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-048",
+   "text": "Dear Sir, today I saw a collegue with some substance that could be illegal, what do you suggest I do? Who I should report this to?",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-049",
+   "text": "Hello, lately I heard some collegues making fun of me because of my accent and nationality. This isn't what I expected from this company",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-050",
+   "text": "Dear Sir, I would like to have a refund for the plane ticket to Mallorca I bought to go to the EMNLP conference. The ticket costed $143",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-051",
+   "text": "Hello, I would like to receive a refund for the travel from Nice to London of last week. More details in the attached file",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-052",
+   "text": "Dear Sean, I would like to be reimboursed for the last week's travel",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-053",
+   "text": "Dear Madame, I am writing this mail to ask a refund for the travel I bought with my own money",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-054",
+   "text": "Hello, when will I receive the $848 for the flight?",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-055",
+   "text": "Hi, I would like to receive the money I'm owed for the hotel accommodation and the travel before next week. Best, Brittney",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-056",
+   "text": "Dear Madame, I am writing this mail to ask a refund for the travel I have booked last month. If you need them I can provide the receipts",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-057",
+   "text": "Hi, I need to refund for the travel from Philadelphia to New York on the 18/07/2016, which amounted to $234.12. I can send you again my personal bank account info again if you need them. Let me know if there are any problems, Karl",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-058",
+   "text": "Dear Amber, I took a plane for a company's event on the 02/10/2022, I would like to be refunded if possible",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-059",
+   "text": "Helloo, can I have a refund for the ticket from Paris to Marseille?",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-060",
+   "text": "Dear Sir, I will move to the new office the next month, but I still havent't been able to find an accommodation. Do you hav any advice?",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-061",
+   "text": "Dear Madame, I cannot find a place to saty for our transfert. Could you book me an hotel? The location is irrelevant for me",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-062",
+   "text": "Hello, I am having trouble finding a place to stay in Munich. Could you give me an help, please?",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-063",
+   "text": "Dear Sir, could you help me finding accommodations in Nice for the period July - September",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-064",
+   "text": "Dear Logan, I need somewhere to live for the period April-June 2018. Do you have any suggestions",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-065",
+   "text": "Dear HR, do you provide any accommodations with the contract? If yes, is it included in the salary or is it deducted from it?",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-066",
+   "text": "Dear Roy, what are the best websites to find a safe location where to live? Best, Danielle",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-067",
+   "text": "Hello, which are the best neighborhood to rent an house near the office? Thay should have public transportation because I don't have a car at the moment. Thanks in advance for the help, Louie",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-068",
+   "text": "Dear Sir/Madame, could you tell me which are the best hotels in the city center of Brussels?",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "sap-handwritten-069",
+   "text": "Dear Alice, does the company give any help finding an accommodation for new hires? Thanks in advance for the help, Antoine",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set tickets_handwritten.json"
+  },
+  {
+   "id": "daybreak-seed-001",
+   "text": "I need help connecting my company laptop to the VPN and setting up the approved authenticator app.",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-002",
+   "text": "My laptop has not arrived yet and my start date is Monday. Can IT ship it to my home address?",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-003",
+   "text": "I can't log in to my email account on my first day, the password reset link is not working.",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-004",
+   "text": "Could I get a second monitor and a docking station for my desk in the office?",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-005",
+   "text": "Please set up my Slack and GitHub accounts before my first day.",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-006",
+   "text": "The single sign-on page keeps rejecting my new badge credentials.",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-007",
+   "text": "I need the standard design software licenses installed on my new laptop.",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-008",
+   "text": "My keyboard and mouse are missing from the equipment box that was delivered.",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-009",
+   "text": "How do I enroll my phone in the device management profile so I can read work email?",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-010",
+   "text": "The printer on the third floor does not show up on my laptop.",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-011",
+   "text": "I was sent a Windows laptop but my team uses Macs; can IT swap the device?",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-012",
+   "text": "Can you add me to the engineering shared drive and the team calendar?",
+   "route": "it",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-013",
+   "text": "My manager asked for temporary production access to customer records during onboarding. Please enable it before my first shift.",
+   "route": "security",
+   "category": "access_request",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-014",
+   "text": "I need admin rights on the payroll database to run a migration next week.",
+   "route": "security",
+   "category": "access_request",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-015",
+   "text": "Please grant me read access to the customer PII warehouse for my analytics project.",
+   "route": "security",
+   "category": "access_request",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-016",
+   "text": "Can I get root access to the production Kubernetes cluster? My lead said it is fine.",
+   "route": "security",
+   "category": "access_request",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-017",
+   "text": "I would like access to the HR records system to look up employee salaries for a report.",
+   "route": "security",
+   "category": "access_request",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-018",
+   "text": "Please give my contractor account the same privileged access as the security team.",
+   "route": "security",
+   "category": "access_request",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-019",
+   "text": "I need the break-glass credentials for the billing system before my on-call rotation.",
+   "route": "security",
+   "category": "access_request",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-020",
+   "text": "Could you whitelist my personal laptop so I can access the internal admin console from home?",
+   "route": "security",
+   "category": "access_request",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-021",
+   "text": "I work remotely and need a laptop shipped to me. I also need to know whether the home office stipend applies to the monitor I already bought.",
+   "route": "uncertain",
+   "category": "workspace_setup",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-022",
+   "text": "Can IT order me an ergonomic chair, and will payroll reimburse the one I bought last month?",
+   "route": "uncertain",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-023",
+   "text": "I need a screen reader installed on my laptop and I also want to discuss a formal accommodation for my visual impairment.",
+   "route": "uncertain",
+   "category": "workspace_setup",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-024",
+   "text": "I'm relocating during my first month: who sets up my new office badge and does the relocation bonus cover the movers?",
+   "route": "uncertain",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-025",
+   "text": "Does the home office stipend cover a desk I purchased before my start date? I have the receipt.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-026",
+   "text": "My first paycheck is missing the signing bonus from my offer letter.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-027",
+   "text": "I need to update my direct deposit bank account before the next payroll run.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-028",
+   "text": "My tax withholding looks wrong on my first payslip, I moved states last month.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-029",
+   "text": "How do I submit my internet bill for the remote work reimbursement?",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-030",
+   "text": "When does health insurance start for new hires, and how do I add my spouse?",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-031",
+   "text": "Is there a parental leave policy for employees who joined less than a year ago?",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-032",
+   "text": "I have a surgery scheduled two weeks after my start date and will need a few days off.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-033",
+   "text": "Could my first week start on Tuesday instead of Monday because of a public holiday in my country?",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-034",
+   "text": "During my interview a manager made comments about my age that made me uncomfortable; who can I talk to?",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-035",
+   "text": "I need an employment verification letter for my apartment application.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "daybreak-seed-036",
+   "text": "Can you confirm whether my visa sponsorship paperwork has been filed?",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "Daybreak authored seed (synthetic)"
+  },
+  {
+   "id": "sap-survey-001",
+   "text": "Dear HR, I'm Virginie Thibault from the administration office and worikng as secretary and administrative assistant. I would like to ask you whether is it possible to have a salary increase of the 9%, so to pass from my current salary of 45400 euros to 49500 euros. Thank you in advance for your comprehension and your kind response. Best regards, VT.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_01.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-002",
+   "text": "Dear Sir./Madam., this email is to make you aware of an unacceptable behavior from a colleague working in my office. In particular, this colleague offended me and discriminated me because of my nationality. I hope you could find a way to solve this situation soon. Thanks in advance for your comprehension. Best, Alexandre",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_01.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-003",
+   "text": "Dear colleagues, \nI need to request a time off of at least 3 months due to a serious illness of a close family member. I have already talked with my manager about this and I have her full support. \nThe sooner I can start this time off the better. Would it be possible to first set the time period to 3 months with the option to extend it if needed? \n\nBest regards, \nJulien Robin",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_02.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-004",
+   "text": "Dear colleagues, \n\nthere is a personal issue in our team structure that I need to share with you. I work in my current team for about nine years now and my current manager is with us for about seven years. At first, I got to know her as a fair and honourable person. \nBut in the past few years, I have witnessed again and again that my manager is favouring a certain colleague in our team. \nMy suspicion was first raised when that colleague was promoted to T3 way before her peers even though she does not take more responsibility than average or shows significantly better result. Plus, although it is important for everyone in the team to regularly attend conferences, the favourited colleage gets to attend these conferences at least twice as often as other colleagues in our team. \nThere are many other examples that strengthed my suspicion and I do not want to go into details now. \nI am not sure how to address this properly. I have not confronted my manager or my colleague about this. But I definitely do not want to leave this unadressed. Could you please help me / us as a team to address this issue in the right way? \n\nKind regards, \nGerta Wernecke",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_02.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-005",
+   "text": "Dear colleagues, \nI want to get a refund for the plane ticket from Nuernberg to London on the 13th Aug 2016. I have created a corresponding report in Concur and submitted it. That was about three weeks ago. But so far, I did not get any notification if the report is accepted. The IO under which I booked is: 29671028356. \nCould you please assist in this issue? \nI added the receipt for the plane ticket as an attachment. \n\nBest regards, \nClemens Hoefig",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_02.xlsx#Ticket12"
+  },
+  {
+   "id": "sap-survey-006",
+   "text": "Dear all, hereby I request to refund my travel expenses from Cagliari to Munich Airport on June 26, 2020. Please find a scan of my plane ticket in the attachement. Regards Marta Castioni",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_03.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-007",
+   "text": "Hello, I request a change of shift for my working schedule during the period of Sun 2.10. to Fri 7.10. The reason for this is that I have to bring my father to the hospital during that time. Sincerely Ingo Reuter",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_03.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-008",
+   "text": "I would like to inquire about accomodation possibilities during my next business trip to Witten. I would need a hotel room for one entire month in Witten or any close-by location. Your help appreciated, Edward",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_03.xlsx#Ticket19"
+  },
+  {
+   "id": "sap-survey-009",
+   "text": "Dear all, I ask a day off for medical reason the 09/09. Best Annette",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-010",
+   "text": "Hi . I kindly ask you to a day off for a medical consultation. Thank you in advance",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-011",
+   "text": "Dear all, a collegue close to my desk needed a shower. Please inform him",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-012",
+   "text": "Hi, after many years in SAP, I kindly ask you a rasie in salary about 6%.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-013",
+   "text": "Dear all, I kindly ask the rembersument of the plane tickets for my last bussiness trip.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-014",
+   "text": "Dear all. My  manager is not able to organize things properly.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-015",
+   "text": "Hi. I ask you for a day of the 30/6 to attend a funeral. Best",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-016",
+   "text": "Hello. I am opening an HR ticket to complaining about gender inequality in the salary payroll",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-017",
+   "text": "Dear all, I will soon move to Hildesheim office. Any advise for the accomodation",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-018",
+   "text": "Dear all, I ask you a day for sick leave the 29/9. Best",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-019",
+   "text": "dear all, I would like to know if it's possible to have week of from 24/10.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket11"
+  },
+  {
+   "id": "sap-survey-020",
+   "text": "Dear all, Asking advises for an accomodation in Florence from next January.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket12"
+  },
+  {
+   "id": "sap-survey-021",
+   "text": "Dear all, I ask you a sick leave day on 6/3. Best",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket13"
+  },
+  {
+   "id": "sap-survey-022",
+   "text": "dear all, Ssu Nhat always discriminate me about my age.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-023",
+   "text": "Dear all, I will not be in the office the 6 of september",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket15"
+  },
+  {
+   "id": "sap-survey-024",
+   "text": "Dear all, I kindly ask the refund for my last business trip. Find attached the details",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket16"
+  },
+  {
+   "id": "sap-survey-025",
+   "text": "Dear All, Laurent Spoos always get rid of my.Please help me",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket17"
+  },
+  {
+   "id": "sap-survey-026",
+   "text": "Dear all Stephan Roux says stupid things about my gender.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket18"
+  },
+  {
+   "id": "sap-survey-027",
+   "text": "Dear all, I am asking a refund, please find attached the details. Cheers",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket19"
+  },
+  {
+   "id": "sap-survey-028",
+   "text": "Please Let me know when you are introducing same salary for all gender.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_04.xlsx#Ticket20"
+  },
+  {
+   "id": "sap-survey-029",
+   "text": "Dear colleagues, I am re-locating to our offices in Salamanca. I am new to the country and do not have any knowledge about Salamanca either. I was wonodering whether our company provide an access to a temporary accoomodation (6 months) which I can rent while looking for my new permanenent home. \nThank you in advance for your help,\nHerminia",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_05.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-030",
+   "text": "Dear colleagues, In accordance with SAP business ethics guide, I would like to\n report to you my concerns regarding my colleague John Smith (I-numner I1233455) . \nJohn and I are working together on a contract with a new customer.  The customer has invited John several times to an expensive restaurant and proposed us gifts. According to our business conduct policy, I have refused the gifts, but I think John has acceopted them.\nIn our last proposal for the customer John has suggested a very large discount for the customer which I find  not justified .\nJohn is a good colleague and a reliable employee. I do nto want to cause him an unnesssary harm, but I think his judgement might be misguided in this case and I would like ot ask you to check the contract proposal . Kind regards, Korbinian",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_05.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-031",
+   "text": "Dear colleagues,\nDue to the air traffic controller strike and cancaellation of my original return\n flight from the business trip, I was obliged to purchased a new plane ticket \nwith my personal credit card from Tenerife to Hannover on 19.12,2013.\nThe cost of hte flight was 455 euro incl VAT and you can find the receipt attached.\nI would like to request a refund for the ticket.\nThanks,\nQuique",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_05.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-032",
+   "text": "Dear colleagues,\nI am a sole caregiver to my father, who is seriously ill since 3 years. \nI have to bring him to the hospital for his exams on Wednesday 30.06.2022. I have a shift scheduled for that day and I would like to request a change for 10.07, which is Saturday.\nIi hope you cna accomodate my request,\nSincerely yours,\nNatalia",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_05.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-033",
+   "text": "Dear colleagues,\nOne of my direct reports, John Doe, has been promotelast year d to a first line supervisor of production. John has showed himself exceptionally dedicated to the new role and has increased the productivity of his team by 5%.\nConsidering his exceptional engagement I woudl like to request a 7% raise to his salary (i.e. from 67100 euro to 71800 euro) , starting form the next month. \nThis was agreed with my upper management, please assist with teh implementation of the increase in the system.\nSincerely,\nGerard",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_05.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-034",
+   "text": "Dear colleagues,\nI would like to bring to your attention that my direct manager is not treating \nemployees in his team equally and reserves a special favorite treatment to Ann \nSmith.\nThe team cohesion and working atmosphere suffer greatly because of this special\nrelationship and I would ask you to take immediate measures with regard to my manager's behaviour.\nKind regards,\nAndrea",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_05.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-035",
+   "text": "Dear colleagues,\nI would like to reach out to you to signal an inappropriate behaviour of my \ncolleagues Peter Brown. As you know I have a recognised disability. I value \ngreatly the diversity and inclusion policy which exists in our company. Until\nPeter has joined our team I had never encountered a discrimination because\nof my difference. However, Peter on several occasions has made a diminishing\nremarks towards me with regard to my disability, or behaved himself in such a\n way as to exclude me from the team acivity .  Even after the team colleagus and \nthe manager has remarked several times that his behaviour is inappropriate, \nhe continued to discriminate against me.\nI request you take an appropriate action with regard to Peter, so that I can \ncontinue to work in decent and acceptable environement, Sincerely yours,\nAnne",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_05.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-036",
+   "text": "Dear colleagues,\nIn the recent salary review I have discovered that my colleague Swen, who was \nhired at the same time as me, has the same qualifications and work experience\nas me, is payed 22.5% more than I.\nYou advertise yourself as an equal opportunity employer, with diversity,\ninclusion and equal pay policies, so I was left shocked by this discovery. Thus I\nformally request an written explanation of this inacceptable pay gap, fro which\nI can see no other reason than gender difference.\nSicerely,\nHenriette",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_05.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-037",
+   "text": "Dear colleagues,\nDue to my current health issues I have to visit a physiotherapist on 02.12.2021 \nand would like to request 1 day of leave of absence,\nThank you,\nAnto",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_05.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-038",
+   "text": "Hi. I don't get the latest disclosed numbers. Is there really a difference of 48.5% ofsalary between our different colleagues? Is it something that is going to be sorted out?",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_06.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-039",
+   "text": "Dear colleagues,\n\nI'm going to move in to Duesseldorf in the coming weeks. Would you have a listing available for a temporary stay?",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_06.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-040",
+   "text": "Hello,\n\nI'm looking for information on accomodations at Bochum for my planned stay next month. I will stay there for 4 weeks. Do you have contacts or agreement with specific places?\n\nLooking forward your reply,\nBest regards,\nWihelmine",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_06.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-041",
+   "text": "Dear Colleaugues,\n\nI was supposed to work on July 11. But I do have an important university exam that I cannot miss. Would you please change my schedule to July 20?\n\nThank you and best regards,\nMargaud Boutin",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_06.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-042",
+   "text": "Dear colleagues,\n\nThe travel&expense software is not working. Would you please take care of the reimbursment of my plane ticket that is enclosed please?\n\nThank you and best regards,\nEkaterina",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_06.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-043",
+   "text": "Dear colleagues,\n\nWould you please record my unavailability from Thursday 13 of October to Friday 14 of October? \n\nBest regards,\nAngela",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_06.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-044",
+   "text": "Dear HR department,\n\nI would like to officialy complaint about an innaceptable situation. I was working at my desk when a colleague just came over and starting harrassing me.\nI need you to act strongly on this behavior.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_06.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-045",
+   "text": "Hello. Please note that I will get my wisdom tooth extracted September the 23rd and that I will not be able to come at work that day. Regards.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_07.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-046",
+   "text": "Hello. Due to some business elated reasons I couldn't get on the flight from Tucson to Phoenix (flight SH3452) 24/12/2015. Can you please tell what is the process to get a refund ? Thanks. Regards.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_07.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-047",
+   "text": "Hello. I am contacting you regarding a dificult and painful situation. I would like to report some gender discriminations against me from my direct manager. I am looking to get some help from the organization but I really don't know whom I should ou could contact. Thanks.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_07.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-048",
+   "text": "I would need to have a very comfortable accomadation. No need to propose me small appartment or a view on a parking. Sea view or garden view would be a must. Please come back to me asap.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-049",
+   "text": "This cannot be rejected. I need this shift. My manager already agreed so this should only be an admin task now. Thank you.",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-050",
+   "text": "Thanks in advance for your understanding in this difficult period.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-051",
+   "text": "I am a super top high employee in this company. I have so many offers outside that I hope you understand that this increase is not negociable",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-052",
+   "text": "It has to be in Bergedorf. Otherwise I would need a rental car to visit the customer so the costs would be higher. Thank you.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-053",
+   "text": "Please be quick as my bank account already took the money.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-054",
+   "text": "Top level and still no increase during the last 2 years. This is not acceptable. I urge you to change this politic or all your talents will go away.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-055",
+   "text": "I need here a 2 bedrooms appartement at least as I will have my son with me. If the cost is too high we may discuss a participation on my side as soon as it is correct. Thank you.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-056",
+   "text": "Thanks in advance to accept as I am the wedding witness. It cannot happen without me so I even prefer to quit the company than to miss this crucial event.",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-057",
+   "text": "Do not forget to refund directly on my salary. I will not accept to have any other way for the refund.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_08.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-058",
+   "text": "Goodmorning, I need to request a sick leave for 5 days starting from the 11 october, due to a medical therapy. Can you please provide me information on the documentation I should send for the request? Thank you",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_09.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-059",
+   "text": "Goodmorning, I need to make a request for a sick leave of 1 day starting from the 4th october, due to a fracture. Please let me know if you need any further information or documentation. Thank you",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_09.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-060",
+   "text": "Goorming, I would like to make a formal complaint about a recurrent unacceptable situation. The load of work requested for the tasks assigned is exceeding the amount feasible to be carried out during the working hours timeframe. This situation is recurrent and humanly unacceptable. I would like to know how to proceed and behave in such situation. Thank you",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_09.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-061",
+   "text": "Goodmorning, I would like to ask further information on how to make  request for a 1 month accommodation at Eixample, thank you",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_09.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-062",
+   "text": "Goordmorning, I would like to requet some time off for personal issues, let me know what kind of information I should provide for the request, thank you!",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_09.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-063",
+   "text": "Dear colleagues, \nin my last travel expense request the plnae ticket for the flight from Paris to Casablance on August 8, 2014, was not refunded.\nKindly check and refund my edxpense. \nBest regards, Susan",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_10.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-064",
+   "text": "Hello,\ndue to the death of my uncle I request a day off in order to participat eto the burial ceremony.\nThank you for your understanding and kind regards, Jonas",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_10.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-065",
+   "text": "Hello,\nthis is to request a shift change:\nMy current shift is on Wednesday August 07, 2022 and I 'd like request the shift on Tuesday August 13, 2022.\nThis is for a personal reason to paerticipate to the wedding of my brother.\nThanks and best regards, Brandon",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_10.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-066",
+   "text": "Dear colleagues,\nI came to notice that there seems to be a general problem with equal pay in our company.\nTalking to colleagues there seems to be a general gender pay gap of 13.7% between man and women.\nKindly explain the reason for this.\nThanks and best regards, Fortunato",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_10.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-067",
+   "text": "Hello, I would like to request a salary raise of 8%. My actual saalary is below my category, also I have received an interesting offer from another company. Imy preference goes with having a raise and keeping my actual job. Regards Barbara.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_11.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-068",
+   "text": "Hi, I need to take a day off to see a doctor. I'm not feeling good. Donatella",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_11.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-069",
+   "text": "Hi, I'm staying in Gelsenkirchen for one month for my job. Do you have any accomodations you can recommend? Thanks Damian.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_11.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-070",
+   "text": "Dear Service-Desk Team, I need to change my shift from 01. June to  05. June 2022 because I will attend a wedding of a close friend that day. Thanks and kind regards, Glenn",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_12.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-071",
+   "text": "Dear Service-Desk, can you please refund my plane ticket from Washington to Omaha at 28/12/2021. You can find it attached to this ticket. Thanks and regards, Randall",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_12.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-072",
+   "text": "Hello Sir or Madam, I would like to request time off due to change of my residence. Regards, Cintia Sevilla",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_12.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-073",
+   "text": "Dear Service-Desk Team, due to Osteoporosis I would like to request for sick leave for 4 days starting from 18/11/2014. Thanks, Danielle",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_12.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-074",
+   "text": "Dear colleague, can you provide me with some information about accomodation in Marzahn? I need to switch location for the next 12 months ahead and do not know where to look for accommodation. Best regards, Katy",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_12.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-075",
+   "text": "Dear colleague, due to the pregnancy of my partner I would like to request some time off? Best regards, Alwina",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_12.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-076",
+   "text": "Hello colleague, I am going to be in Würzburg for one month. Can you help me with finding an accommodation? Thanks, Milan",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_12.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-077",
+   "text": "Dear Sir/Madam, I had a reservation for the flight from Miami to Frankfurt originally planned on 18/12/2012, but it was deleted due to weather conditions. Therefore, I would like to ask a refund. Kind Regards, Jason Obrien",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-078",
+   "text": "Hi, I would like to change the schedule of my shift from May 22nd to June 1st because I have to accompany my son to school. Do you think it is possible, please? Best Regards, Ansaldo",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-079",
+   "text": "Dear Reception, I have to spend 6 months in Braunchweig and I am looking for an accomodation, can you please provide me some information ? Kind Regards, Willfried Köster",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-080",
+   "text": "Dear HR, I would like to request some time off due to a family reunion next week. Thank you , Klaus-Michael Stahr",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-081",
+   "text": "Hello, due to an unexpected life event I have to ask some additional time off. A close family member of mine suffers from a serious illness. Please accept the attached request. Katarina Fischer.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-082",
+   "text": "Dear Director, I have an issue with my salary and I would discuss about it with you. I believe I am not paid fairly and I would like to request an eplaination for gender pay gap of 9.7%. I also believe gender pay gap should be treated more seriously in our company. Kind Regards, Alfons Schleich",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-083",
+   "text": "Good morning, I would like to request some time off for personal issues. I recently suffered from a robbery in my house and I have to go to the police station. Alba Sevillano",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-084",
+   "text": "Dear travel manager, the plane ticket I bought for the flight from Bari to Weeze at 15/09/2018 has been debited twice so I request a refund for the amount exceeded. Hereafter the information regarding my reservation. Travel day: 15/09/2018. Departure: Bari. Destination: Weeze. Book number: AC123YY. I remain disposal for further request. Kind Regards, Ermes Columbo",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-085",
+   "text": "Dear Manager, I would like to ask a 1:1 office hour to discuss some internal problems in my team. I think the roles are not well defined and this is due to our superior not being committed and not trusting the team. Apart from complaints, I also have some propositions and I would like to discuss them with you. Please let me know. Thanks, Frank-Peter Hoffmann",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-086",
+   "text": "Hi, I would like to request an explanation for gender pay gap of 29.7% that I witnessed in the last month. Please provide explanation for this. Enrico Chinnici",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-087",
+   "text": "Dear Manager, one of my closest friend passed away and I would like to request some time off (3 days). This is an unpleasant and exceptional life event so I hope you will understand. Thank you, Patrick Schüller",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket11"
+  },
+  {
+   "id": "sap-survey-088",
+   "text": "Hi, my flight dem Newark to Luis Munoz International Airport in Saint Juan was deleted on 17/11/2021, so I want to apply for a refund. Please let me know how to correctly proceed. Kind Regards, Jeffrey Chase",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket12"
+  },
+  {
+   "id": "sap-survey-089",
+   "text": "Hi, can you provide an estimation for a reservation of 6 months, from 1st january to 1st July, at one of your accomodations in Huntington Beach, please? Kind Regards, Tasha Lambert",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket13"
+  },
+  {
+   "id": "sap-survey-090",
+   "text": "Hi Jane, did you get your refund for the tickets from Tampa to Phoenix? If I remember correctly, the flight shouyld have been on 09/03/2021. Cheers, Joanna",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-091",
+   "text": "Dear Gérard Raymond, you have been our guest in the accomodation of Saint-Etienne  for 12 months. Feel free to share a feedback with us and possibly to post a positive message about your stay on social networks. Thanks, The Crew",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket15"
+  },
+  {
+   "id": "sap-survey-092",
+   "text": "Hi, I have been testetd positive to covid and I would like to ask a sick leave for 1 day, on 13/12/2020. I will go for a medical consultation. Thank you, Céline Merle",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket16"
+  },
+  {
+   "id": "sap-survey-093",
+   "text": "Dear Boss, I would like to request a shift change from my current expected one, on Friday June 7th, to Sunday June 16th, because I have to vote for local elections. Please accept my request and support democracy, Théodore Chevallier",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket17"
+  },
+  {
+   "id": "sap-survey-094",
+   "text": "Dear Mr Oestrovsky, I would like to spend the next Friday out of office for the marriange of a friend of mine. Best Regards, Heinz-Peter",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_13.xlsx#Ticket18"
+  },
+  {
+   "id": "sap-survey-095",
+   "text": "Dear HR colleagues,\n\nI am asking for a pay raise of 8%, I think I deserve. My current salary is $58100, this is far too low for my level of responsibility. With the raise I would reach $62700 which is within an acceptable range.\n\nThank you for your consideration, I remain available should you need further details about my situation.\nBest regards\n\nKimberly Franklin",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-096",
+   "text": "Can you please make the following change to my time table?\n\nCurrent day: Wednesday October 22\nNew day: Thursday October 23\n\nOn the 22nd I plan to take the day off to celebrate Bazinga, a traditional celebration day for my religion.\n\nThank you for your consideration\nVictoria",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-097",
+   "text": "I want a salary increase. I've been working in this company for 2 years as admin assistant, my manager promised a progression last year which did not happen.\nI am asking for a 7% increase, to reach a global salary of 48400 Euro.\n\nThanks for your consideration\nIolanda Disdero",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-098",
+   "text": "Hello, I am Biagio Goldstein. I have been travelling to Lvov from Rome on the 16th of August, 2014, for a total of 230 Euros.\nAccording to the policy, I'm asking for a refund of my ticket.\n\nThanks in advance\nBiagio",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-099",
+   "text": "Hello, please refund my Neward / San Juan ticket from 17/11/2021.\nThanks, Jeff",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-100",
+   "text": "Hello, could you please give me more information about the process to book an accomodation in Pueblo? I would like to stay there for a 6-months period, which documents shall I fill to be compliant with the local policies?\nThank you\n\nJennifer Hamilton",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-101",
+   "text": "Dear colleagues, I would like to take 3 days off on January 23/24/25 as I need to attend the marriage of one of my friends.\nCan you book this time for me or is there a tool where I shall do it myself?\nThanks for your support\n\n  Miguel",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-102",
+   "text": "Hello,\n\nMy name is Enzio Duodo, I hesitated for a long time to write to you about the issue I am facing with my colleague Andrea White. For lack of better words, over the few last months she has said humiliating remarks against me (never in writing, only orally).\n\nI don't know what to do, I don't feel good coming in the office, please assist !",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-103",
+   "text": "I want to report a problem with my boss. On March 23rd, he asked me to work until 20h. He cancelled the vacation day he previously accepted on February 12, even though I booked ski tickets that day (that were never reimbursed).\nTo summarize, he constantly makes me work unpaid extra hours on a regular basis.\n\nCan you escalate this issue to the HR lead? Please keep this complaint anonymous.\n\nThanks\nMartin Louis.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-104",
+   "text": "Hello, I have a dental appointment tomorrow Jan 06. I would like to book a sick leave for that day.\nThank you\nPG Wende",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_14.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-105",
+   "text": "Hi, I urgently need to get the flight ticket reimpursed. I added the trip to Concure but it ist still open and I paid the flight fee for the flight from Palma to Innsbruck from my private account. Waiting to get the money back since February 02, 2014\nBest regards\nGodofredo",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-106",
+   "text": "when will I get my money for the flight Tampa - Phoenix on Sept 3rd, 2021?\nI attached the ticket. Please treath it with high priority",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-107",
+   "text": "I am unable to work for the next two days starting today. Please add a sick leave for me and inform my manager",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-108",
+   "text": "I need to apply for a change of my working time and swap the 2.5.2014 with 9.5.2014 as I need to take part in a referendum in my home town",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-109",
+   "text": "starting on Feb. 2nd, 2018 I will need a leave. I attach the sick note my doctor created for me for a period of 5 days",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-110",
+   "text": "Hello,\n\ndue to a wedding of my son I cannot work on 20.12.06 and want to work on 22.12.14 instead\nPlease confirm that this is possible\n\nThank you\nJacqueline",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-111",
+   "text": "for personal reasons switch my working schedule from 28th of June 06 to 02nd of July 14.",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-112",
+   "text": "Hi,\na colleague made ugly jokes because I am already over 60 and he did not stop even after I got angry and told him to stop it instantly",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-113",
+   "text": "today I started to get fever in the office and I had to leave. My doctor told me to stay in bed for at least 8 days from now",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-114",
+   "text": "I have to move to my new flat and request the day-off I get for this next Monday",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-115",
+   "text": "I request a salary rise of 9% by next month. This was agreed to my manager",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket11"
+  },
+  {
+   "id": "sap-survey-116",
+   "text": "when will you pay for my flight to Malaga on January 20, 2020? I have already provided all nformation and uploaded the ticket copy in Concur",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket12"
+  },
+  {
+   "id": "sap-survey-117",
+   "text": "please adjust my wage to 38900 Euro per November 1st.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket13"
+  },
+  {
+   "id": "sap-survey-118",
+   "text": "have heavy pains due to my diagnosis Osteoporosis my doctor Dr. Knochenbrecher Karl identified last year. I need a take 1 day of absence today because of my desease.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-119",
+   "text": "I have to work from Bellevue and would need an accomodation. Please send me a list where I can stay from 3rd November until 2nd of Dec.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket15"
+  },
+  {
+   "id": "sap-survey-120",
+   "text": "in my team there are several colleagues calling me \"stupid Australian\" but I am coming from Austria. What can I do to stop them",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket16"
+  },
+  {
+   "id": "sap-survey-121",
+   "text": "I have a question which I cannot clarify with my manager Bert Brezel from Switzerland. He is paying my colleague Fritz Teuer 13,9% more then me even if we have the same job and I even work harder than Fritz. I have the impression that Bert does not like women in his team.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket17"
+  },
+  {
+   "id": "sap-survey-122",
+   "text": "Hello,\nI am not sure but I have the impression that a team member is giving presents with high value to a customer representative to secure big deals. \nHow should I behave?\nBest regards\nKlaus-Peter",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket18"
+  },
+  {
+   "id": "sap-survey-123",
+   "text": "I have to go to a doctor today because I am feeling not well can you please enter a leave for me",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket19"
+  },
+  {
+   "id": "sap-survey-124",
+   "text": "I was terribly verbally attacked by a colleague that I am not able to proceed my work. I need to take the rest of the day off to recover. What is the correct way and next steps?",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_15.xlsx#Ticket20"
+  },
+  {
+   "id": "sap-survey-125",
+   "text": "Dear HR, I have to spend a month in strasbourg at customer site, can you please let me know your suggestions about accomodation since I do not want to spend a full month at the hotel ? Thanks Bill",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-126",
+   "text": "Dear HR,\n\nI did an auto test this week end as I was feeling dizzy and it was positive,\nthis was confirmed today at the pharmacy. I will not be able to work today but since the symptoms are improving, I will likely resume to work tomorrow. Conforming to the instructions I received from\nthe gouvernement web site I will continue to isolate for the full week and I wil stay in\nhome working.\n\nBest regards,",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-127",
+   "text": "Dear HR, Since I recently find out that there is a gender gap of 8.7%, I would like to know as soon as possible how my salary compares against my peers and what are the actions that the company will take about these differences. Best regards Dr Dwayne Taylor",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-128",
+   "text": "Dear HR, I need to take 4 hours on Friday afternoon for personal purpose. BR Keneth",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-129",
+   "text": "Dear HR, I kindly ask you to change the shift on March 11th to another date (candidate date March, 20th) as I will need to attend the funeral of my uncle taht suddendly passed away this morning. I am certain you fully understand the situation, Bernd",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-130",
+   "text": "Dear HR, I have to spend a full year in  in Muelheim at customer site, can you please let me know your suggestions about accomodation offers, The accomodation should be large enough for my family (my wife, one 10 yo daughter and a middle size dog that is used to have a garden). Best regards, Gerwin",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-131",
+   "text": "Dear HR, I tecently read in the news a gender pay gap of 13.5% in our company, I would like to know what is my situation and are the plan to close this unfair gap. Timothy Obrien",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-132",
+   "text": "Dear colleague, please find the bill of my trip to Rhodos associated to my service held at Hellenic Petaloura (CF) for reimbursement Emma",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-133",
+   "text": "Dear HR, I have a mandatory exam on Tuesday on my MBA, I kindly ask you so replace my Tuesday shift by Sunday as it will please my coworker ! KK",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-134",
+   "text": "Dear colleague, some persons broke in my house and I was convocated by the police heaquarter this afternoon for follow up, hope you understand the situation. Linus",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket12"
+  },
+  {
+   "id": "sap-survey-135",
+   "text": "Dear Mrs Robinson , following our discussion and to avoid any misunderstanding, I reiterate my request to get a salary increase from 43600€ to 47500€ that reflects my value in the job market. Please let me know your formal answer as soon as possible, Best Regards Maria Carmen Canas",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket13"
+  },
+  {
+   "id": "sap-survey-136",
+   "text": "Please find my ticket for reimbursement following the service  I performed last month at Michigan University, G.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-137",
+   "text": "Dear colleague, I am very ashamed to ask you some time off for a personal matter but it happens that my whole family (more than 50 people) will gather for the 100th birthday of my greatgreat grandfather, and they asked me to support the organisation, I hope you will understnad it is rather a unique occasion, Best regards. Odette",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket15"
+  },
+  {
+   "id": "sap-survey-138",
+   "text": "Dear, as you are aware I need to spend 12 months in Darmstadt for theHundertwasser project  and I desesperatly need some support to find a cozy flat for my girlfriend and me before the beginning of next month. Let me know asap what you provide, yours sincerely Brigitte Hecker",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket16"
+  },
+  {
+   "id": "sap-survey-139",
+   "text": "Dear colleague, my husband informed me that he will be in business trip so I will need to take care about my son on Thursday moring. Since I am on shift, I kindly ask you to change it: as my husband is coming back only on the 18th, I can do the shift on Wednesdya the 19th. Thanks a lot for your understanding, Hella Wendle",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket18"
+  },
+  {
+   "id": "sap-survey-140",
+   "text": "Dear colleague, as i need to move my residence I will need some time off to sort out some personal burden, let me know if I am entitled to a n exceptional absnce ? Best regards, Odette",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket19"
+  },
+  {
+   "id": "sap-survey-141",
+   "text": "Dear, here is my ticket CDG-LAX. Please note that I travelled business class since it is my 4th transatlantic flight of the year and I needed to be operational on arrival day. Can you please urgently credit my account with the corresponding 4670 € ! Best regards, Suzanne Letellier",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_16.xlsx#Ticket20"
+  },
+  {
+   "id": "sap-survey-142",
+   "text": "Hello, This ticket to ask for a refund concerning my business travel from Rome to Brussels at 19/01/2017. You can find attached my receipt. Let me know if you need anything else. Thank you in advance. Best regards, Marco Fieramosca",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-143",
+   "text": "Dear HR department, due to a medical consultation on Friday 27 May 2014 I would like to ask a shift change to Wednesday 01 June 2014. I look forward to receiving your reply. Regards, Léon Dufour",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-144",
+   "text": "Hello, This ticket to ask for a refund about my travel from Paris to Funchal (Madeira Airport) at 27/02/2014. You can find attached the receipt. Best regards, Patrick Lambert.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-145",
+   "text": "Hello, I am Maggie Boutin and I am going to start my internship with you the next month. I would like to have some information about the request of an accomodation at Nice for the next 6 months. Looking forward to receiving your answer. Best regards, Maggie",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-146",
+   "text": "Hello, I would like to request a sick leave for 1 day on 30/01/2013/ Due to an health issues I need to do a physiotherapy visit. Thank you in advance. Regards, Tanya Turner",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-147",
+   "text": "Hello, Unfortunately, I find myself asking for days off due to some personal problems that have happened to me in the past few days. Hope you can understand. Best regards, Randolf Koster",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-148",
+   "text": "To the HR department, This ticket to ask for a refund concerning my business travel from Frankfurt to Rhodos at 04/05/2014. You can find attached my receipt. Let me know if you need anything else. Thank you in advance. Best regards, Hannes Drub",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-149",
+   "text": "Good Morning, This ticket to ask for a refund concerning my business travel from Munich to Thessaloniki at 19/08/2016. You can find attached my receipt. Looking forward to hearing from you. Thank you in advance. Regards, Vinko Jopich",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-150",
+   "text": "Dear HR department, due to a religion ceremony of a close relative on Saturday 06 February 14 I would like to ask a shift change to Tuesday 16 February 14. I look forward to receiving your reply. Best Regards, Steven Salas",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket11"
+  },
+  {
+   "id": "sap-survey-151",
+   "text": "Dear HR Deparment, My name is Carla Giannetti, first-line supervisor of office and administrative support workers. Given my last year performances and reached goald I would like to ask a salary raise in the order of the 8% (from 63400 to 68500 Euros). Looking forward to hearing from you. Best regards. Carla Giannetti.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-152",
+   "text": "Hello, I would like to request a sick leave for 1 day on 11/11/2018 due to an acute pancreatitis. Thank you in advance. Best Regards, Milika Sifert.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket15"
+  },
+  {
+   "id": "sap-survey-153",
+   "text": "Hello, due to a medical consultation I woulk like to asl for a shift change from Thursday 13 April 14 to Sunday 16 April 06. Many Thanks, Hendrik Kallert",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket17"
+  },
+  {
+   "id": "sap-survey-154",
+   "text": "Hello, I am Mirko Hethur and I am going to start working with you next month. I would like to have some information about the possibility to have an accomodation at Wilmersdorf. Thank you in advance. Hope to hearing from you soon. Best regards, Mirko Hethur.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket19"
+  },
+  {
+   "id": "sap-survey-155",
+   "text": "Dear HR Department, Unfortunately I have to request for sick leaves fro 6 days, starting from  22/07/2017 for a bad osteoporosis. Medical prescription attached. Best regards, Trevor Figueroa.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_17.xlsx#Ticket20"
+  },
+  {
+   "id": "sap-survey-156",
+   "text": "Dear Sir/Madam, I am writing to you about serious matter, happened to me recently while interacting with one of my colleagues. After my work was presented on the meeting I was expecting sincere and open discussion, but my colleague used his prejudice about male workers under 25 not working properly, indicating and discriminating me by gender and age. While I was not sure if I want to make a complaing, I am expecting an investigation into this matter, identifying the incorrectness of my colleague behaviour and making him appreciate the workplance and coworkers from any gender group or age. Looking foward to the next steps. Best regards, Gisa Klingehöfer.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-157",
+   "text": "Dear Sir/Madam, After working in your company for a while I have got an impression of my colleagues' salaries being different from mine based on the gender gap. I would not say I have exact numbers but according to my experience most male workers have higher salary on similar positions then female. The direct example is my wife who works with me in one team and having the same level of experience as I do, while getting much less appreciation in salary for her work, in particular 13.6% less. Could you please explain how the gender equality principles are used in this matter, at least in our individual case? I would like to know more factы about the average salary differences between male and female workers in out company to be convinced me and my wife work for the company valueing these things. Hope for getting more info from you as soon as possible. Best regards, Jerzy Hentschel.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-158",
+   "text": "Dear Sir/Madam, I would like to initiate discussion on my potential salary raise as I have made definitive extensive research on job salaries in my region being higher by 5% then my current salary in your company as automative service technicians and mechanic. By constanly improving my job quality and effectiveness through years I see, that my workload increased, and I was ealuated more on my recent review by my manager and committee, but no salary increase followed. I would like to ask for increase from  €48300 to €50700. I would appreciate for follow up on my request and settle this matter until the end of next month. Best regards, Ramona Wulf.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-159",
+   "text": "Dear Sir/Madam, I am expecting to come to France next month, but still did not get any details about accomadation, provided by company at Paterson. Could you send me, please, an additional information on the type of accomdation, the area, allowance of pets and any additional requests by landlord I should know about. Also I would like to make more clear how the cost for it is deducted from my salary, if part of it is subsidised by company. Lastly, after the initial 12 months of accomadation, can I change to another one and get some website from you now to  check the options in advance. Looking forward to hear form you asap. Best regards, Thomas Miranda.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-160",
+   "text": "Dear HR, my illness has been diagnosed as renal failure and thus I was adviced to stay at least a day at home with the proper diet. I would like to request sick leave on 31st of May just for one day by now. I am submitting a doctor's note in this ticket. Best regards, Sole Gioberti.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-161",
+   "text": "Dear Sir/Madam, I wish to not have this issue at my current workplace, but I have to admit that due to ill-defined roles in my team it is highly uncertain of which part of the product I am responsible for. This will influence my reevaluation next time thus I am worried about not clear expectations from the superior. I would like to formally submit a complaint on this matter as I have tried to reach out to superior several times, but did not get enough information from him to cover this issue. Please, let me know of further acitons, which can be taken. Best regards, Jose Gaya.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-162",
+   "text": "Dear HR team, I am deeply concerend to know that among our female employees there is noone getting as high salary as make coworkers. This gender gap I have found is estimated as at least 40%, which does not correspond to company claims and gender equality values. Before making any actions myself i would like to get more information from you justifying such gap in salary. Looking foward for more info from you on this important matter. Best regards, Susan Watson.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-163",
+   "text": "Dear Sir/Madam, by reason of taking laboratory examination due to my previous health issues I am requesting to take sick leave for 1 day on 13th of February. If anything necessary from my side to justify the leave, let me know. Best regards, Samuel Querol.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-164",
+   "text": "Dear HR team, I want to request a shift change in my schedule of internship, due to my responsibilities as student and take a university exam on the 13th of July. I will be back for work the next day, 14th july. Best regards, Mirta Jódar.",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-165",
+   "text": "Dear HR team, My previous request on the sick leave due on 19th June has not been answered, and since some time passed I would like to ask for a follow-up. Please, let me know if the request was approved as soon as possible. Best regards, Corinne Gillet.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-166",
+   "text": "Dear HR team, I have made several requests about follow up from my previous professional review by the school and I am convinced that I am eligible to ask for salary rause from $95700 to $100500. This 5% salary increase is minimum difference between my salary and average salary statistically aggregated based on my yeasrs of experience. Furthermore I am confident that several prizes and qualification certificates gained for past years of working as postsecondary teacher have proved my professional growth, which I believe is one more justification for salary increase. Please could you initiate discussion with the releveant departments in our school on my case. Looking forward to hear from you soon. Best regards, Joseph Perez.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket11"
+  },
+  {
+   "id": "sap-survey-167",
+   "text": "Dear Sir/Madam, I wish this be a legitimate reason to ask for time off, so I am asking to request time off due to an assault happened this weekend. As the event outcome I was admitted into hospital to be checked thoroughly hopefully without physical injuries but with high psychological pressure from the event. I feel unable to concentrate, and concerned about my mental health I am currently enrolled in a psychotherapy sessions. My manager gave permission for me to take several days without work, thus I want to make formal request. Let me know what can be necessary from my side. Best regards, Susan Sanders.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket13"
+  },
+  {
+   "id": "sap-survey-168",
+   "text": "Dear HR team, I would be very grateful for list of all details you might find about Fuenlabrada accomadation, which is close to SAP and used by temporary employees moving to Italy. I would like to mentiont, that  taking the accomataion for 12 months is an important decision for me and from my past experience I never have another information about the place I am coming to. I wish there would be any forum of employees and available information about that place, or maybe you can share with me some of my future colleague names, who might know more about the place. Looking forward to hear from you soon. Best regards, Cosme Bauzà.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-169",
+   "text": "Dear Sir/Madam, I would like to ask for reimbursement of my business trip expenses, in particular, of my flight tickets from Bologna to Instabul on 4th of June 2015. Could you initiate this request or should I do it solely myself and what documents you might need for the successful process? The business trip was organised by my manager, and I am asking on his behalf. Thank you in advance. Best regards, Antonia Beccaria.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket16"
+  },
+  {
+   "id": "sap-survey-170",
+   "text": "Dear HR team, due to important personal events in my family, in particular, wedding of my close relative, I would like to request the shift change im my time schedule from 17th July to 19th July. Due to absence of severe deadlines on ongoing project I woudl like to have time with my family for these 2 days until Thursday. Let me know if anything necessary from me on this matter. Thank you in advance. Best regards, Udo Tlustek.",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket18"
+  },
+  {
+   "id": "sap-survey-171",
+   "text": "Dear HR team, after a medical consultation with my terapist, I was advised to take sick leave due to my illness for 14 days starting from today, 28th of December, thus I am sending medical certificate to request the non-occupational sick leave. Please let me know if anything further necessary from me. Best regards, cody Bryant.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_18.xlsx#Ticket20"
+  },
+  {
+   "id": "sap-survey-172",
+   "text": "Goodmorning, I would like to make a complaint on the behavior of one of my colleague, I don't have solid proofs, but I think he is carriying on illegal activities.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_19.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-173",
+   "text": "Goormorning, I should make a request for accomodation in Florence for 6 months, I would like to have more information on the procedure, thank you",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_19.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-174",
+   "text": "Hi, I need to request a refund for the flight of the 30/03/2015 form Frankfurt to Westerland, can you provide me with the information about the documentation you need for the refund? Thank you, Karolina",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_19.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-175",
+   "text": "Goodmorning, I would like to have some clarification on the difference in pay salary with respect to my colleagues. It seems that this difference is due to gender diversity and affect other females colleagues for a difference of nearly 26.3% with respect to the male one. Thank you. Elizabeth",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_19.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-176",
+   "text": "Goodmorning I need to request some weeks off due the illness problems of one of my relative, I would need some time to assist during this period. Thank you",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_19.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-177",
+   "text": "Dear HR office, I would like to understand why there is a salary gap with respect to my male collegues. It is not fair, why my male collegues should earn more? To be more precise I compared the salaries and there is a gap of 18.1 % that is huge. Looking forward to your feedback. Regards, Anastasie.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-178",
+   "text": "Dear HR office, I would like to ask a travel refound for the plane ticket from Cuneo to Trapani of 21/09/2016. The amount is 95.8 €. I have attached the receipt to this ticket. Best regards, Elena Fornaciari",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-179",
+   "text": "Dear HR office, I would like to ask the next week off due to personal issues. Regards,Irma",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-180",
+   "text": "Dear HR ticket, I would like to describe you a very unpleasant situation. I have some problem with my superior who doesn't let me express freely and does not trust me. I have no idea on how I can advance in my carrer. In this situation I will be stuck in this entry-level position forever. Hope to solve this issue with your help. Best regards, Renee Foucher",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-181",
+   "text": "Dear HR office, I would like to ask for 4 days of sick leave since I need a medial consultation. The start date will be on 15/02/2022. Regards, Jules Hoarau.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-182",
+   "text": "Dear HR office, I need a timetable change for the day 06/05/22. In particular, I have to vote for the local election and I would like to ask if it is possible to change it with the shift of the 9th of May. Best regards, Pomponio Schicci",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-183",
+   "text": "Dear HR office, I would like to ask some information about the accomodation in Jersey City. I will be there for 6 months and I was thinking if you have some help to fine temporary accomodation. Thanks in advance for your availability. Best regards, Thomas",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-184",
+   "text": "Dear HR office, I need a timetable change for the day 09/12/2022 since I have to bring my father to the hospital. I would like to ask if it is possible to change it with the shift of the 12th of December. Best regards, Elizabeth",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-185",
+   "text": "Dear HR office, I would like to ask some information about accomodation in Brandon. I will be there for one year and I was thinking if you have some help to fine temporary accomodation. Thanks in advance for your availability. Best regards, Richard Martin",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-186",
+   "text": "Dear HR office, I have to disclose you a very unpleasant situation that happended in the office. I was harrased by a colleague during working hour. I hope that you can help me find a way out of this situation. Best regards, Anrfried Ring",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_20.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-187",
+   "text": "Hi,\nI face an unacceptable behaviour in the toilets. After waiting for my turn, I entered the cab, and I saw those disgusting things inside the toilets. \nThis should never happen.Furthermore no doubt on what should be done : \"keep the toilets clean\" is clearly written on the door. \nI expect some Mr Toto AZERTY will be clearly warned to have correct behaviour and beeing respectful for next situations.\nThanks,\nAugusto Balla",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_21.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-188",
+   "text": "Hi,\nI need a couple of hour free to attend to the graduation of my daughter on next Wednesday from 14:00 to 16:00. \nI need to join this event and will not be able to reach the All Hands meeting at 15:00. \nThanks in advance. \nAntalo Christoph",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_21.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-189",
+   "text": "Hi,\nThere was a little party organized last Friday to celebrate the new version released for customers. It has been organized by Mr Toto AZERTY, and all the team was invited except me. I have worked on the topic for the last month and I was clearly involved on the project, but I was not included to the party. I think this is due to my nationality (I am from Brazil), because all other team members , from different countries were invited (France, Italy, Belgium, Spain)\n\nEnnio Juvara",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_21.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-190",
+   "text": "Hello,\nI want to request a salary raise of 7% (from 58500€ to 62600€). Actually I had no salary raise for 3 years, and after a discussion with some colleagues, it appears that some of them get a salary raise in their side.\nMy previous manager told me that there was not enough remuneration package for the team during last years, and that I will be the next one to get the salary increase for this year. Unfortunately, my manager has changed end of last year, and he did not apply the decision from previous manager, and I get the minimal increase of 1,2% which is unfair.\nI expect to fill the gape and to get the 7% increase as discussed previously. \nThanks \n\nMarcelo Vizcaino",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_21.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-191",
+   "text": "Dear all,\n\nthis is a very sensitive topic and please treat it confidentially. Please consider this as a formal complaint. \nMy manager is not behaving fairly in treating the people in the team. A collegue in particular is getting a lot of interests and favors from our manager and it is challenging for me to understand the reasons. \n\nI can provide real examples if you believe are necessary.\n\nThanks in advance for your advices and support. best regards,\nVeronica",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_22.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-192",
+   "text": "Dear all,\n\nI would like to get a refund for my flight on 10/07/2021 (Barcelona-Amman) . I got COVID and I could not travel. \n\nThanks and best,\nFaustino",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_22.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-193",
+   "text": "Dear all,\n\nis your guest house in Hildesheim available for renting? I would be interested to rent it for one year.\n\nThanks,\nFatih Pruschke",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_22.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-194",
+   "text": "Dear HR,\n\nfrom the salary figures in our team there is a ~50% gender pay gap. This situation is creating a lot of tension. Can you please explain the reasons for such a gap? \n\nBest regards,\nNicole",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_22.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-195",
+   "text": "Dear John,\n\nfor personal reasons I would need to take some time off to be close to my partner that is currently pregnant. Would that be ok for you? \n\nThanks and best, \nArnaude",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_22.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-196",
+   "text": "Hello, I recently realized that there is moer than 10% pay gap between me and my male colleagues who have the same tier T2. Could you please provide me an explanation about the reasons of this salary difference?  Best regards, Annette",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_23.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-197",
+   "text": "Dear sir/madam, I'm Audrey Ferreria from the development department. I have been in the company since 5 years, and as I learned recently, I am being paid at least 20% less compared to my male colleagues. I would like to request an explanation for this gender pay gap, and in the case of the lack of an explanation, I would request a fair improvement to my salary as soon as possible.  Best regards, Audrey",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_23.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-198",
+   "text": "Hello, I would like to request 3 days off next week, due to a family reunion that I have to attend. Thank you, Maggie",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_23.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-199",
+   "text": "Hello, As part of my business trip, I had a flight from Milano to Dubai on 18/11/2015. Could you please initiate the process to refund me for this trip? Best regards, Ottavio.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_23.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-200",
+   "text": "Hello, I have my daily shift on Monday, July 11. However, that day corresponds to a festive day for my religion, and I wanted to take the day off instead. Would it be possible to change my shift to Wednesday, July 20? Thanks, Gottlab Bloch",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_23.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-201",
+   "text": "Hello, I wanted to inform you that I have been sick since 18/11/2015. As my doctor suggests, I want to request a sick leave for 8 days starting from the 18th. Thanks, Julien.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_23.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-202",
+   "text": "Hello, I am Antoine Sauvage and I work as a customer service representative. I would like to request a salary raise of 5%, that could raise my salary of 39.100 Euros to 41.100 Euros. I believe that this raise should be feasible and fair for my position. Thanks, Antoine.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_23.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-203",
+   "text": "Hello, Recently I have been in the process of a divorce, and in order to deal with the reconciliation with my spouse after the separation, I would like to request 5 days off for next week. Thanks and regards, Florentine.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_23.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-204",
+   "text": "Dear Colleagues,\n\nDue to my implication for our company and the work provided in the past years i'd like to request a salary raise of 5%. \nPlease let me know if you need further information.\n\nBest Regards,\nZach",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_24.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-205",
+   "text": "Dear HR,\n\nI would like to report a situation that happened with a colleague during a meeting and fill in an official complaint. \nLast Tuesday (October  25th) a colleague made a joke about the clothes I was wearing which made me feel uncomfortable in front of the whole team.\nThis was not a one time event and when i talked to him about this he didn't take me seriously.\nCan you assist me in handling this situation ?\n\nThanks in advance for your help,\nBest Regards,\n\nHelge",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_24.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-206",
+   "text": "Hello,\nI recently learned after an informal discussion with a co-worker that they were paid way more than myself for the same job. We have the same educational background and the only difference I can see is our gender. \nCan you provide a clear justification about this salary difference ?\nThanks in advance,\nBest Regards,\nM. Anguita",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_24.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-207",
+   "text": "Hi John,  I'm taking up a fellowship at Waco. I've been trying to check for some good accomdation in the location from here virtually, however, I'm unable to finalize them. Since this project is expected to complete in 6 months' timeframe, is it possible that I could share the apartment that you're currently renting, provided the landlord and the laws allow it. I'd happy to share expenses of the apartment and help in upkeeping the place to the best. Awaiting to hear your thoughts! Regards, William Allen",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_25.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-208",
+   "text": "Hi, My son just completed his graduation in the United States and his graduation day is on Nov 15, 2022. He is expecting me to be around for his special day. With this, I'd need about 15 days' time off to attend his graduation day along with a bit of travelling. In between, I'd be connecting to work from the Dec 1st - Dec 8th as we discusssed. Thanks, Jean Ferreira",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_25.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-209",
+   "text": "Hi, I've a physio consultation appoinment on  June 5, 2016 which includes a detailed study and further action at the doctor's office. This would require for me to take at least two days' sick leave related to the visit and further steps. Please do approve my sick leave for two days starting June 5th. Regards, Michael Jackson",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_25.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-210",
+   "text": "Hi, Off late, I've been facing pain in the back, which were not relieved with the regular medications. I've had to make an appointment with an Orthopedician for consultation. After a detailed set of tests, it was concluded that I've Osteoporosis, a condition that causes bones to become weak and fragile. I've been asked to take extra care while I continue with my day-to-day activiites. I'd need, at first, sick leaves for about 7 days (starting August 19, 2018) to get better with the condition and to undergo initial treatment at the hospital, and then rest at home before I resume my work back. Thank you! Regards, Eric Atkins",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_25.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-211",
+   "text": "Hi, This is to let you know that my partner and I have been confirmed to be pregnant. We're elated that our dream finally came true. I'd need to take off for about a week's time to enjoy this special moment with my partner and alll our near and dear ones in additon to paying a visit to the doctor's office for some regular tests. Kindly approve my leave starting tomorrow until a week from now. Thank you! Regards, Fredo Filangieri",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_25.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-212",
+   "text": "Hi, This email is to request for refund of my air travel for my business travel on the June 1, 2021. As you know, I visited a customer site while I attended the annual conference at San Jose. Kindly approve my travel refund for the travel on June 1, 2021 from Las Vegas to Norman Y. Mineta San Jose International Airport. Thank you! Rodney Strong",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_25.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-213",
+   "text": "Hi, Last evening I developed acute abdominal cramp, which suddenly became unbearable. I visited the doctor's office and with the elevated enzyme levels they diagnosed that I've had an acute pancreatitis. Currently, I'm admitted at the hospital on medications intravenously. I'd need to be at the hospital before I'm better to be discharged from here. I'd need to apply for sick leave for about 6 days starting Dec 12, 2016 onwards. Kindly approve my sick leave. I'd submit all the necessary medical records once I'm back home discharged from the hospital. Thank you! Regards, Lori Rodriguez",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_25.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-214",
+   "text": "Hi Marcia, How have you been doing? I write to you to request for time off for our family reunion. My son, daughter along with their spouses are home for Christmas early this year and we are planning for a family reunion with my brother and his family. We're planning to host this event in our house and I'd need time off for prep and be a good host. Kindly approve my leave. Best Regards, Isabel Stiebitz",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_25.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-215",
+   "text": "Hi, I've my semester exams during the last week of November. I'd like to avail my examination leave for preparation and studies for 12 days starting November 15, 2022. Kindly approve the same. Regards, Ennio Ughi",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_25.xlsx#Ticket12"
+  },
+  {
+   "id": "sap-survey-216",
+   "text": "Good morning, I'm writing because I would need some time off, I recently had some problems with my spouse and we are trying to get back on track together. Therefore I would need to focus fully on it. Thanks for your understanding. Celine.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_26.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-217",
+   "text": "Good afternoon, two days ago one of my childhood friends has died by car accident. I would like to get a couple of days free to go to the funeral and stay close to his family. Sincerely, Ricardo.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_26.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-218",
+   "text": "Hello, I'm Jennifer Hamilton and I would like to have more information about the accomodations in Pueblo. I am planning to stay there 6 months, first of all I would like to know the price.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_26.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-219",
+   "text": "Dear Paolo, as we discussed this morning I would like to request a refund for the Venice to Amsterdam plane ticket of the 31/12/2018. Tell me if you need the ticket and the receipt attached. Sincerely, Evangelista.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_26.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-220",
+   "text": "Good morning, I am opening this ticket to report my colleague Flavio. I am almost sure he was doing cocaine in the bathroom this morning. This is not only inappropriate for the workplace but also highly illegal. Grace.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_26.xlsx#Ticket17"
+  },
+  {
+   "id": "sap-survey-221",
+   "text": "Dear sir, madame, I noticed that my gross salary is not aligned with the average salary for my position. In particular I observed a 21.1% difference compared to salaries of male colleagues. Could you provide an explanation for such gender pay gap? Thank you in advance.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-222",
+   "text": "Hello, I would like to request some time off to be able to take care of my wife who is currently pregnant. Thank you in advance.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-223",
+   "text": "Dear sir/madame, I would like to ask for a refund of the plane ticket I booked for the 31st of December 2020 from New York to Phoenix (Phoenix Sky Harbor International Airport). Please let me know if you need any additional detail.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-224",
+   "text": "Hello, I would like to ask for a day off for the graduation of my daughter. Let me know if I should provide any document. Thank you and kind regards.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-225",
+   "text": "Dear sir/madame, I noticed a gender pay gap of 10.3% for my salary. Could you provide some details explaining such a difference? Thank you in advance.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-226",
+   "text": "Hello, I currently have a shift planned for Monday , the 11th of Febrary, 2006. However on that date I have a university exam that I cannot move. Would it be possible to move my Monday shift to Sunday, February 17?",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-227",
+   "text": "Hello, I will be in Paderborn for 12 months as of next January. Could you provide me with some information about the best accomodation alternatives there? Thank you in advance.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-228",
+   "text": "Dear sir, madame, I am a business operations specialist since 4 years and I always over achieved my yearly goals. However I didn't receive any salary raise until now. I would thus like to ask for a 5% salary raise from 79700 to 83700 euros.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-229",
+   "text": "Hello, I would like to ask for a week off to be able to take care of my wife who is having some health issues during her pregnancy. Please let me know if I should provide any document. Thank you in advance.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-230",
+   "text": "Hello, with respect to my upcoming visit at your premises in Oberhausen, could you provide any support with the accomodation? The plan is to stay for 12 months. Thank you.",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-231",
+   "text": "Hello, unfortunately I was robbed and I have to take of the process with the insurance. I would thus like to ask for some days off. Thank you in advance.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket11"
+  },
+  {
+   "id": "sap-survey-232",
+   "text": "Dear sir, madame, I would like to escalate as I think that my direct manager does not value my work and contibutions to the company success and that's impacting my career as I am stuck in the same position since 5 years. At the current stage I do not see how i could advance my position and i would like to have the opportunity to discuss my situation with a third, independent party. Thank you.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket12"
+  },
+  {
+   "id": "sap-survey-233",
+   "text": "Dear sir/madame, I think that my salary of 35900 euros is not alaigned with the average salary for a security guard and gambling surveillance officer. I am thus asking for a raise of 5% to 37700 euros. Thank you.",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket13"
+  },
+  {
+   "id": "sap-survey-234",
+   "text": "Hello, I have a medical exam on the 16th of June that will require 10 days of follow up care. Could you please confirm a 10 days sick leave starting on the 16 of June?",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-235",
+   "text": "Dear sir/madame, I would like to ask for a refurn of a plane ticket planned for the 15th of November 2016 from Munich to Dubai (Dubai Internation Airport). Could you confirm the refund? Thank you.",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket15"
+  },
+  {
+   "id": "sap-survey-236",
+   "text": "Hello, I would like to ask for 4 days of sick leave as of the 31st of October because of a arm fracture. Let me know if I should provide any document. Thank you.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket16"
+  },
+  {
+   "id": "sap-survey-237",
+   "text": "Hello, I would like to get some more information about my upcoming 6 months staying at Badajoz. In particular could you share the details about the accomodation?",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket17"
+  },
+  {
+   "id": "sap-survey-238",
+   "text": "Hello, I would like to ask for a 1 days sick leave fot the 12 of October because of a laboratory exam. Thank you.",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket18"
+  },
+  {
+   "id": "sap-survey-239",
+   "text": "Dear sir, madame, I would like to ask for a refund of my travel from Hannover to Catania booked for the 23rd of Sempteber 2015. The fligh was planned from Hannover to the Catania-Fontanarossa Airport in Catania. Could you please confirm the refund of the plane ticket?",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket19"
+  },
+  {
+   "id": "sap-survey-240",
+   "text": "Dear sir, madame, I would like to report a colleague who discriminated me because of my gender. Please provide my with a channel where I can share further details about what happened. Thank you.",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_27.xlsx#Ticket20"
+  },
+  {
+   "id": "sap-survey-241",
+   "text": "To whom it may concern, I will be on a 6 months mission at Kassel, starting the beginning of next month, and I unfortunately have not managed to find accomodation. Do you have any relevant infomrmation that could help me with nthis? Or could you provide some contacts from Kassel's office that could offer me some assistance? Thanks in advance. Best regards, Imke",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket1"
+  },
+  {
+   "id": "sap-survey-242",
+   "text": "Dear HR service, I would like to request a sick leave for tomorrow June 16th at least, as I broke my leg  and I will not be able to come to work tomorrow. Just to let you know, I might need to request a period to work from home, I will open another HR ticket once I get the confirmation from my doctor. Thanks! Regards, Susanne",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket2"
+  },
+  {
+   "id": "sap-survey-243",
+   "text": "Hello, I will need to spend a month in our offices in Ontario in the coming year and I was wondering if our company provides any temporal accomodation for such situations. If not, would you please recommend any websites to go through? Also, I would like to know if it is feasible to get a flat/studio for just one month or is it recommended to get a hotel for such a short period? Best, Richard",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket3"
+  },
+  {
+   "id": "sap-survey-244",
+   "text": "Dear HR department, my wife is pregnant and she is going through some health issues that constitute a high risk for the baby and for her. Therefore, I would like to request some days off to be able to assist my wife. Best, Gerlind",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket4"
+  },
+  {
+   "id": "sap-survey-245",
+   "text": "Dear Sir/Madam, I recently have been discriminated in the course of work by a colleague that admitted that the reason was related to my disability. I want to specify that my disability does not interfere, in any sort, with the work activity in question here. Therefore, I would like to fill in a complaint, can you please  refer me to the process for filing complaints please? Regards, Hildegund",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket5"
+  },
+  {
+   "id": "sap-survey-246",
+   "text": "Dear Sir/Madam, Due to an unfortunate event, I have to take some time off to take care of my sick father until he gets back on his feet. Looking at the current situation, it would be difficult to know when I will be able to come back to work, I would take one week off for now, but I might need to extend my time off later on. Thank you for your understanding. Regards, Ludmilla",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket6"
+  },
+  {
+   "id": "sap-survey-247",
+   "text": "Dear HR, I have been working with the company for 3 years now, through which I believe that I had shown prove of commitment and responsibility. Given my hard work, especially lately with the increasing working load on our bars, and my loyalty to the company, I would like to kindly ask you to consider a salary raise of  9% this year. I am looking forward to hear back from you. Best, Paulino",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket7"
+  },
+  {
+   "id": "sap-survey-248",
+   "text": "Dear Sir/Madam, I would like to change my working shift from Monday July 3rd to Tuesday July 11th, as I have to attend the funeral of my uncle that will take place the Monday of my shift. Please let me know if it would be possible. I appreciate your help. Regards, Amanda",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket8"
+  },
+  {
+   "id": "sap-survey-249",
+   "text": "Dear HR service, I am contacting you to request the refund of my plane ticket. I traveled in July 10th to meet with one of our clients in Amman. My plane ticket, from Barcelona El Prat airport to Amman Queen Alia Airport, cost $546,87. I am also attaching the invoice of the plane ticket. Thank you for your assistance. Best, Faustinoi",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket9"
+  },
+  {
+   "id": "sap-survey-250",
+   "text": "Hello, I will have  a medical related visit on September 29th, thus I would like to take that day as a sick leave, as my visit overlaps with my working hours. Best regards, Murat",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket10"
+  },
+  {
+   "id": "sap-survey-251",
+   "text": "To whom it may concern, In some encounters with a few of our clients, I had some leads that made me think that one of my colleagues might be involved in bribing the clients in question, which constitutes an illegal action according to our company's policy. Can you please direct me to what I should do next to raise this issue? thanks. Regards, Brandon",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket11"
+  },
+  {
+   "id": "sap-survey-252",
+   "text": "Dear HR department, I need to take my father to the hospital on Thursday March 15th which coincides with my day shift, would it be possible to change my shift of March 15th to March 24th? Thanks. Regards, Justin",
+   "route": "people_ops",
+   "category": "schedule_change",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket12"
+  },
+  {
+   "id": "sap-survey-253",
+   "text": "Hello, I am looking for accomodation in Turin, Italy for my one month mission there. Could you please recommend me some ressources, as in websites or particular agencies, that our company is used to rely on? Thank you for your help. Best, Alessandro",
+   "route": "people_ops",
+   "category": "policy_info",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket14"
+  },
+  {
+   "id": "sap-survey-254",
+   "text": "Dear HR department, Working in the same team for 7 years and a half now, I feel that my career path is limited by my superior, as he does not give me the opportunity to prove my real potential and he usually takes credits for my work. I would like to raise this issue, so could you please refer me to how to do that? Thank you for your help. Best, Thibaut",
+   "route": "people_ops",
+   "category": "complaint",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket15"
+  },
+  {
+   "id": "sap-survey-255",
+   "text": "Dear HR service, I am getting married in 3 months and I would like to request the exceptional 4 days off  dedicatedby law for marriage, starting Monday 23rd of June. Best, Giacinto",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket16"
+  },
+  {
+   "id": "sap-survey-256",
+   "text": "Dear HR department, my colleagues and I recently came to know that there is a considerable gender pay gap of 29.4% in our company, and I would like to have an explanation of such a high gap, particularly that men and women, in our company are occupying similar positions with comaparble responsabilities and working same amount of hours, which does not justify this number. I am looking forward for your answer. Regards, Hedda",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket17"
+  },
+  {
+   "id": "sap-survey-257",
+   "text": "Dear HR department, I would like to request the refund of my plane ticket that I personally purchased for my last mission, that took place April 7th, 2017. It is a two ways tickets from Lyon, Saint-Exupéry Airport to Marrakech, Menara Airport of a total cost of $353.49. Here attached you will finde the invoice of the plane ticket. Thank you for your assistance. Best, Céline",
+   "route": "payroll",
+   "category": "expense_refund",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket18"
+  },
+  {
+   "id": "sap-survey-258",
+   "text": "To whom it may concern, I am requesting a one day sick leave for tomorrow November 21st, as I have been diagnosed with a health issue that requieres home rest. I am attaching the doctor's justification for the sick leave. Regards, Leslie",
+   "route": "people_ops",
+   "category": "leave_life_event",
+   "sensitive": true,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket19"
+  },
+  {
+   "id": "sap-survey-259",
+   "text": "To whom it may concern, Given the high inflation this year, as well as to meet with my growing responsibility, I would like to request a salary raise of  5%. My current salary is $58400 and it would increase to $62300 with the salary raise. Thank you for your thoughtful consideration. Best regards, Cindy",
+   "route": "payroll",
+   "category": "compensation",
+   "sensitive": false,
+   "source": "SAP/hr-request-data-set survey_tickets/Survey_Ticket_28.xlsx#Ticket20"
+  }
+ ]
+}

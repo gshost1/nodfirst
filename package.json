@@ -1,17 +1,24 @@
 {
   "name": "daybreak-onboarding",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "A local HR onboarding demo with human approvals and real local inference.",
+  "description": "An HR onboarding agent demo with typed decisions (Jev, Claude, OpenAI-compatible, Ollama, offline) and human approvals.",
   "type": "module",
-  "engines": { "node": ">=24.2.0" },
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
     "setup": "node scripts/setup.mjs",
     "start": "node src/server.mjs",
     "dev": "node --watch src/server.mjs",
     "test": "node --test --test-timeout=15000 test/*.test.mjs",
     "test:live": "node scripts/validate-live.mjs",
-    "model:smoke": "node scripts/model-smoke.mjs"
+    "model:smoke": "node scripts/model-smoke.mjs",
+    "eval": "node scripts/eval-hr.mjs",
+    "demo:profile": "node scripts/demo-profile.mjs"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0"
+  }
 }

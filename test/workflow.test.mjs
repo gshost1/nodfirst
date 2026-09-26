@@ -168,3 +168,34 @@ test('worker shutdown waits for in-flight inference across several timer ticks',
   assert.equal(store.state().jobs[0].status, 'succeeded');
   store.close();
 });
+
+test('admin-only provider switch persists, is audited, and refuses unconfigured providers', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'daybreak-test-'));
+  const second = { ...mockProvider, name: 'second', label: 'Second', model: 'mock-2', configured: true, judge: async () => ({ ...judgment, provider: 'second', route: 'payroll', confidence: 0.91, category: 'compensation', sensitive: 0.2, probabilities: { payroll: 0.91, people_ops: 0.09 } }) };
+  const missing = { ...mockProvider, name: 'missing', label: 'Missing', configured: false, setup: 'Set MISSING_KEY.', health: async () => ({ available: false, error: 'MISSING_KEY is not set.' }) };
+  const providers = { 'test-double': { ...mockProvider, configured: true }, second, missing };
+  const dbPath = join(directory, 'switch.sqlite');
+  let app = createApp({ dbPath, providers, worker: false });
+  t.after(async () => { await app.close(); await rm(directory, { recursive: true, force: true }); });
+  let c = await client(app);
+  const health = (await c.request('/api/health')).data;
+  assert.equal(health.providers.length, 3);
+  assert.equal((await c.request('/api/provider', { name: 'second' })).status, 403);
+  await c.request('/api/session', { role: 'admin' });
+  assert.equal((await c.request('/api/provider', { name: 'nope' })).status, 422);
+  const refused = await c.request('/api/provider', { name: 'missing' });
+  assert.equal(refused.status, 409);
+  assert.match(refused.data.error, /MISSING_KEY/);
+  assert.equal((await c.request('/api/provider', { name: 'second' })).data.provider.active, true);
+  const state = (await c.request('/api/state')).data;
+  assert.ok(state.audit.some(entry => entry.action === 'provider.changed' && entry.details.to === 'second'));
+  const workflow = app.service.onboard(state.employees[0].id, 'Test');
+  app.service.queueJudgment(workflow.id, 'Test');
+  app.service.finishJob(app.service.claimJob(), await app.provider.judge({}));
+  const stored = (await c.request('/api/state')).data.judgments[0];
+  assert.deepEqual([stored.provider, stored.route, stored.category, stored.probabilities.payroll], ['second', 'payroll', 'compensation', 0.91]);
+  await app.close();
+  app = createApp({ dbPath, providers, worker: false });
+  c = await client(app);
+  assert.equal((await c.request('/api/health')).data.model.provider, 'second', 'active provider survives restart');
+});

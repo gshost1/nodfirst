@@ -32,6 +32,12 @@ export const policies = [
     rule: 'For a remote new hire, IT records a plan for equipment delivery. This demo does not order or ship equipment. Stipend, eligibility, accommodation, or policy interpretation questions require human review.',
   },
   {
+    id: 'payroll',
+    title: 'Payroll, stipends, and reimbursement',
+    version: '2026.09',
+    rule: 'Payroll & Benefits answers salary, pay equity, stipend, and reimbursement questions. The demo never changes pay, issues payments, or decides eligibility; it records a follow-up for a human.',
+  },
+  {
     id: 'exceptions',
     title: 'Exceptions and sensitive access',
     version: '2026.09',

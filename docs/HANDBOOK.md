@@ -8,7 +8,7 @@ This handbook and every employee record in the demo are synthetic. They are for 
 
 The `onboarding-v1` routine creates the initial onboarding checklist when a coordinator starts a workflow for a selected employee. Each checklist item points to the policy that explains its owner or handling. It covers reading the welcome handbook, scheduling a first-day welcome meeting, preparing a standard workspace, remote equipment delivery where applicable, and any exception recorded for that employee.
 
-Ordinary checklist items can be completed by the coordinator. An exception may be sent to the local model for a limited routing suggestion (`it`, `people_ops`, `security`, or `uncertain`). The model does not decide eligibility, grant access, or perform the requested work. Its confidence is uncalibrated and is only a routing hint.
+Ordinary checklist items can be completed by the coordinator. An exception may be sent to the configured decision provider (TypeSafe Jev, Claude, an OpenAI-compatible API, local Ollama, or the offline baseline) for a limited typed suggestion: a route (`it`, `people_ops`, `payroll`, `security`, or `uncertain`), a request category, and a probability that the request is sensitive. The model does not decide eligibility, grant access, or perform the requested work. Its confidence is uncalibrated and is only a routing hint.
 
 **Every exception requires an administrator decision before a follow-up action, even when the model reports high confidence.** An administrator can approve or reject the proposed internal follow-up task. Approval does not itself grant system access, authorize spending, or write to an HRIS. The demo's follow-up is a local task record.
 
@@ -22,6 +22,7 @@ All policy records use version `2026.09`; the IDs below are the stable IDs refer
 | `orientation` | The manager schedules a first-day welcome meeting with the new hire. | `Schedule a first-day welcome`, owned by the employee's manager. |
 | `workspace` | IT Operations prepares a record of the standard equipment and account checklist. Requests outside the standard setup path need human review. | `Prepare a standard workspace`, owned by IT Operations. |
 | `remote` | For a remote new hire, IT Operations records an equipment delivery plan. The demo does not order or ship equipment. Stipend, eligibility, accommodation, or policy interpretation questions require human review. | Remote employees also receive `Confirm equipment delivery plan`, owned by IT Operations. |
+| `payroll` | Payroll & Benefits answers salary, pay equity, stipend, and reimbursement questions. The demo never changes pay, issues payments, or decides eligibility. | Reference for payroll-routed exceptions; approval creates a local follow-up for Payroll & Benefits. |
 | `exceptions` | Every exception waits for an administrator decision regardless of model confidence. Security-sensitive access requests go to Security for review; the demo grants no access. | Exception task receives a model routing suggestion and enters administrator review before any follow-up. |
 
 ## Handling examples

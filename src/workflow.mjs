@@ -1,6 +1,6 @@
 import { AppError, id, now } from './store.mjs';
+import { CONFIDENCE_FLOOR, owners } from './decision.mjs';
 
-const owners = { it: 'IT Operations', people_ops: 'People Operations', security: 'Security', uncertain: 'People Operations' };
 function text(value, field, max = 120, min = 1) {
   if (typeof value !== 'string' || value.trim().length < min || value.trim().length > max) {
     throw new AppError(422, `${field} must contain ${min}–${max} characters.`);
@@ -83,25 +83,25 @@ export function createWorkflowService(store) {
   function modelInput(job) {
     const workflow = requireRecord('workflows', job.workflowId);
     const employee = requireRecord('employees', workflow.employeeId);
-    return { role: employee.role, location: employee.location, workMode: employee.workMode, exception: employee.exception, policies: db.prepare("SELECT * FROM policies WHERE id IN ('workspace','remote','exceptions')").all() };
+    return { role: employee.role, location: employee.location, workMode: employee.workMode, exception: employee.exception, policies: db.prepare("SELECT * FROM policies WHERE id IN ('workspace','remote','payroll','exceptions')").all() };
   }
   function finishJob(job, result) {
     return transaction(() => {
       if (get('jobs', job.id)?.status !== 'running') return;
       const task = db.prepare("SELECT * FROM tasks WHERE workflowId=? AND kind='exception'").get(job.workflowId);
-      const judgment = insert('judgments', { id: id(), workflowId: job.workflowId, provider: result.provider, model: result.model, route: result.route, confidence: result.confidence, reason: result.reason, uncertain: Number(Boolean(result.uncertain || result.confidence < 0.75 || result.route === 'uncertain')), durationMs: Math.round(result.durationMs), createdAt: now() });
+      const judgment = insert('judgments', { id: id(), workflowId: job.workflowId, provider: result.provider, model: result.model, route: result.route, confidence: result.confidence, reason: result.reason, category: result.category ?? null, categoryConfidence: result.categoryConfidence ?? null, sensitive: result.sensitive ?? null, probabilities: result.probabilities ? JSON.stringify(result.probabilities) : null, uncertain: Number(Boolean(result.uncertain || result.confidence < CONFIDENCE_FLOOR || result.route === 'uncertain')), durationMs: Math.round(result.durationMs), createdAt: now() });
       const approval = insert('approvals', { id: id(), workflowId: job.workflowId, taskId: task.id, judgmentId: judgment.id, status: 'pending', requestedAt: now(), decidedAt: null, decidedBy: null, reason: null });
       db.prepare("UPDATE tasks SET status='awaiting_review' WHERE id=?").run(task.id);
       db.prepare("UPDATE jobs SET status='succeeded',error=NULL,updatedAt=? WHERE id=?").run(now(), job.id);
-      log('Local model worker', 'model.completed', job.workflowId, { jobId: job.id, judgmentId: judgment.id, provider: judgment.provider, model: judgment.model, route: judgment.route, confidence: judgment.confidence, uncertain: Boolean(judgment.uncertain), durationMs: judgment.durationMs });
+      log('Decision worker', 'model.completed', job.workflowId, { jobId: job.id, judgmentId: judgment.id, provider: judgment.provider, model: judgment.model, route: judgment.route, confidence: judgment.confidence, category: judgment.category, sensitive: judgment.sensitive, uncertain: Boolean(judgment.uncertain), durationMs: judgment.durationMs });
       log('Policy engine', 'approval.requested', job.workflowId, { approvalId: approval.id, policyId: 'exceptions', reason: 'Every exception requires a human decision before a follow-up is created.' });
     });
   }
   function failJob(job, error) {
     transaction(() => {
-      const message = String(error.message || 'Local inference failed.').slice(0, 700);
+      const message = String(error.message || 'Decision provider failed.').slice(0, 700);
       db.prepare("UPDATE jobs SET status='failed',error=?,updatedAt=? WHERE id=?").run(message, now(), job.id);
-      log('Local model worker', 'model.failed', job.workflowId, { jobId: job.id, error: message });
+      log('Decision worker', 'model.failed', job.workflowId, { jobId: job.id, error: message });
     });
   }
   function decide(approvalId, input, session) {
@@ -130,7 +130,9 @@ export function createWorkflowService(store) {
   return { addEmployee, onboard, completeTask, queueJudgment, recoverJobs, claimJob, modelInput, finishJob, failJob, decide };
 }
 
-export function startWorker(service, provider, intervalMs = 400) {
+// providerFor may be a provider or a function returning the active one per job.
+export function startWorker(service, providerFor, intervalMs = 400) {
+  const activeProvider = typeof providerFor === 'function' ? providerFor : () => providerFor;
   let active = false;
   let stopped = false;
   let current = Promise.resolve();
@@ -141,7 +143,7 @@ export function startWorker(service, provider, intervalMs = 400) {
     try {
       const job = service.claimJob();
       if (!job) return;
-      try { service.finishJob(job, await provider.judge(service.modelInput(job))); }
+      try { service.finishJob(job, await activeProvider().judge(service.modelInput(job))); }
       catch (error) { service.failJob(job, error); }
     } finally { active = false; }
   }
