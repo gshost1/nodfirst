@@ -1,10 +1,21 @@
 # NodFirst
 
-An HR onboarding agent demo for the fictional **Northstar Studio**, modeled on how an HR agent should behave: it does the routine work, answers typed questions about every exception, **asks a human for approval**, and keeps a record of every action with an identity, scope, and rationale.
+**An HR onboarding agent that sorts new-hire requests and asks a person before it acts.**
 
-![NodFirst: agent decision on a new hire's exception](docs/demo/hire-decision.png)
+New hires ask for unusual things: a stipend, production access, a payroll change. At a small company those requests land in Slack or email with no clear owner. NodFirst does the routine onboarding work, reads each unusual request, suggests who should handle it and how sensitive it is, and then waits. Nothing happens until an admin approves, and every step goes into an append-only record.
 
-[Walkthrough video](docs/demo/walkthrough.webm) · [Overview](docs/demo/overview.png) · [Approvals](docs/demo/approvals.png) · [Activity](docs/demo/activity.png) · [Decision engine](docs/demo/decision-engine.png) · [Mobile](docs/demo/mobile.png)
+![NodFirst walkthrough: a new hire's request is routed to Security, then an admin approves it](docs/demo/walkthrough.gif)
+
+**Key decisions**
+
+- **The model only proposes.** It answers three typed questions (route, category, sensitive) and returns probabilities, not prose. Code checks every answer against a schema, marks anything under 75% confidence as "needs a human", and a database trigger refuses any action without an admin decision.
+- **Any model, including none.** The same contract runs on Claude, any OpenAI-compatible API, a local Ollama model, or an offline Naive Bayes baseline, so the app works with no API key at all.
+- **Measured, not assumed.** Providers are scored on 259 human-written HR requests from SAP's public dataset ([results](#evaluation)).
+- **Minimal data out.** Only role, location, work mode, the request and the relevant policy reach a model. Names and dates never do.
+
+Built with Node.js and SQLite (`node:sqlite`), with a vanilla JS UI and no build step. The company, handbook and employees are fictional; see [what is real and what is simulated](#what-is-real-and-what-is-simulated).
+
+[Walkthrough video (MP4)](docs/demo/walkthrough.mp4) · [Agent decision](docs/demo/hire-decision.png) · [Overview](docs/demo/overview.png) · [Approvals](docs/demo/approvals.png) · [Activity](docs/demo/activity.png) · [Decision engine](docs/demo/decision-engine.png) · [Mobile](docs/demo/mobile.png)
 
 ## Run
 
@@ -19,7 +30,7 @@ With no keys set it runs fully offline on the built-in baseline model. To use a 
 
 | Provider | Environment | Notes |
 | --- | --- | --- |
-| **TypeSafe Jev** | `TYPESAFE_API_KEY`, optional `JEV_MODEL` (default `jev-latest`), `TYPESAFE_BASE_URL` | Typed decision model. One `/v1/systemone` call asks three questions and returns probabilities, not prose. |
+| **Jev** (TypeSafe) | `TYPESAFE_API_KEY`, optional `JEV_MODEL` (default `jev-latest`), `TYPESAFE_BASE_URL` | A hosted typed-decision model from TypeSafe. One `/v1/systemone` call asks the three questions and returns probabilities, not prose. NodFirst's decision contract follows this question-and-probability format. |
 | **Claude** | `ANTHROPIC_API_KEY` (or `NODFIRST_ANTHROPIC_AUTH_TOKEN`), optional `ANTHROPIC_MODEL` (default `claude-opus-5`), `ANTHROPIC_EFFORT` (default `low`) | Official SDK with JSON-schema structured output. |
 | **OpenAI-compatible** | `OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_BASE_URL` | OpenAI, OpenRouter, Groq, vLLM, LM Studio… (subscription credits through OpenRouter work here). |
 | **Ollama** | `OLLAMA_MODEL`, `OLLAMA_BASE_URL` (loopback only) | Local weights; `npm run setup` pulls `qwen2.5:3b`. |
@@ -96,4 +107,4 @@ npm run test:live     # real Ollama end-to-end (requires Ollama)
 | `data/` | SAP evaluation set, baseline training data, and the SAP license |
 | `scripts/eval-hr.mjs`, `scripts/demo-profile.mjs` | Evaluation harness and end-to-end profile run |
 
-MIT licensed; SAP data rows are Apache-2.0 (`data/LICENSE-SAP-Apache-2.0.txt`). Independently designed. No Warp or TypeSafe source, branding, or assets are included.
+MIT licensed; SAP data rows are Apache-2.0 (`data/LICENSE-SAP-Apache-2.0.txt`). NodFirst is not affiliated with TypeSafe; the Jev provider only calls its public API.
