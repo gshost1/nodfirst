@@ -92,7 +92,7 @@ npm run test:live     # real Ollama end-to-end (requires Ollama)
 | `src/provider.mjs` | Ollama local provider (loopback-only, local-weights verification) |
 | `src/server.mjs` | HTTP, sessions, provider switching, and static assets |
 | `src/store.mjs`, `src/workflow.mjs` | Schema and persistence; the routine, job worker, and approval transaction |
-| `public/` | Dark UI: vanilla JS, no build step |
+| `public/` | UI: light "paper and ink" theme with automatic dark mode; vanilla JS, no build step |
 | `data/` | SAP evaluation set, baseline training data, and the SAP license |
 | `scripts/eval-hr.mjs`, `scripts/demo-profile.mjs` | Evaluation harness and end-to-end profile run |
 
