@@ -45,3 +45,15 @@ A Google Sheet with an Apps Script that sends the NodFirst feedback-call outreac
 | `error` | See `notes` |
 
 Replies arrive in george@nodfirst.com's inbox, whichever address sent the email.
+
+## Hooks from public job boards
+
+`hooks.mjs` writes the `hook` column. Give it a CSV of companies (an Apollo export works as-is: it reads `Company`, `Website`, `First Name` and `Email`). For each company it looks for a public job board on Greenhouse, Lever or Ashby and writes one factual line from the open US roles:
+
+```sh
+node outreach/hooks.mjs apollo-export.csv hooks.csv --leads leads.csv
+```
+
+- `hooks.csv` keeps every input column and adds `hook`, `hook_source` (the board it came from), `ats`, `us_roles` and `us_states`. Read each hook before it goes out. The script only knows job titles, so an odd title makes an odd line.
+- `leads.csv` has exactly `email, first_name, company, hook` for rows that have an email. Paste it into the Leads tab only after every address is verified.
+- The hook picks, in order: an open People or HR role, an IT role ("just opened" only if posted in the last 21 days), several roles across 3 or more states, a count of open roles, or the single open role. Companies with no public board get a blank hook; write those by hand or leave them blank.
