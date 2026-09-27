@@ -1,6 +1,6 @@
 {
- "license": "SAP rows: Apache-2.0, Copyright SAP SE (https://github.com/SAP/hr-request-data-set). Daybreak seeds: MIT.",
- "labeling": "Daybreak route/category/sensitive labels are mapped from the SAP category and sub-category; see docs/EVALUATION.md.",
+ "license": "SAP rows: Apache-2.0, Copyright SAP SE (https://github.com/SAP/hr-request-data-set). NodFirst seeds: MIT.",
+ "labeling": "NodFirst route/category/sensitive labels are mapped from the SAP category and sub-category; see docs/EVALUATION.md.",
  "mapping": {
   "Salary / Salary raise": {
    "route": "payroll",
@@ -43,7 +43,7 @@
    "sensitive": false
   }
  },
- "description": "Training data for the offline baseline: SAP handwritten tickets, Daybreak seeds, and the SAP survey tickets.",
+ "description": "Training data for the offline baseline: SAP handwritten tickets, NodFirst seeds, and the SAP survey tickets.",
  "examples": [
   {
    "id": "sap-handwritten-000",
@@ -606,292 +606,292 @@
    "source": "SAP/hr-request-data-set tickets_handwritten.json"
   },
   {
-   "id": "daybreak-seed-001",
+   "id": "nodfirst-seed-001",
    "text": "I need help connecting my company laptop to the VPN and setting up the approved authenticator app.",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-002",
+   "id": "nodfirst-seed-002",
    "text": "My laptop has not arrived yet and my start date is Monday. Can IT ship it to my home address?",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-003",
+   "id": "nodfirst-seed-003",
    "text": "I can't log in to my email account on my first day, the password reset link is not working.",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-004",
+   "id": "nodfirst-seed-004",
    "text": "Could I get a second monitor and a docking station for my desk in the office?",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-005",
+   "id": "nodfirst-seed-005",
    "text": "Please set up my Slack and GitHub accounts before my first day.",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-006",
+   "id": "nodfirst-seed-006",
    "text": "The single sign-on page keeps rejecting my new badge credentials.",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-007",
+   "id": "nodfirst-seed-007",
    "text": "I need the standard design software licenses installed on my new laptop.",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-008",
+   "id": "nodfirst-seed-008",
    "text": "My keyboard and mouse are missing from the equipment box that was delivered.",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-009",
+   "id": "nodfirst-seed-009",
    "text": "How do I enroll my phone in the device management profile so I can read work email?",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-010",
+   "id": "nodfirst-seed-010",
    "text": "The printer on the third floor does not show up on my laptop.",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-011",
+   "id": "nodfirst-seed-011",
    "text": "I was sent a Windows laptop but my team uses Macs; can IT swap the device?",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-012",
+   "id": "nodfirst-seed-012",
    "text": "Can you add me to the engineering shared drive and the team calendar?",
    "route": "it",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-013",
+   "id": "nodfirst-seed-013",
    "text": "My manager asked for temporary production access to customer records during onboarding. Please enable it before my first shift.",
    "route": "security",
    "category": "access_request",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-014",
+   "id": "nodfirst-seed-014",
    "text": "I need admin rights on the payroll database to run a migration next week.",
    "route": "security",
    "category": "access_request",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-015",
+   "id": "nodfirst-seed-015",
    "text": "Please grant me read access to the customer PII warehouse for my analytics project.",
    "route": "security",
    "category": "access_request",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-016",
+   "id": "nodfirst-seed-016",
    "text": "Can I get root access to the production Kubernetes cluster? My lead said it is fine.",
    "route": "security",
    "category": "access_request",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-017",
+   "id": "nodfirst-seed-017",
    "text": "I would like access to the HR records system to look up employee salaries for a report.",
    "route": "security",
    "category": "access_request",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-018",
+   "id": "nodfirst-seed-018",
    "text": "Please give my contractor account the same privileged access as the security team.",
    "route": "security",
    "category": "access_request",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-019",
+   "id": "nodfirst-seed-019",
    "text": "I need the break-glass credentials for the billing system before my on-call rotation.",
    "route": "security",
    "category": "access_request",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-020",
+   "id": "nodfirst-seed-020",
    "text": "Could you whitelist my personal laptop so I can access the internal admin console from home?",
    "route": "security",
    "category": "access_request",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-021",
+   "id": "nodfirst-seed-021",
    "text": "I work remotely and need a laptop shipped to me. I also need to know whether the home office stipend applies to the monitor I already bought.",
    "route": "uncertain",
    "category": "workspace_setup",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-022",
+   "id": "nodfirst-seed-022",
    "text": "Can IT order me an ergonomic chair, and will payroll reimburse the one I bought last month?",
    "route": "uncertain",
    "category": "expense_refund",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-023",
+   "id": "nodfirst-seed-023",
    "text": "I need a screen reader installed on my laptop and I also want to discuss a formal accommodation for my visual impairment.",
    "route": "uncertain",
    "category": "workspace_setup",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-024",
+   "id": "nodfirst-seed-024",
    "text": "I'm relocating during my first month: who sets up my new office badge and does the relocation bonus cover the movers?",
    "route": "uncertain",
    "category": "policy_info",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-025",
+   "id": "nodfirst-seed-025",
    "text": "Does the home office stipend cover a desk I purchased before my start date? I have the receipt.",
    "route": "payroll",
    "category": "expense_refund",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-026",
+   "id": "nodfirst-seed-026",
    "text": "My first paycheck is missing the signing bonus from my offer letter.",
    "route": "payroll",
    "category": "compensation",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-027",
+   "id": "nodfirst-seed-027",
    "text": "I need to update my direct deposit bank account before the next payroll run.",
    "route": "payroll",
    "category": "compensation",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-028",
+   "id": "nodfirst-seed-028",
    "text": "My tax withholding looks wrong on my first payslip, I moved states last month.",
    "route": "payroll",
    "category": "compensation",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-029",
+   "id": "nodfirst-seed-029",
    "text": "How do I submit my internet bill for the remote work reimbursement?",
    "route": "payroll",
    "category": "expense_refund",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-030",
+   "id": "nodfirst-seed-030",
    "text": "When does health insurance start for new hires, and how do I add my spouse?",
    "route": "people_ops",
    "category": "policy_info",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-031",
+   "id": "nodfirst-seed-031",
    "text": "Is there a parental leave policy for employees who joined less than a year ago?",
    "route": "people_ops",
    "category": "policy_info",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-032",
+   "id": "nodfirst-seed-032",
    "text": "I have a surgery scheduled two weeks after my start date and will need a few days off.",
    "route": "people_ops",
    "category": "leave_life_event",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-033",
+   "id": "nodfirst-seed-033",
    "text": "Could my first week start on Tuesday instead of Monday because of a public holiday in my country?",
    "route": "people_ops",
    "category": "schedule_change",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-034",
+   "id": "nodfirst-seed-034",
    "text": "During my interview a manager made comments about my age that made me uncomfortable; who can I talk to?",
    "route": "people_ops",
    "category": "complaint",
    "sensitive": true,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-035",
+   "id": "nodfirst-seed-035",
    "text": "I need an employment verification letter for my apartment application.",
    "route": "people_ops",
    "category": "policy_info",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
-   "id": "daybreak-seed-036",
+   "id": "nodfirst-seed-036",
    "text": "Can you confirm whether my visa sponsorship paperwork has been filed?",
    "route": "people_ops",
    "category": "policy_info",
    "sensitive": false,
-   "source": "Daybreak authored seed (synthetic)"
+   "source": "NodFirst authored seed (synthetic)"
   },
   {
    "id": "sap-survey-001",

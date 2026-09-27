@@ -80,13 +80,13 @@ export function createJevProvider({
 // Claude through the official SDK. Accepts an API key or an auth token.
 export function createAnthropicProvider({
   apiKey = env('ANTHROPIC_API_KEY'),
-  authToken = env('DAYBREAK_ANTHROPIC_AUTH_TOKEN'),
-  baseUrl = env('DAYBREAK_ANTHROPIC_BASE_URL', 'https://api.anthropic.com'),
+  authToken = env('NODFIRST_ANTHROPIC_AUTH_TOKEN'),
+  baseUrl = env('NODFIRST_ANTHROPIC_BASE_URL', 'https://api.anthropic.com'),
   model = env('ANTHROPIC_MODEL', 'claude-opus-5'),
   effort = env('ANTHROPIC_EFFORT', 'low'),
   timeoutMs = DEFAULT_TIMEOUT_MS,
 } = {}) {
-  baseUrl = httpsOrigin(baseUrl, 'DAYBREAK_ANTHROPIC_BASE_URL');
+  baseUrl = httpsOrigin(baseUrl, 'NODFIRST_ANTHROPIC_BASE_URL');
   const configured = Boolean(apiKey || authToken);
   // Explicit baseURL so an ambient ANTHROPIC_BASE_URL cannot redirect HR data.
   const client = configured ? new Anthropic({ apiKey: apiKey || null, authToken: authToken || null, baseURL: baseUrl, timeout: timeoutMs, maxRetries: 2 }) : null;
@@ -97,7 +97,7 @@ export function createAnthropicProvider({
     model,
     baseUrl,
     configured,
-    setup: 'Set ANTHROPIC_API_KEY (or DAYBREAK_ANTHROPIC_AUTH_TOKEN); optionally ANTHROPIC_MODEL and ANTHROPIC_EFFORT.',
+    setup: 'Set ANTHROPIC_API_KEY (or NODFIRST_ANTHROPIC_AUTH_TOKEN); optionally ANTHROPIC_MODEL and ANTHROPIC_EFFORT.',
     async health() {
       return configured ? { available: true, note: 'Credential configured; verified on first decision.' } : unavailable('ANTHROPIC_API_KEY is not set.');
     },
@@ -257,7 +257,7 @@ export function createBaselineProvider({ examples } = {}) {
     name: 'baseline',
     label: 'Offline baseline (naive Bayes)',
     kind: 'offline',
-    model: 'daybreak-nb-v1',
+    model: 'nodfirst-nb-v1',
     baseUrl: 'in-process',
     configured: true,
     setup: 'Always available. Trained on data/training/hr-requests.json.',
@@ -280,7 +280,7 @@ export function createBaselineProvider({ examples } = {}) {
         categoryConfidence: c.probability,
         sensitive: s.probabilities.yes ?? 0,
         reason: r.cues.length ? `Strongest cues for ${r.label}: ${r.cues.map(cue => `"${cue}"`).join(', ')}.` : `No strong cues; prior favors ${r.label}.`,
-      }, { provider: 'baseline', model: 'daybreak-nb-v1', durationMs: performance.now() - started });
+      }, { provider: 'baseline', model: 'nodfirst-nb-v1', durationMs: performance.now() - started });
     },
   };
 }
@@ -299,10 +299,10 @@ export function createProviders() {
   return providers;
 }
 
-// DAYBREAK_PROVIDER picks one explicitly; auto prefers configured hosted providers.
-export function defaultProviderName(providers, requested = env('DAYBREAK_PROVIDER', 'auto')) {
+// NODFIRST_PROVIDER picks one explicitly; auto prefers configured hosted providers.
+export function defaultProviderName(providers, requested = env('NODFIRST_PROVIDER', 'auto')) {
   if (requested !== 'auto') {
-    if (!providers[requested]) throw new Error(`DAYBREAK_PROVIDER must be auto or one of: ${Object.keys(providers).join(', ')}.`);
+    if (!providers[requested]) throw new Error(`NODFIRST_PROVIDER must be auto or one of: ${Object.keys(providers).join(', ')}.`);
     return requested;
   }
   const ollamaChosen = Boolean(env('OLLAMA_MODEL') || env('OLLAMA_BASE_URL'));

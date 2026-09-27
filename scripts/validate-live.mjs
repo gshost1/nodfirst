@@ -8,13 +8,13 @@ import { setTimeout as delay } from 'node:timers/promises';
 
 // Starts actual server processes and calls actual local Ollama. No provider doubles.
 const root = fileURLToPath(new URL('..', import.meta.url));
-const directory = await mkdtemp(join(tmpdir(), 'daybreak-live-'));
+const directory = await mkdtemp(join(tmpdir(), 'nodfirst-live-'));
 let processHandle;
 let session;
 const evidence = { date: new Date().toISOString(), node: process.version, platform: `${process.platform}/${process.arch}`, inference: 'Real local Ollama; no mocks or cloud calls', checks: [] };
 
 async function launch() {
-  const child = spawn(process.execPath, ['src/server.mjs'], { cwd: root, env: { ...process.env, DAYBREAK_PROVIDER: 'ollama', DAYBREAK_DB: join(directory, 'demo.sqlite'), PORT: '0' }, stdio: ['ignore', 'pipe', 'pipe'] });
+  const child = spawn(process.execPath, ['src/server.mjs'], { cwd: root, env: { ...process.env, NODFIRST_PROVIDER: 'ollama', NODFIRST_DB: join(directory, 'demo.sqlite'), PORT: '0' }, stdio: ['ignore', 'pipe', 'pipe'] });
   let output = '';
   let errors = '';
   child.stderr.on('data', chunk => { errors += chunk; });

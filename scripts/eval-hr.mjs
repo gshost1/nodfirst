@@ -127,7 +127,7 @@ for (const name of requested) {
   runs.push(result);
   printRun(result);
   if (name === 'baseline') {
-    // Harder check: never train on survey tickets at all (SAP handwritten + Daybreak seeds only).
+    // Harder check: never train on survey tickets at all (SAP handwritten + NodFirst seeds only).
     const crossRows = await runProvider(createBaselineProvider({ examples: background }), examples);
     const cross = { provider: 'baseline-cross-source', label: 'Offline baseline, cross-source', model: provider.model, mode: 'trained on other sources', wallSeconds: 0, ...score(crossRows) };
     runs.push(cross);
@@ -142,7 +142,7 @@ runs.sort((a, b) => (b.categoryAccuracy ?? 0) - (a.categoryAccuracy ?? 0));
 const report = {
   generatedAt: new Date().toISOString(),
   dataset: { name: 'SAP HR request survey tickets', size: examples.length, source: 'https://github.com/SAP/hr-request-data-set', license: 'Apache-2.0' },
-  note: 'Human-written HR requests by 29 SAP survey participants; Daybreak labels are mapped from SAP categories (docs/EVALUATION.md). Baseline scored with 5-fold cross-validation; hosted providers zero-shot.',
+  note: 'Human-written HR requests by 29 SAP survey participants; NodFirst labels are mapped from SAP categories (docs/EVALUATION.md). Baseline scored with 5-fold cross-validation; hosted providers zero-shot.',
   runs,
 };
 await writeFile(`${root}${out}/latest.json`, JSON.stringify(report, null, 1));

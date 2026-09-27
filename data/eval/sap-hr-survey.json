@@ -1,6 +1,6 @@
 {
- "license": "SAP rows: Apache-2.0, Copyright SAP SE (https://github.com/SAP/hr-request-data-set). Daybreak seeds: MIT.",
- "labeling": "Daybreak route/category/sensitive labels are mapped from the SAP category and sub-category; see docs/EVALUATION.md.",
+ "license": "SAP rows: Apache-2.0, Copyright SAP SE (https://github.com/SAP/hr-request-data-set). NodFirst seeds: MIT.",
+ "labeling": "NodFirst route/category/sensitive labels are mapped from the SAP category and sub-category; see docs/EVALUATION.md.",
  "mapping": {
   "Salary / Salary raise": {
    "route": "payroll",

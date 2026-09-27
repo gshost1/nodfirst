@@ -39,7 +39,7 @@ Failed jobs create **no judgment, approval, or action**, and can be retried. A p
 
 ## Browser and review evidence
 
-- At **1365 px**, the working surface, complete policy checklist, actual 3B result, and admin decision screen rendered without overflow. Screenshots are saved locally under `artifacts/daybreak-desktop.png` and `artifacts/daybreak-approvals.png` (ignored by Git).
+- At **1365 px**, the working surface, complete policy checklist, actual 3B result, and admin decision screen rendered without overflow. Screenshots are saved locally under `artifacts/nodfirst-desktop.png` and `artifacts/nodfirst-approvals.png` (ignored by Git).
 - At **390 px**, navigation and content fit without horizontal page overflow.
 - Both keyboard and click form submissions worked. An unfinished hire form survived a **32-second** background health refresh.
 - The start date `2026-10-05` displayed as **Oct 5, 2026** in the local US time zone.

@@ -1,10 +1,10 @@
 // Creates a fictional hire (plus four hires whose requests are real SAP dataset
 // tickets), then drives each one through the actual HTTP API of a real server
 // process: onboarding, checklist, agent decision, admin approval or rejection,
-// and the audit trail. Uses whichever provider DAYBREAK_PROVIDER selects.
+// and the audit trail. Uses whichever provider NODFIRST_PROVIDER selects.
 //
 //   npm run demo:profile                     # temporary database
-//   DAYBREAK_DB=.data/demo.sqlite npm run demo:profile   # keep it to open in the UI
+//   NODFIRST_DB=.data/demo.sqlite npm run demo:profile   # keep it to open in the UI
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { mkdtemp, readFile, rm, writeFile, mkdir } from 'node:fs/promises';
@@ -14,8 +14,8 @@ import { fileURLToPath } from 'node:url';
 import { setTimeout as delay } from 'node:timers/promises';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const keepDb = process.env.DAYBREAK_DB;
-const directory = keepDb ? null : await mkdtemp(join(tmpdir(), 'daybreak-profile-'));
+const keepDb = process.env.NODFIRST_DB;
+const directory = keepDb ? null : await mkdtemp(join(tmpdir(), 'nodfirst-profile-'));
 const dbPath = keepDb || join(directory, 'profile.sqlite');
 
 const profile = {
@@ -40,7 +40,7 @@ const fromDataset = [
   expected: { route: example.route, category: example.category, source: example.id },
 }));
 
-const child = spawn(process.execPath, ['src/server.mjs'], { cwd: root, env: { ...process.env, DAYBREAK_DB: dbPath, PORT: '0' }, stdio: ['ignore', 'pipe', 'pipe'] });
+const child = spawn(process.execPath, ['src/server.mjs'], { cwd: root, env: { ...process.env, NODFIRST_DB: dbPath, PORT: '0' }, stdio: ['ignore', 'pipe', 'pipe'] });
 let errors = '';
 child.stderr.on('data', chunk => { if (!/ExperimentalWarning|trace-warnings/.test(chunk)) errors += chunk; });
 const base = await new Promise((resolveReady, reject) => {
@@ -70,7 +70,7 @@ try {
   step('Decision engine', { note: `${health.model.label} (${health.model.model}), available=${health.model.available}` });
   assert.ok(health.model.available, `Active provider is unavailable: ${health.model.error}`);
 
-  for (const [index, item] of [{ profile, expected: { route: 'payroll', category: 'expense_refund', source: 'daybreak-demo-profile' } }, ...fromDataset].entries()) {
+  for (const [index, item] of [{ profile, expected: { route: 'payroll', category: 'expense_refund', source: 'nodfirst-demo-profile' } }, ...fromDataset].entries()) {
     const { employee } = await api('/api/employees', item.profile, 201);
     step(`Added fictional hire ${employee.name}`, { note: `${employee.role}, ${employee.location}, ${employee.workMode}` });
     const { workflow } = await api(`/api/employees/${employee.id}/onboard`, {});

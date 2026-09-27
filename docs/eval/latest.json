@@ -6,12 +6,12 @@
   "source": "https://github.com/SAP/hr-request-data-set",
   "license": "Apache-2.0"
  },
- "note": "Human-written HR requests by 29 SAP survey participants; Daybreak labels are mapped from SAP categories (docs/EVALUATION.md). Baseline scored with 5-fold cross-validation; hosted providers zero-shot.",
+ "note": "Human-written HR requests by 29 SAP survey participants; NodFirst labels are mapped from SAP categories (docs/EVALUATION.md). Baseline scored with 5-fold cross-validation; hosted providers zero-shot.",
  "runs": [
   {
    "provider": "baseline",
    "label": "Offline baseline (naive Bayes)",
-   "model": "daybreak-nb-v1",
+   "model": "nodfirst-nb-v1",
    "mode": "5-fold CV",
    "wallSeconds": 0.2,
    "n": 259,
@@ -427,7 +427,7 @@
   {
    "provider": "baseline-cross-source",
    "label": "Offline baseline, cross-source",
-   "model": "daybreak-nb-v1",
+   "model": "nodfirst-nb-v1",
    "mode": "trained on other sources",
    "wallSeconds": 0,
    "n": 259,

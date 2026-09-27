@@ -1,8 +1,8 @@
-# Daybreak
+# NodFirst
 
 An HR onboarding agent demo for the fictional **Northstar Studio**, modeled on how an HR agent should behave: it does the routine work, answers typed questions about every exception, **asks a human for approval**, and keeps a record of every action with an identity, scope, and rationale.
 
-![Daybreak: agent decision on a new hire's exception](docs/demo/hire-decision.png)
+![NodFirst: agent decision on a new hire's exception](docs/demo/hire-decision.png)
 
 [Walkthrough video](docs/demo/walkthrough.webm) · [Overview](docs/demo/overview.png) · [Approvals](docs/demo/approvals.png) · [Activity](docs/demo/activity.png) · [Decision engine](docs/demo/decision-engine.png) · [Mobile](docs/demo/mobile.png)
 
@@ -20,12 +20,12 @@ With no keys set it runs fully offline on the built-in baseline model. To use a 
 | Provider | Environment | Notes |
 | --- | --- | --- |
 | **TypeSafe Jev** | `TYPESAFE_API_KEY`, optional `JEV_MODEL` (default `jev-latest`), `TYPESAFE_BASE_URL` | Typed decision model. One `/v1/systemone` call asks three questions and returns probabilities, not prose. |
-| **Claude** | `ANTHROPIC_API_KEY` (or `DAYBREAK_ANTHROPIC_AUTH_TOKEN`), optional `ANTHROPIC_MODEL` (default `claude-opus-5`), `ANTHROPIC_EFFORT` (default `low`) | Official SDK with JSON-schema structured output. |
+| **Claude** | `ANTHROPIC_API_KEY` (or `NODFIRST_ANTHROPIC_AUTH_TOKEN`), optional `ANTHROPIC_MODEL` (default `claude-opus-5`), `ANTHROPIC_EFFORT` (default `low`) | Official SDK with JSON-schema structured output. |
 | **OpenAI-compatible** | `OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_BASE_URL` | OpenAI, OpenRouter, Groq, vLLM, LM Studio… (subscription credits through OpenRouter work here). |
 | **Ollama** | `OLLAMA_MODEL`, `OLLAMA_BASE_URL` (loopback only) | Local weights; `npm run setup` pulls `qwen2.5:3b`. |
 | **Offline baseline** | none | Naive Bayes trained on `data/training/hr-requests.json`. Returns a full probability distribution like Jev. |
 
-`DAYBREAK_PROVIDER=auto` (the default) picks the first configured provider in this order: Jev, Claude, OpenAI, Ollama, then the baseline. An admin can switch providers at runtime on the **Decision engine** page; the choice is audited and persists. Keys live only in the server environment and never in the browser.
+`NODFIRST_PROVIDER=auto` (the default) picks the first configured provider in this order: Jev, Claude, OpenAI, Ollama, then the baseline. An admin can switch providers at runtime on the **Decision engine** page; the choice is audited and persists. Keys live only in the server environment and never in the browser.
 
 ## Try it
 
@@ -37,7 +37,7 @@ With no keys set it runs fully offline on the built-in baseline model. To use a 
 3. Switch the persona to **Maya Chen · admin** and open **Approvals**. Write a rationale and approve: exactly one local follow-up is created. Reject another request: nothing is created.
 4. **Activity** shows the append-only record. **Overview** lists what needs attention.
 
-`npm run demo:profile` does all of this through the real HTTP API for a fictional hire plus four hires whose requests come from the SAP dataset. Add `DAYBREAK_DB=.data/demo.sqlite` to keep the result and open it in the UI.
+`npm run demo:profile` does all of this through the real HTTP API for a fictional hire plus four hires whose requests come from the SAP dataset. Add `NODFIRST_DB=.data/demo.sqlite` to keep the result and open it in the UI.
 
 ## Evaluation
 
@@ -61,18 +61,18 @@ Jev, Claude and OpenAI runs need an API key. Set one and rerun `npm run eval`; r
 
 Only role, location, work mode, the request text, and relevant fictional policies reach a provider. Names and dates are never sent. Case fields are passed as untrusted data.
 
-- Hosted providers use HTTPS origins you configure. `DAYBREAK_ANTHROPIC_BASE_URL` is explicit, so an ambient `ANTHROPIC_BASE_URL` cannot redirect HR data.
+- Hosted providers use HTTPS origins you configure. `NODFIRST_ANTHROPIC_BASE_URL` is explicit, so an ambient `ANTHROPIC_BASE_URL` cannot redirect HR data.
 - Redirects are refused.
 - Ollama is restricted to loopback, and cloud-tagged models are refused.
 - The server binds to `127.0.0.1` with Host/Origin checks, a per-session CSRF token, and a strict CSP. The UI loads no external assets.
 
-Data lives in `.data/daybreak-v2.sqlite`. v0.1 databases are refused with a clear message because the decision schema changed.
+Data lives in `.data/nodfirst.sqlite`. v0.1 databases are refused with a clear message because the decision schema changed.
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
 | `PORT` | `4317` | Local web port |
-| `DAYBREAK_DB` | `.data/daybreak-v2.sqlite` | SQLite database path |
-| `DAYBREAK_PROVIDER` | `auto` | `auto`, `jev`, `anthropic`, `openai`, `ollama`, or `baseline` |
+| `NODFIRST_DB` | `.data/nodfirst.sqlite` | SQLite database path |
+| `NODFIRST_PROVIDER` | `auto` | `auto`, `jev`, `anthropic`, `openai`, `ollama`, or `baseline` |
 
 ## Tests
 
