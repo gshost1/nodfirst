@@ -328,7 +328,7 @@ main { width: 100%; max-width: 1180px; margin: 0 auto; padding: 40px 36px 72px; 
 .provider.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow-lift); }
 .provider-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .provider h3 { font-size: 15px; font-weight: 600; }
-.provider p { color: var(--muted); font-size: 13px; }
+.provider p { color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
 .provider .mono { color: var(--text-2); overflow-wrap: anywhere; }
 .provider-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 4px; }
 .eval-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
