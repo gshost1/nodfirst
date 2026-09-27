@@ -11,7 +11,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const personas = { coordinator: 'Jordan Lee (coordinator)', admin: 'Maya Chen (admin)' };
 const staticFiles = { '/': ['index.html', 'text/html'], '/index.html': ['index.html', 'text/html'], '/app.js': ['app.js', 'text/javascript'], '/styles.css': ['styles.css', 'text/css'], '/favicon.svg': ['favicon.svg', 'image/svg+xml'] };
 
-export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.data/daybreak-v2.sqlite'), provider, providers, worker = true } = {}) {
+export function createApp({ dbPath = process.env.NODFIRST_DB || resolve(root, '.data/nodfirst.sqlite'), provider, providers, worker = true } = {}) {
   const store = createStore(dbPath);
   const service = createWorkflowService(store);
   providers ??= provider ? { [provider.name]: provider } : createProviders();
@@ -25,7 +25,7 @@ export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.
   const sessions = new Map();
   let stopWorker = async () => {};
   function getSession(req, res) {
-    const cookie = /(?:^|;\s*)daybreak_session=([a-f0-9]{48})(?:;|$)/.exec(req.headers.cookie || '')?.[1];
+    const cookie = /(?:^|;\s*)nodfirst_session=([a-f0-9]{48})(?:;|$)/.exec(req.headers.cookie || '')?.[1];
     let entry = cookie && sessions.get(cookie);
     if (entry && entry.expiresAt < Date.now()) { sessions.delete(cookie); entry = null; }
     if (!entry) {
@@ -33,7 +33,7 @@ export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.
       entry = { role: 'coordinator', actor: personas.coordinator, csrfToken: randomBytes(24).toString('hex'), expiresAt: Date.now() + 12 * 60 * 60 * 1000 };
       if (sessions.size > 1000) sessions.clear();
       sessions.set(token, entry);
-      res.setHeader('Set-Cookie', `daybreak_session=${token}; HttpOnly; SameSite=Strict; Path=/; Max-Age=43200`);
+      res.setHeader('Set-Cookie', `nodfirst_session=${token}; HttpOnly; SameSite=Strict; Path=/; Max-Age=43200`);
     }
     return entry;
   }
@@ -58,7 +58,7 @@ export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.
       const address = server.address();
       const port = typeof address === 'object' ? address.port : 4317;
       const allowedHosts = new Set([`127.0.0.1:${port}`, `localhost:${port}`]);
-      if (!allowedHosts.has(req.headers.host)) throw new AppError(403, 'Use the local Daybreak address shown in your terminal.');
+      if (!allowedHosts.has(req.headers.host)) throw new AppError(403, 'Use the local NodFirst address shown in your terminal.');
       const origin = req.headers.origin;
       if (origin && ![`http://127.0.0.1:${port}`, `http://localhost:${port}`].includes(origin)) throw new AppError(403, 'Requests must come from this local app.');
       if (req.headers['sec-fetch-site'] === 'cross-site') throw new AppError(403, 'Cross-site requests are not allowed.');
@@ -129,7 +129,7 @@ export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const app = createApp();
   const address = await app.listen();
-  console.log(`Daybreak is ready at ${address}\nSynthetic demo · SQLite persistence · decisions: ${app.provider.label || app.provider.name} (${app.provider.model})`);
+  console.log(`NodFirst is ready at ${address}\nSynthetic demo · SQLite persistence · decisions: ${app.provider.label || app.provider.name} (${app.provider.model})`);
   let closing = false;
   for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, async () => {
     if (closing) return; closing = true;

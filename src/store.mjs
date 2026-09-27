@@ -16,7 +16,7 @@ export function createStore(path) {
   const legacy = db.prepare("SELECT sql FROM sqlite_master WHERE type='table' AND name='judgments'").get();
   if (legacy && !legacy.sql.includes('payroll')) {
     db.close();
-    throw new Error(`${path} was created by Daybreak v0.1 and cannot store the new decision fields. Use a new DAYBREAK_DB path (the default is now .data/daybreak-v2.sqlite).`);
+    throw new Error(`${path} was created by an older version (v0.1) and cannot store the new decision fields. Use a new NODFIRST_DB path (the default is now .data/nodfirst.sqlite).`);
   }
   db.exec(`
     PRAGMA foreign_keys = ON;

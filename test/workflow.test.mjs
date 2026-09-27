@@ -34,7 +34,7 @@ async function waitFor(fn, timeout = 5000) {
 }
 
 test('HTTP approval gate, duplicate prevention, rejection, policies and persistent audit', async t => {
-  const directory = await mkdtemp(join(tmpdir(), 'daybreak-test-'));
+  const directory = await mkdtemp(join(tmpdir(), 'nodfirst-test-'));
   let app = createApp({ dbPath: join(directory, 'test.sqlite'), provider: mockProvider, worker: false });
   t.after(async () => { await app.close(); await rm(directory, { recursive: true, force: true }); });
   let c = await client(app);
@@ -129,7 +129,7 @@ test('model failure creates no fake judgment, approval or action; retry is durab
 });
 
 test('interrupted running job is requeued and produces one judgment after reopening', async () => {
-  const directory = await mkdtemp(join(tmpdir(), 'daybreak-recovery-'));
+  const directory = await mkdtemp(join(tmpdir(), 'nodfirst-recovery-'));
   const path = join(directory, 'db.sqlite');
   let store = createStore(path);
   try {
@@ -170,7 +170,7 @@ test('worker shutdown waits for in-flight inference across several timer ticks',
 });
 
 test('admin-only provider switch persists, is audited, and refuses unconfigured providers', async t => {
-  const directory = await mkdtemp(join(tmpdir(), 'daybreak-test-'));
+  const directory = await mkdtemp(join(tmpdir(), 'nodfirst-test-'));
   const second = { ...mockProvider, name: 'second', label: 'Second', model: 'mock-2', configured: true, judge: async () => ({ ...judgment, provider: 'second', route: 'payroll', confidence: 0.91, category: 'compensation', sensitive: 0.2, probabilities: { payroll: 0.91, people_ops: 0.09 } }) };
   const missing = { ...mockProvider, name: 'missing', label: 'Missing', configured: false, setup: 'Set MISSING_KEY.', health: async () => ({ available: false, error: 'MISSING_KEY is not set.' }) };
   const providers = { 'test-double': { ...mockProvider, configured: true }, second, missing };

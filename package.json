@@ -1,5 +1,5 @@
 {
-  "name": "daybreak-onboarding",
+  "name": "nodfirst",
   "version": "0.2.0",
   "private": true,
   "description": "An HR onboarding agent demo with typed decisions (Jev, Claude, OpenAI-compatible, Ollama, offline) and human approvals.",

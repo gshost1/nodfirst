@@ -1,8 +1,8 @@
-# Daybreak implementation contract
+# NodFirst implementation contract
 
 Local Node >=22.13 ESM application, built-in SQLite and HTTP, static vanilla JS UI. Root owns `src/server.mjs`, `src/store.mjs`, `src/workflow.mjs`, package/config and integration tests. UI agent owns `public/`. Provider agent owns `src/provider.mjs`, `scripts/setup.mjs`, `scripts/model-smoke.mjs`, provider tests. Fixture agent owns `src/fixtures.mjs` and `docs/HANDBOOK.md`.
 
-All domain records use camelCase keys and ISO timestamps. IDs are opaque strings. A record referenced by `workflowId` belongs to that workflow. State is persisted in `.data/daybreak.sqlite`; model weights stay in Ollama storage. All employee and handbook data is fictional.
+All domain records use camelCase keys and ISO timestamps. IDs are opaque strings. A record referenced by `workflowId` belongs to that workflow. State is persisted in `.data/nodfirst.sqlite`; model weights stay in Ollama storage. All employee and handbook data is fictional.
 
 ## HTTP interface
 
@@ -44,4 +44,4 @@ Exports `company={name:'Northstar Studio',synthetic:true}`, `policies` with IDs 
 
 ## Visual direction
 
-Product name Daybreak. Warm ivory background, dark ink type, forest/sage accents and amber review status. Compact left navigation, visible new-hire queue, selected hire detail with policy-backed checklist, local judgment card, admin approvals and audit views. Immediately usable working surface. Native controls, accessible labels, keyboard focus, responsive stacking. No external fonts, images, scripts, network calls or decorative dashboard graphs. Show synthetic/local demo and model confidence caveat clearly. Error, busy and empty states must be real.
+Product name NodFirst. Warm ivory background, dark ink type, forest/sage accents and amber review status. Compact left navigation, visible new-hire queue, selected hire detail with policy-backed checklist, local judgment card, admin approvals and audit views. Immediately usable working surface. Native controls, accessible labels, keyboard focus, responsive stacking. No external fonts, images, scripts, network calls or decorative dashboard graphs. Show synthetic/local demo and model confidence caveat clearly. Error, busy and empty states must be real.

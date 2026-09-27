@@ -9,9 +9,9 @@ No Hugging Face dataset for HR decisions was reachable from the build environmen
 | File in this repo | Contents | Use |
 | --- | --- | --- |
 | `data/eval/sap-hr-survey.json` | 259 human-written requests from `survey_tickets/*.xlsx` | **Test set** |
-| `data/training/hr-requests.json` | 70 SAP hand-written tickets + 36 Daybreak-authored seeds + the 259 survey tickets | Training data for the in-app offline baseline |
+| `data/training/hr-requests.json` | 70 SAP hand-written tickets + 36 NodFirst-authored seeds + the 259 survey tickets | Training data for the in-app offline baseline |
 
-SAP labels each request with a category and sub-category. Daybreak asks three typed questions: a route (the team that owns the follow-up), a category, and a sensitivity probability. The mapping below is our own labeling layer, so route and sensitivity accuracy measure agreement with *these* labels:
+SAP labels each request with a category and sub-category. NodFirst asks three typed questions: a route (the team that owns the follow-up), a category, and a sensitivity probability. The mapping below is our own labeling layer, so route and sensitivity accuracy measure agreement with *these* labels:
 
 | SAP category / sub-category | n | Route | Category | Sensitive |
 | --- | ---: | --- | --- | --- |

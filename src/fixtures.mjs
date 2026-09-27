@@ -1,4 +1,4 @@
-// Fully fictional data for the local Daybreak onboarding demonstration.
+// Fully fictional data for the local NodFirst onboarding demonstration.
 // Keep all dates and identities synthetic; these records are not people data.
 
 export const company = {

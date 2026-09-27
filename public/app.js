@@ -105,7 +105,7 @@ async function refreshEvaluation() {
 }
 
 function showFatal(error) {
-  app.innerHTML = `<div class="fatal"><div class="eyebrow">Daybreak could not open</div><h1>Connection needed</h1><p>${text(error.message)}</p><div><button class="button primary" data-action="retry-load">Try again</button></div></div>`;
+  app.innerHTML = `<div class="fatal"><div class="eyebrow">NodFirst could not open</div><h1>Connection needed</h1><p>${text(error.message)}</p><div><button class="button primary" data-action="retry-load">Try again</button></div></div>`;
 }
 
 function renderSafely() {
@@ -130,7 +130,7 @@ function render() {
   const role = data.session.role;
   app.innerHTML = `
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark" aria-hidden="true"><span></span></div><div><strong>Daybreak</strong><small>HR agent · ${text(data.company?.name)}</small></div></div>
+      <div class="brand"><div class="brand-mark" aria-hidden="true"><span></span></div><div><strong>NodFirst</strong><small>HR agent · ${text(data.company?.name)}</small></div></div>
       <nav class="nav" aria-label="Primary">
         <div class="nav-label">Workspace</div>
         ${navLink('overview')}
@@ -173,7 +173,7 @@ function renderOverview() {
   const hour = new Date().getHours();
   const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
   const recent = [...all('audit')].sort((a, b) => b.createdAt.localeCompare(a.createdAt)).slice(0, 7);
-  return `${pageHead('Overview', `${greeting}, ${isAdmin() ? 'Maya' : 'Jordan'}`, 'Daybreak runs onboarding checklists and routes every exception through a typed decision model. Nothing leaves review without a person.', `<button class="button primary" type="button" data-action="new-hire">New hire</button>`)}
+  return `${pageHead('Overview', `${greeting}, ${isAdmin() ? 'Maya' : 'Jordan'}`, 'NodFirst runs onboarding checklists and routes every exception through a typed decision model. Nothing leaves review without a person.', `<button class="button primary" type="button" data-action="new-hire">New hire</button>`)}
     <div class="kpis">
       <div class="panel kpi"><small>Active onboardings</small><strong>${workflows.filter(w => w.status === 'active').length}</strong><span>${workflows.filter(w => w.status === 'complete').length} completed</span></div>
       <div class="panel kpi"><small>Awaiting approval</small><strong>${pending.length}</strong><span>human decision required</span></div>
