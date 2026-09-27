@@ -1,93 +1,99 @@
 # Daybreak
 
-A runnable local HR onboarding demo for the fictional **Northstar Studio**. Start a policy-backed checklist, ask a real local model to route an exception, review it as an admin, and retain the decision and local follow-up in SQLite.
+An HR onboarding agent demo for the fictional **Northstar Studio**, modeled on how an HR agent should behave: it does the routine work, answers typed questions about every exception, **asks a human for approval**, and keeps a record of every action with an identity, scope, and rationale.
 
-## Demo
+![Daybreak: agent decision on a new hire's exception](docs/demo/hire-decision.png)
 
-[Watch the 50-second walkthrough](docs/demo/daybreak-dark-walkthrough.mp4) · [Full desktop view](docs/demo/daybreak-dark-desktop.png) · [Mobile view](docs/demo/daybreak-dark-mobile.png)
-
-![Daybreak dark onboarding workspace](docs/demo/daybreak-dark-preview.png)
+[Walkthrough video](docs/demo/walkthrough.webm) · [Overview](docs/demo/overview.png) · [Approvals](docs/demo/approvals.png) · [Activity](docs/demo/activity.png) · [Decision engine](docs/demo/decision-engine.png) · [Mobile](docs/demo/mobile.png)
 
 ## Run
 
-Prerequisites: **Node 24.2+** and **Ollama** installed and running. On this Mac, Node 26.7 and Ollama are already available. If Ollama is stopped, open its app or run `OLLAMA_NO_CLOUD=1 ollama serve` in a separate terminal. This environment variable must be set on the Ollama daemon, not just on Daybreak.
-
-From the repository:
+Requires **Node 22.13+**; Node 24 is recommended because it has stable `node:sqlite`.
 
 ```sh
-npm run setup
-npm start
+npm install
+npm start          # http://127.0.0.1:4317
 ```
 
-Open **http://127.0.0.1:4317**. There are no npm runtime dependencies or paid API keys. Setup checks the local runtime and downloads `qwen2.5:3b` through Ollama only if it is missing (about 1.9 GB). Model download requires internet; normal use with installed weights uses only loopback requests. Model weights stay in Ollama's storage, outside this repository.
+With no keys set it runs fully offline on the built-in baseline model. To use a hosted decision model, export a key before `npm start`:
 
-## Try the complete flow
+| Provider | Environment | Notes |
+| --- | --- | --- |
+| **TypeSafe Jev** | `TYPESAFE_API_KEY`, optional `JEV_MODEL` (default `jev-latest`), `TYPESAFE_BASE_URL` | Typed decision model. One `/v1/systemone` call asks three questions and returns probabilities, not prose. |
+| **Claude** | `ANTHROPIC_API_KEY` (or `DAYBREAK_ANTHROPIC_AUTH_TOKEN`), optional `ANTHROPIC_MODEL` (default `claude-opus-5`), `ANTHROPIC_EFFORT` (default `low`) | Official SDK with JSON-schema structured output. |
+| **OpenAI-compatible** | `OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_BASE_URL` | OpenAI, OpenRouter, Groq, vLLM, LM Studio… (subscription credits through OpenRouter work here). |
+| **Ollama** | `OLLAMA_MODEL`, `OLLAMA_BASE_URL` (loopback only) | Local weights; `npm run setup` pulls `qwen2.5:3b`. |
+| **Offline baseline** | none | Naive Bayes trained on `data/training/hr-requests.json`. Returns a full probability distribution like Jev. |
 
-1. Select **Avery Chen** and click **Start onboarding**. Each task includes its owner and fictional handbook policy. Mark ordinary tasks done.
-2. Click **Run local judgment**. Wait for the actual Ollama result, suggested route, uncalibrated confidence, and uncertainty flag. A failed run stays visibly failed and can be retried; it never becomes a pretend result.
-3. Switch the **Demo persona** to **Maya Chen · admin** and open **Approvals**. Enter a reason, then **Approve & create local task**. One internal follow-up record is created atomically with the decision.
-4. Run **Jules Martin** through onboarding and judgment, then reject that request. Rejection creates no follow-up action.
-5. Open **Audit trail** for the decision maker, reason, action, and timestamps. Stop the app with Ctrl-C and start it again: workflows and history remain. Browser demo sessions reset to coordinator.
+`DAYBREAK_PROVIDER=auto` (the default) picks the first configured provider in this order: Jev, Claude, OpenAI, Ollama, then the baseline. An admin can switch providers at runtime on the **Decision engine** page; the choice is audited and persists. Keys live only in the server environment and never in the browser.
 
-**Noor Alvarez** exercises a checklist without an exception. **Theo Okafor** supplies an ordinary IT routing case. You can also add a fictional hire. Use synthetic information only.
+## Try it
+
+1. **New hires**: select Avery Chen, then **Start onboarding** and mark the ordinary tasks done.
+2. **Run agent decision.** The agent answers three typed questions:
+   - **route**: IT, People Ops, Payroll & Benefits, Security, or "needs a human", with a bar for each option's probability
+   - **category**
+   - **sensitive**: the probability the request needs confidential handling
+3. Switch the persona to **Maya Chen · admin** and open **Approvals**. Write a rationale and approve: exactly one local follow-up is created. Reject another request: nothing is created.
+4. **Activity** shows the append-only record. **Overview** lists what needs attention.
+
+`npm run demo:profile` does all of this through the real HTTP API for a fictional hire plus four hires whose requests come from the SAP dataset. Add `DAYBREAK_DB=.data/demo.sqlite` to keep the result and open it in the UI.
+
+## Evaluation
+
+`npm run eval` scores providers on **259 human-written HR requests** from [SAP/hr-request-data-set](https://github.com/SAP/hr-request-data-set) (Apache-2.0). Full write-up: [docs/EVALUATION.md](docs/EVALUATION.md).
+
+| Provider | Mode | Route | Category | Flagged | Accuracy when not flagged |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Offline baseline | 5-fold CV | 98.1% | 91.1% | 5.4% | 99.6% |
+| Offline baseline | cross-source (no survey tickets in training) | 91.5% | 66.4% | 36.7% | 97.6% |
+
+Jev, Claude and OpenAI runs need an API key. Set one and rerun `npm run eval`; results appear in the table above and in the app.
 
 ## What is real, and what is simulated
 
-- **Real:** local model inference, SQLite storage, durable jobs, server-side role checks, approval/rejection, internal follow-up creation, and append-only application audit/event records.
-- **Simulated:** the company, handbook, employees, and persona identities. The persona switch is intentionally available to anyone using this local demo; it is **not production authentication**. Completing a checklist records an acknowledgment; it does not provision a laptop or account.
-- A follow-up is only a database task record. There is no email delivery, HRIS write, account access grant, spending, payroll, benefits eligibility, hiring, or termination action.
-- The model only proposes a route. Code creates tasks, validates dates and inputs, enforces permissions and review, and executes the approved local action. **Every exception requires admin review**, including confident model results. Confidence is not calibrated; routing may still be wrong.
+- **Real:** the decision calls to the configured provider, SQLite storage, durable jobs that survive restarts, server-side role checks, approval and rejection, follow-up creation, append-only audit, and the evaluation data.
+- **Simulated:** the company, the handbook, the employees, and the persona switch. The persona switch is **not authentication**. A follow-up is a local database record: no email, HRIS write, payroll change, payment, access grant, or eligibility decision ever happens.
+- **The model only proposes.** Code validates every answer against the schema and forces `uncertain` below 0.75 confidence or when the route is `uncertain`. Code also refuses any action without an admin decision, which a database trigger enforces.
+  - Confidence from LLM providers is self-reported and uncalibrated. Jev's and the baseline's are distribution-based.
 
-**Observed model limitation:** during validation, the original 1.5B model wrongly treated a mixed laptop/stipend question as a security request with 90% confidence. The final 3B model handled that case better, but still routed the ordinary VPN/authenticator fixture to Security with 100% confidence. These are real model errors, not policy decisions. The admin gate prevents an automatic external action; the small model is not ready for autonomous HR routing.
+## Data boundary
 
-## Local data and inference
+Only role, location, work mode, the request text, and relevant fictional policies reach a provider. Names and dates are never sent. Case fields are passed as untrusted data.
 
-The server binds to `127.0.0.1`. The UI loads no external assets. Requests have same-origin/Host checks and a per-session CSRF token. The provider accepts only loopback HTTP origins, refuses redirects and cloud-tagged models, and verifies local weight metadata before sending a case. For defense in depth, run Ollama with `OLLAMA_NO_CLOUD=1`. The local daemon and machine owner remain trusted.
+- Hosted providers use HTTPS origins you configure. `DAYBREAK_ANTHROPIC_BASE_URL` is explicit, so an ambient `ANTHROPIC_BASE_URL` cannot redirect HR data.
+- Redirects are refused.
+- Ollama is restricted to loopback, and cloud-tagged models are refused.
+- The server binds to `127.0.0.1` with Host/Origin checks, a per-session CSRF token, and a strict CSP. The UI loads no external assets.
 
-Only role, location, work mode, exception text, and relevant fictional policies are sent to local inference; names and start dates are omitted from the structured input. There is no cloud fallback. A custom provider should preserve this explicit boundary.
-
-Data lives in `.data/daybreak.sqlite` with SQLite WAL files. Use one app process per database. Stop the app before copying the entire `.data` directory for a backup. Audit and event tables reject updates/deletes through database triggers; they are not cryptographically tamper-proof against the machine owner.
-
-To start an independent fresh demo while retaining existing data:
-
-```sh
-DAYBREAK_DB=.data/fresh-demo.sqlite PORT=4318 npm start
-```
-
-Optional environment variables (see `.env.example`; export them in your shell):
+Data lives in `.data/daybreak-v2.sqlite`. v0.1 databases are refused with a clear message because the decision schema changed.
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
 | `PORT` | `4317` | Local web port |
-| `DAYBREAK_DB` | `.data/daybreak.sqlite` | SQLite database path |
-| `OLLAMA_BASE_URL` | `http://127.0.0.1:11434` | Loopback Ollama origin |
-| `OLLAMA_MODEL` | `qwen2.5:3b` | Installed local model; cloud models refused |
+| `DAYBREAK_DB` | `.data/daybreak-v2.sqlite` | SQLite database path |
+| `DAYBREAK_PROVIDER` | `auto` | `auto`, `jev`, `anthropic`, `openai`, `ollama`, or `baseline` |
 
-If inference is unavailable, the rest of the checklist remains usable. Start Ollama, run setup, then retry the failed judgment. Jobs interrupted by a crash are requeued on restart; graceful shutdown waits for in-flight inference. Completed judgments and approval decisions are not rerun.
-
-## Validation
+## Tests
 
 ```sh
-npm test             # Deterministic workflow and provider boundary tests
-npm run model:smoke   # One actual local model invocation
-npm run test:live     # Actual server processes, real inference, approval/rejection and restart
+npm test              # 19 deterministic tests: workflow, approval gate, providers (mock servers), baseline, provider switching
+npm run eval          # dataset evaluation
+npm run demo:profile  # end-to-end fictional profile through a real server process
+npm run test:live     # real Ollama end-to-end (requires Ollama)
 ```
-
-Unit/integration tests explicitly use provider doubles and loopback mock servers. The live test uses real Ollama, temporary SQLite storage, and actual server process restart; it leaves the demo database unchanged. Run `VALIDATION_OUTPUT=docs/validation-live.json npm run test:live` to save evidence. See [validation evidence](docs/VALIDATION.md).
 
 ## Code map
 
 | Path | Responsibility |
 | --- | --- |
-| `src/server.mjs` | HTTP, sessions, request boundaries, local asset serving |
-| `src/store.mjs` | Schema, persistence, events, audit constraints |
-| `src/workflow.mjs` | Deterministic routine, job worker, approval transaction |
-| `src/provider.mjs` | Narrow `health()` / `judge()` local inference adapter |
-| `src/fixtures.mjs` | Synthetic company, policies, routines, and employees |
-| `public/` | Accessible responsive web UI, no build step |
+| `src/decision.mjs` | The typed decision contract: routes, categories, the Jev-style questions, schema, and validation |
+| `src/providers.mjs` | Jev, Claude, OpenAI-compatible, and offline baseline providers; the registry and default selection |
+| `src/provider.mjs` | Ollama local provider (loopback-only, local-weights verification) |
+| `src/server.mjs` | HTTP, sessions, provider switching, and static assets |
+| `src/store.mjs`, `src/workflow.mjs` | Schema and persistence; the routine, job worker, and approval transaction |
+| `public/` | Dark UI: vanilla JS, no build step |
+| `data/` | SAP evaluation set, baseline training data, and the SAP license |
+| `scripts/eval-hr.mjs`, `scripts/demo-profile.mjs` | Evaluation harness and end-to-end profile run |
 
-The [API contract](docs/API.md) and [fictional handbook](docs/HANDBOOK.md) describe the domain. A future TypeSafe Jev or customer-configured provider can implement the narrow inference interface; it must not take ownership of workflow state or action authorization.
-
-Before a real pilot: add authenticated identities and access control, a reviewed policy and routing evaluation set, privacy/retention controls, migration/versioning strategy, and one explicitly authorized HRIS integration. This demo is intentionally a single-process local application.
-
-MIT licensed. Independently designed; no Warp source, branding, or assets are included.
+MIT licensed; SAP data rows are Apache-2.0 (`data/LICENSE-SAP-Apache-2.0.txt`). Independently designed. No Warp or TypeSafe source, branding, or assets are included.

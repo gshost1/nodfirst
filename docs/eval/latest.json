@@ -1,0 +1,844 @@
+{
+ "generatedAt": "2026-09-26T23:10:56.791Z",
+ "dataset": {
+  "name": "SAP HR request survey tickets",
+  "size": 259,
+  "source": "https://github.com/SAP/hr-request-data-set",
+  "license": "Apache-2.0"
+ },
+ "note": "Human-written HR requests by 29 SAP survey participants; Daybreak labels are mapped from SAP categories (docs/EVALUATION.md). Baseline scored with 5-fold cross-validation; hosted providers zero-shot.",
+ "runs": [
+  {
+   "provider": "baseline",
+   "label": "Offline baseline (naive Bayes)",
+   "model": "daybreak-nb-v1",
+   "mode": "5-fold CV",
+   "wallSeconds": 0.2,
+   "n": 259,
+   "errors": 0,
+   "routeAccuracy": 0.9806949806949807,
+   "safeRouteRate": 0.9806949806949807,
+   "categoryAccuracy": 0.9111969111969112,
+   "sensitiveAccuracy": 0.9459459459459459,
+   "flaggedRate": 0.05405405405405406,
+   "accuracyWhenNotFlagged": 0.9959183673469387,
+   "meanConfidence": 0.9478660449459001,
+   "ece": 0.03445614507867911,
+   "calibration": [
+    {
+     "bin": "0-0.1",
+     "n": 0,
+     "meanConfidence": null,
+     "accuracy": null
+    },
+    {
+     "bin": "0.1-0.2",
+     "n": 0,
+     "meanConfidence": null,
+     "accuracy": null
+    },
+    {
+     "bin": "0.2-0.3",
+     "n": 0,
+     "meanConfidence": null,
+     "accuracy": null
+    },
+    {
+     "bin": "0.3-0.4",
+     "n": 0,
+     "meanConfidence": null,
+     "accuracy": null
+    },
+    {
+     "bin": "0.4-0.5",
+     "n": 0,
+     "meanConfidence": null,
+     "accuracy": null
+    },
+    {
+     "bin": "0.5-0.6",
+     "n": 6,
+     "meanConfidence": 0.5351206013638293,
+     "accuracy": 0.5
+    },
+    {
+     "bin": "0.6-0.7",
+     "n": 5,
+     "meanConfidence": 0.6459099390722496,
+     "accuracy": 0.8
+    },
+    {
+     "bin": "0.7-0.8",
+     "n": 9,
+     "meanConfidence": 0.762592761902248,
+     "accuracy": 0.8888888888888888
+    },
+    {
+     "bin": "0.8-0.9",
+     "n": 22,
+     "meanConfidence": 0.849400897541074,
+     "accuracy": 1
+    },
+    {
+     "bin": "0.9-1",
+     "n": 217,
+     "meanConfidence": 0.983902662370599,
+     "accuracy": 1
+    }
+   ],
+   "meanLatencyMs": 0.4749034749034749,
+   "confusion": {
+    "labels": [
+     "workspace_setup",
+     "compensation",
+     "expense_refund",
+     "leave_life_event",
+     "schedule_change",
+     "complaint",
+     "policy_info",
+     "access_request"
+    ],
+    "matrix": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      41,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      40,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      76,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      11,
+      18,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      3,
+      0,
+      1,
+      0,
+      29,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      32,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "routeConfusion": {
+    "rows": [
+     "payroll",
+     "people_ops"
+    ],
+    "columns": [
+     "it",
+     "people_ops",
+     "payroll",
+     "security",
+     "uncertain"
+    ],
+    "matrix": [
+     [
+      0,
+      4,
+      78,
+      0,
+      0
+     ],
+     [
+      0,
+      176,
+      1,
+      0,
+      0
+     ]
+    ]
+   },
+   "bySource": {
+    "Salary / Salary raise": {
+     "n": 21,
+     "route": 0.9047619047619048,
+     "category": 1
+    },
+    "Life event / Personal issues": {
+     "n": 41,
+     "route": 1,
+     "category": 1
+    },
+    "Life event / Health issues": {
+     "n": 35,
+     "route": 1,
+     "category": 1
+    },
+    "Complaint / complaint": {
+     "n": 34,
+     "route": 0.9705882352941176,
+     "category": 0.8529411764705882
+    },
+    "Refund / Refund travel": {
+     "n": 40,
+     "route": 1,
+     "category": 1
+    },
+    "Timetable change / Shift change": {
+     "n": 30,
+     "route": 1,
+     "category": 0.6
+    },
+    "Salary / Gender pay gap": {
+     "n": 21,
+     "route": 0.9047619047619048,
+     "category": 0.9523809523809523
+    },
+    "Ask information / Accommodation": {
+     "n": 37,
+     "route": 1,
+     "category": 0.8648648648648649
+    }
+   },
+   "sampleErrors": [
+    {
+     "id": "sap-survey-032",
+     "text": "Dear colleagues,\nI am a sole caregiver to my father, who is seriously ill since 3 years. \nI have to bring him to the hospital for his exams on Wednesday 30.06.2022. I have a shift scheduled for that day and I would like ",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.99
+     },
+     "reason": "Strongest cues for people_ops: \"shift\", \"day\", \"change\", \"hospital\"."
+    },
+    {
+     "id": "sap-survey-061",
+     "text": "Goodmorning, I would like to ask further information on how to make  request for a 1 month accommodation at Eixample, thank you",
+     "expected": {
+      "route": "people_ops",
+      "category": "policy_info"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.93
+     },
+     "reason": "Strongest cues for people_ops: \"information\", \"like\", \"request\", \"make\"."
+    },
+    {
+     "id": "sap-survey-110",
+     "text": "Hello,\n\ndue to a wedding of my son I cannot work on 20.12.06 and want to work on 22.12.14 instead\nPlease confirm that this is possible\n\nThank you\nJacqueline",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.98
+     },
+     "reason": "Strongest cues for people_ops: \"due\", \"cannot\", \"work\", \"son\"."
+    },
+    {
+     "id": "sap-survey-121",
+     "text": "I have a question which I cannot clarify with my manager Bert Brezel from Switzerland. He is paying my colleague Fritz Teuer 13,9% more then me even if we have the same job and I even work harder than Fritz. I have the i",
+     "expected": {
+      "route": "payroll",
+      "category": "compensation"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "complaint",
+      "confidence": 0.79
+     },
+     "reason": "Strongest cues for people_ops: \"colleague\", \"he\", \"cannot\", \"like\"."
+    },
+    {
+     "id": "sap-survey-156",
+     "text": "Dear Sir/Madam, I am writing to you about serious matter, happened to me recently while interacting with one of my colleagues. After my work was presented on the meeting I was expecting sincere and open discussion, but m",
+     "expected": {
+      "route": "people_ops",
+      "category": "complaint"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "compensation",
+      "confidence": 0.68
+     },
+     "reason": "Strongest cues for people_ops: \"colleague\", \"any\", \"about\", \"next\"."
+    },
+    {
+     "id": "sap-survey-025",
+     "text": "Dear All, Laurent Spoos always get rid of my.Please help me",
+     "expected": {
+      "route": "people_ops",
+      "category": "complaint"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "policy_info",
+      "confidence": 0.86
+     },
+     "reason": "Strongest cues for people_ops: \"help\", \"all\", \"get\"."
+    },
+    {
+     "id": "sap-survey-038",
+     "text": "Hi. I don't get the latest disclosed numbers. Is there really a difference of 48.5% ofsalary between our different colleagues? Is it something that is going to be sorted out?",
+     "expected": {
+      "route": "payroll",
+      "category": "compensation"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "compensation",
+      "confidence": 0.51
+     },
+     "reason": "Strongest cues for people_ops: \"don\", \"going\", \"out\", \"colleagues\"."
+    },
+    {
+     "id": "sap-survey-111",
+     "text": "for personal reasons switch my working schedule from 28th of June 06 to 02nd of July 14.",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.93
+     },
+     "reason": "Strongest cues for people_ops: \"july\", \"june\", \"personal\", \"working\"."
+    },
+    {
+     "id": "sap-survey-010",
+     "text": "Hi . I kindly ask you to a day off for a medical consultation. Thank you in advance",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 1
+     },
+     "reason": "Strongest cues for people_ops: \"off\", \"day\", \"day off\", \"medical\"."
+    },
+    {
+     "id": "sap-survey-026",
+     "text": "Dear all Stephan Roux says stupid things about my gender.",
+     "expected": {
+      "route": "people_ops",
+      "category": "complaint"
+     },
+     "predicted": {
+      "route": "payroll",
+      "category": "compensation",
+      "confidence": 0.5
+     },
+     "reason": "Strongest cues for payroll: \"gender\", \"about\", \"all\", \"about gender\"."
+    },
+    {
+     "id": "sap-survey-048",
+     "text": "I would need to have a very comfortable accomadation. No need to propose me small appartment or a view on a parking. Sea view or garden view would be a must. Please come back to me asap.",
+     "expected": {
+      "route": "people_ops",
+      "category": "policy_info"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.97
+     },
+     "reason": "Strongest cues for people_ops: \"come\", \"very\", \"need\", \"back\"."
+    },
+    {
+     "id": "sap-survey-049",
+     "text": "This cannot be rejected. I need this shift. My manager already agreed so this should only be an admin task now. Thank you.",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.89
+     },
+     "reason": "Strongest cues for people_ops: \"shift\", \"cannot\", \"now\", \"should\"."
+    }
+   ],
+   "failures": []
+  },
+  {
+   "provider": "baseline-cross-source",
+   "label": "Offline baseline, cross-source",
+   "model": "daybreak-nb-v1",
+   "mode": "trained on other sources",
+   "wallSeconds": 0,
+   "n": 259,
+   "errors": 0,
+   "routeAccuracy": 0.915057915057915,
+   "safeRouteRate": 0.915057915057915,
+   "categoryAccuracy": 0.6640926640926641,
+   "sensitiveAccuracy": 0.752895752895753,
+   "flaggedRate": 0.3667953667953668,
+   "accuracyWhenNotFlagged": 0.975609756097561,
+   "meanConfidence": 0.7790562867410192,
+   "ece": 0.1360016283168958,
+   "calibration": [
+    {
+     "bin": "0-0.1",
+     "n": 0,
+     "meanConfidence": null,
+     "accuracy": null
+    },
+    {
+     "bin": "0.1-0.2",
+     "n": 0,
+     "meanConfidence": null,
+     "accuracy": null
+    },
+    {
+     "bin": "0.2-0.3",
+     "n": 0,
+     "meanConfidence": null,
+     "accuracy": null
+    },
+    {
+     "bin": "0.3-0.4",
+     "n": 3,
+     "meanConfidence": 0.3795365353801523,
+     "accuracy": 0.6666666666666666
+    },
+    {
+     "bin": "0.4-0.5",
+     "n": 13,
+     "meanConfidence": 0.45666927698788223,
+     "accuracy": 0.7692307692307693
+    },
+    {
+     "bin": "0.5-0.6",
+     "n": 36,
+     "meanConfidence": 0.5554600496220446,
+     "accuracy": 0.75
+    },
+    {
+     "bin": "0.6-0.7",
+     "n": 32,
+     "meanConfidence": 0.6578844019183205,
+     "accuracy": 0.875
+    },
+    {
+     "bin": "0.7-0.8",
+     "n": 32,
+     "meanConfidence": 0.7593465958484347,
+     "accuracy": 0.9375
+    },
+    {
+     "bin": "0.8-0.9",
+     "n": 61,
+     "meanConfidence": 0.8474253299152408,
+     "accuracy": 0.9672131147540983
+    },
+    {
+     "bin": "0.9-1",
+     "n": 82,
+     "meanConfidence": 0.9470654782827024,
+     "accuracy": 0.9878048780487805
+    }
+   ],
+   "meanLatencyMs": 0.023166023166023165,
+   "confusion": {
+    "labels": [
+     "workspace_setup",
+     "compensation",
+     "expense_refund",
+     "leave_life_event",
+     "schedule_change",
+     "complaint",
+     "policy_info",
+     "access_request"
+    ],
+    "matrix": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      41,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      39,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      3,
+      0,
+      72,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      2,
+      24,
+      0,
+      1,
+      1,
+      0
+     ],
+     [
+      2,
+      12,
+      0,
+      11,
+      0,
+      8,
+      1,
+      0
+     ],
+     [
+      0,
+      10,
+      2,
+      11,
+      0,
+      2,
+      12,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ]
+   },
+   "routeConfusion": {
+    "rows": [
+     "payroll",
+     "people_ops"
+    ],
+    "columns": [
+     "it",
+     "people_ops",
+     "payroll",
+     "security",
+     "uncertain"
+    ],
+    "matrix": [
+     [
+      0,
+      5,
+      77,
+      0,
+      0
+     ],
+     [
+      0,
+      160,
+      17,
+      0,
+      0
+     ]
+    ]
+   },
+   "bySource": {
+    "Salary / Salary raise": {
+     "n": 21,
+     "route": 0.9523809523809523,
+     "category": 1
+    },
+    "Complaint / complaint": {
+     "n": 34,
+     "route": 0.8529411764705882,
+     "category": 0.23529411764705882
+    },
+    "Life event / Personal issues": {
+     "n": 41,
+     "route": 0.9512195121951219,
+     "category": 0.926829268292683
+    },
+    "Refund / Refund travel": {
+     "n": 40,
+     "route": 0.95,
+     "category": 0.975
+    },
+    "Timetable change / Shift change": {
+     "n": 30,
+     "route": 0.9333333333333333,
+     "category": 0
+    },
+    "Ask information / Accommodation": {
+     "n": 37,
+     "route": 0.8108108108108109,
+     "category": 0.32432432432432434
+    },
+    "Life event / Health issues": {
+     "n": 35,
+     "route": 0.9714285714285714,
+     "category": 0.9714285714285714
+    },
+    "Salary / Gender pay gap": {
+     "n": 21,
+     "route": 0.9047619047619048,
+     "category": 0.9523809523809523
+    }
+   },
+   "sampleErrors": [
+    {
+     "id": "sap-survey-002",
+     "text": "Dear Sir./Madam., this email is to make you aware of an unacceptable behavior from a colleague working in my office. In particular, this colleague offended me and discriminated me because of my nationality. I hope you co",
+     "expected": {
+      "route": "people_ops",
+      "category": "complaint"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "compensation",
+      "confidence": 0.6
+     },
+     "reason": "Strongest cues for people_ops: \"sir\", \"because\", \"hope\", \"advance\"."
+    },
+    {
+     "id": "sap-survey-004",
+     "text": "Dear colleagues, \n\nthere is a personal issue in our team structure that I need to share with you. I work in my current team for about nine years now and my current manager is with us for about seven years. At first, I go",
+     "expected": {
+      "route": "people_ops",
+      "category": "complaint"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "workspace_setup",
+      "confidence": 0.67
+     },
+     "reason": "Strongest cues for people_ops: \"take\", \"help\", \"issue\", \"about\"."
+    },
+    {
+     "id": "sap-survey-007",
+     "text": "Hello, I request a change of shift for my working schedule during the period of Sun 2.10. to Fri 7.10. The reason for this is that I have to bring my father to the hospital during that time. Sincerely Ingo Reuter",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.57
+     },
+     "reason": "Strongest cues for people_ops: \"period\", \"hospital\", \"time\", \"during\"."
+    },
+    {
+     "id": "sap-survey-010",
+     "text": "Hi . I kindly ask you to a day off for a medical consultation. Thank you in advance",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.95
+     },
+     "reason": "Strongest cues for people_ops: \"off\", \"advance\", \"day off\", \"day\"."
+    },
+    {
+     "id": "sap-survey-014",
+     "text": "Dear all. My  manager is not able to organize things properly.",
+     "expected": {
+      "route": "people_ops",
+      "category": "complaint"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.76
+     },
+     "reason": "Strongest cues for people_ops: \"able\", \"not\", \"manager\"."
+    },
+    {
+     "id": "sap-survey-015",
+     "text": "Hi. I ask you for a day of the 30/6 to attend a funeral. Best",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.59
+     },
+     "reason": "Strongest cues for people_ops: \"day\", \"funeral\"."
+    },
+    {
+     "id": "sap-survey-020",
+     "text": "Dear all, Asking advises for an accomodation in Florence from next January.",
+     "expected": {
+      "route": "people_ops",
+      "category": "policy_info"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.66
+     },
+     "reason": "Strongest cues for people_ops: \"next\"."
+    },
+    {
+     "id": "sap-survey-023",
+     "text": "Dear all, I will not be in the office the 6 of september",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.66
+     },
+     "reason": "Strongest cues for people_ops: \"office\", \"september\", \"not\"."
+    },
+    {
+     "id": "sap-survey-025",
+     "text": "Dear All, Laurent Spoos always get rid of my.Please help me",
+     "expected": {
+      "route": "people_ops",
+      "category": "complaint"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "policy_info",
+      "confidence": 0.5
+     },
+     "reason": "Strongest cues for people_ops: \"help\"."
+    },
+    {
+     "id": "sap-survey-026",
+     "text": "Dear all Stephan Roux says stupid things about my gender.",
+     "expected": {
+      "route": "people_ops",
+      "category": "complaint"
+     },
+     "predicted": {
+      "route": "payroll",
+      "category": "compensation",
+      "confidence": 0.5
+     },
+     "reason": "Strongest cues for payroll: \"gender\", \"about\"."
+    },
+    {
+     "id": "sap-survey-030",
+     "text": "Dear colleagues, In accordance with SAP business ethics guide, I would like to\n report to you my concerns regarding my colleague John Smith (I-numner I1233455) . \nJohn and I are working together on a contract with a new ",
+     "expected": {
+      "route": "people_ops",
+      "category": "complaint"
+     },
+     "predicted": {
+      "route": "payroll",
+      "category": "compensation",
+      "confidence": 0.56
+     },
+     "reason": "Strongest cues for payroll: \"last\", \"think\", \"ask\", \"which\"."
+    },
+    {
+     "id": "sap-survey-032",
+     "text": "Dear colleagues,\nI am a sole caregiver to my father, who is seriously ill since 3 years. \nI have to bring him to the hospital for his exams on Wednesday 30.06.2022. I have a shift scheduled for that day and I would like ",
+     "expected": {
+      "route": "people_ops",
+      "category": "schedule_change"
+     },
+     "predicted": {
+      "route": "people_ops",
+      "category": "leave_life_event",
+      "confidence": 0.87
+     },
+     "reason": "Strongest cues for people_ops: \"hope\", \"like\", \"hospital\", \"day\"."
+    }
+   ],
+   "failures": []
+  }
+ ]
+}

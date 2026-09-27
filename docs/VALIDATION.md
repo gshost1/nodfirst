@@ -1,5 +1,7 @@
 # Validation — 2026-09-26
 
+> **Historical record (v0.1, Ollama-only).** For the v0.2 dark UI, multi-provider decision engine, and the SAP dataset evaluation, see [EVALUATION.md](EVALUATION.md). `npm test` now runs 19 tests.
+
 **Approach: Codex-only**, with separate implementation ownership for UI, local provider, and synthetic fixtures, followed by an independent review and integration validation. This kept the local workflow, permissions, and persistence in one coherent application. The completed ten-task workflow tracker was not used.
 
 Environment: Apple Silicon Mac, 8 GB RAM, Node **26.7.0**, local Ollama with **qwen2.5:3b**. The project began with only `AGENTS.md` and `IMPLEMENTATION_BRIEF.md`. No cloud model API or paid key was used.

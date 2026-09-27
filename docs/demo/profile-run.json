@@ -1,0 +1,310 @@
+{
+ "date": "2026-09-26T23:11:45.045Z",
+ "steps": [
+  {
+   "at": "2026-09-26T23:11:45.180Z",
+   "label": "Decision engine",
+   "note": "Offline baseline (naive Bayes) (daybreak-nb-v1), available=true"
+  },
+  {
+   "at": "2026-09-26T23:11:45.188Z",
+   "label": "Added fictional hire Rowan Adeyemi-Park",
+   "note": "Senior Account Executive, Austin, TX, remote"
+  },
+  {
+   "at": "2026-09-26T23:11:45.212Z",
+   "label": "Checklist completed",
+   "note": "4 items, 1 exception"
+  },
+  {
+   "at": "2026-09-26T23:11:45.469Z",
+   "label": "Agent decision",
+   "note": "route=payroll (69%), category=expense_refund, sensitive=2%, uncertain=true"
+  },
+  {
+   "at": "2026-09-26T23:11:45.478Z",
+   "label": "Admin approved — one follow-up created",
+   "note": "Follow up on Rowan Adeyemi-Park's onboarding exception → People Operations"
+  },
+  {
+   "at": "2026-09-26T23:11:45.481Z",
+   "label": "Added fictional hire Mira Castellanos",
+   "note": "Support Specialist, Madrid, ES, office"
+  },
+  {
+   "at": "2026-09-26T23:11:45.491Z",
+   "label": "Checklist completed",
+   "note": "3 items, 1 exception"
+  },
+  {
+   "at": "2026-09-26T23:11:45.999Z",
+   "label": "Agent decision",
+   "note": "route=people_ops (88%), category=leave_life_event, sensitive=65%, uncertain=false"
+  },
+  {
+   "at": "2026-09-26T23:11:46.006Z",
+   "label": "Admin approved — one follow-up created",
+   "note": "Follow up on Mira Castellanos's onboarding exception → People Operations"
+  },
+  {
+   "at": "2026-09-26T23:11:46.008Z",
+   "label": "Added fictional hire Jonah Whitlock",
+   "note": "Warehouse Lead, Leeds, UK, office"
+  },
+  {
+   "at": "2026-09-26T23:11:46.018Z",
+   "label": "Checklist completed",
+   "note": "3 items, 1 exception"
+  },
+  {
+   "at": "2026-09-26T23:11:46.273Z",
+   "label": "Agent decision",
+   "note": "route=people_ops (99%), category=schedule_change, sensitive=20%, uncertain=false"
+  },
+  {
+   "at": "2026-09-26T23:11:46.280Z",
+   "label": "Admin approved — one follow-up created",
+   "note": "Follow up on Jonah Whitlock's onboarding exception → People Operations"
+  },
+  {
+   "at": "2026-09-26T23:11:46.281Z",
+   "label": "Added fictional hire Ilse Varga",
+   "note": "Financial Analyst, Vienna, AT, hybrid"
+  },
+  {
+   "at": "2026-09-26T23:11:46.292Z",
+   "label": "Checklist completed",
+   "note": "3 items, 1 exception"
+  },
+  {
+   "at": "2026-09-26T23:11:46.801Z",
+   "label": "Agent decision",
+   "note": "route=people_ops (100%), category=complaint, sensitive=100%, uncertain=false"
+  },
+  {
+   "at": "2026-09-26T23:11:46.809Z",
+   "label": "Admin rejected — no action created",
+   "note": "none"
+  },
+  {
+   "at": "2026-09-26T23:11:46.811Z",
+   "label": "Added fictional hire Kofi Mensah",
+   "note": "Field Engineer, Hamburg, DE, remote"
+  },
+  {
+   "at": "2026-09-26T23:11:46.824Z",
+   "label": "Checklist completed",
+   "note": "4 items, 1 exception"
+  },
+  {
+   "at": "2026-09-26T23:11:47.080Z",
+   "label": "Agent decision",
+   "note": "route=payroll (100%), category=expense_refund, sensitive=0%, uncertain=false"
+  },
+  {
+   "at": "2026-09-26T23:11:47.088Z",
+   "label": "Admin approved — one follow-up created",
+   "note": "Follow up on Kofi Mensah's onboarding exception → Payroll & Benefits"
+  },
+  {
+   "at": "2026-09-26T23:11:47.090Z",
+   "label": "Final state",
+   "note": "{\"employees\":9,\"workflows\":5,\"tasks\":22,\"judgments\":5,\"approvals\":5,\"actions\":4,\"audit\":51}"
+  }
+ ],
+ "hires": [
+  {
+   "name": "Rowan Adeyemi-Park",
+   "request": "My offer letter includes a $1,500 home office stipend, but I already bought a standing desk in September. Can payroll reimburse that purchase, and does the stipend come on my first paycheck?",
+   "expected": {
+    "route": "payroll",
+    "category": "expense_refund",
+    "source": "daybreak-demo-profile"
+   },
+   "decision": {
+    "provider": "baseline",
+    "model": "daybreak-nb-v1",
+    "route": "payroll",
+    "confidence": 0.6881446121428346,
+    "probabilities": {
+     "it": 0.0338,
+     "people_ops": 0.1554,
+     "payroll": 0.6881,
+     "security": 0.0136,
+     "uncertain": 0.1091
+    },
+    "category": "expense_refund",
+    "sensitive": 0.021910665274019095,
+    "uncertain": true,
+    "reason": "Strongest cues for payroll: \"paycheck\", \"offer\", \"bought\", \"does\".",
+    "durationMs": 2
+   },
+   "matches": {
+    "route": true,
+    "category": true
+   },
+   "approval": "approved",
+   "action": {
+    "title": "Follow up on Rowan Adeyemi-Park's onboarding exception",
+    "owner": "People Operations"
+   }
+  },
+  {
+   "name": "Mira Castellanos",
+   "request": "dear all, I would like to know if it's possible to have week of from 24/10.",
+   "expected": {
+    "route": "people_ops",
+    "category": "leave_life_event",
+    "source": "sap-survey-019"
+   },
+   "decision": {
+    "provider": "baseline",
+    "model": "daybreak-nb-v1",
+    "route": "people_ops",
+    "confidence": 0.8840084022558422,
+    "probabilities": {
+     "it": 0.0002,
+     "people_ops": 0.884,
+     "payroll": 0.1154,
+     "security": 0.0003,
+     "uncertain": 0.0001
+    },
+    "category": "leave_life_event",
+    "sensitive": 0.6458055094501496,
+    "uncertain": false,
+    "reason": "Strongest cues for people_ops: \"like\", \"week\", \"all\", \"possible\".",
+    "durationMs": 0
+   },
+   "matches": {
+    "route": true,
+    "category": true
+   },
+   "approval": "approved",
+   "action": {
+    "title": "Follow up on Mira Castellanos's onboarding exception",
+    "owner": "People Operations"
+   }
+  },
+  {
+   "name": "Jonah Whitlock",
+   "request": "Hi. I ask you for a day of the 30/6 to attend a funeral. Best",
+   "expected": {
+    "route": "people_ops",
+    "category": "schedule_change",
+    "source": "sap-survey-015"
+   },
+   "decision": {
+    "provider": "baseline",
+    "model": "daybreak-nb-v1",
+    "route": "people_ops",
+    "confidence": 0.9908589550421513,
+    "probabilities": {
+     "it": 0.0012,
+     "people_ops": 0.9909,
+     "payroll": 0.0072,
+     "security": 0.0005,
+     "uncertain": 0.0002
+    },
+    "category": "schedule_change",
+    "sensitive": 0.2043556931099433,
+    "uncertain": false,
+    "reason": "Strongest cues for people_ops: \"day\", \"attend\", \"funeral\", \"ask day\".",
+    "durationMs": 0
+   },
+   "matches": {
+    "route": true,
+    "category": true
+   },
+   "approval": "approved",
+   "action": {
+    "title": "Follow up on Jonah Whitlock's onboarding exception",
+    "owner": "People Operations"
+   }
+  },
+  {
+   "name": "Ilse Varga",
+   "request": "Dear colleagues, \n\nthere is a personal issue in our team structure that I need to share with you. I work in my current team for about nine years now and my current manager is with us for about seven years. At first, I got to know her as a fair and honourable person. \nBut in the past few years, I have witnessed again and again that my manager is favouring a certain colleague in our team. \nMy suspicion was first raised when that colleague was promoted to T3 way before her peers even though she does not take more responsibility than average or shows significantly better result. Plus, although it is important for everyone in the team to regularly attend conferences, the favourited colleage gets to attend these conferences at least twice as often as other colleagues in our team. \nThere are many other examples that strengthed my suspicion and I do not want to go into details now. \nI am not sure how to address this properly. I have not confronted my manager or my colleague about this. But I definitely do not want to leave this unadressed. Could you please help me / us as a team to address this issue in the right way? \n\nKind regards, \nGerta Wernecke",
+   "expected": {
+    "route": "people_ops",
+    "category": "complaint",
+    "source": "sap-survey-004"
+   },
+   "decision": {
+    "provider": "baseline",
+    "model": "daybreak-nb-v1",
+    "route": "people_ops",
+    "confidence": 0.999950261067486,
+    "probabilities": {
+     "it": 0,
+     "people_ops": 1,
+     "payroll": 0,
+     "security": 0,
+     "uncertain": 0
+    },
+    "category": "complaint",
+    "sensitive": 0.9999983452025901,
+    "uncertain": false,
+    "reason": "Strongest cues for people_ops: \"leave\", \"take\", \"colleague\", \"help\".",
+    "durationMs": 3
+   },
+   "matches": {
+    "route": true,
+    "category": true
+   },
+   "approval": "rejected",
+   "action": null
+  },
+  {
+   "name": "Kofi Mensah",
+   "request": "Dear colleagues, \nI want to get a refund for the plane ticket from Nuernberg to London on the 13th Aug 2016. I have created a corresponding report in Concur and submitted it. That was about three weeks ago. But so far, I did not get any notification if the report is accepted. The IO under which I booked is: 29671028356. \nCould you please assist in this issue? \nI added the receipt for the plane ticket as an attachment. \n\nBest regards, \nClemens Hoefig",
+   "expected": {
+    "route": "payroll",
+    "category": "expense_refund",
+    "source": "sap-survey-005"
+   },
+   "decision": {
+    "provider": "baseline",
+    "model": "daybreak-nb-v1",
+    "route": "payroll",
+    "confidence": 0.9999512326478588,
+    "probabilities": {
+     "it": 0,
+     "people_ops": 0,
+     "payroll": 1,
+     "security": 0,
+     "uncertain": 0
+    },
+    "category": "expense_refund",
+    "sensitive": 0.000030355605176647432,
+    "uncertain": false,
+    "reason": "Strongest cues for payroll: \"refund\", \"ticket\", \"plane\", \"plane ticket\".",
+    "durationMs": 2
+   },
+   "matches": {
+    "route": true,
+    "category": true
+   },
+   "approval": "approved",
+   "action": {
+    "title": "Follow up on Kofi Mensah's onboarding exception",
+    "owner": "Payroll & Benefits"
+   }
+  }
+ ],
+ "provider": {
+  "provider": "baseline",
+  "label": "Offline baseline (naive Bayes)",
+  "model": "daybreak-nb-v1",
+  "baseUrl": "in-process",
+  "available": true
+ },
+ "counts": {
+  "employees": 9,
+  "workflows": 5,
+  "tasks": 22,
+  "judgments": 5,
+  "approvals": 5,
+  "actions": 4,
+  "audit": 51
+ }
+}

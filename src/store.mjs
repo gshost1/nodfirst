@@ -13,6 +13,11 @@ export class AppError extends Error {
 export function createStore(path) {
   if (path !== ':memory:') mkdirSync(dirname(path), { recursive: true, mode: 0o700 });
   const db = new DatabaseSync(path);
+  const legacy = db.prepare("SELECT sql FROM sqlite_master WHERE type='table' AND name='judgments'").get();
+  if (legacy && !legacy.sql.includes('payroll')) {
+    db.close();
+    throw new Error(`${path} was created by Daybreak v0.1 and cannot store the new decision fields. Use a new DAYBREAK_DB path (the default is now .data/daybreak-v2.sqlite).`);
+  }
   db.exec(`
     PRAGMA foreign_keys = ON;
     PRAGMA journal_mode = WAL;
@@ -47,8 +52,10 @@ export function createStore(path) {
     CREATE TABLE IF NOT EXISTS judgments (
       id TEXT PRIMARY KEY, workflowId TEXT NOT NULL UNIQUE REFERENCES workflows(id),
       provider TEXT NOT NULL, model TEXT NOT NULL,
-      route TEXT NOT NULL CHECK(route IN ('it','people_ops','security','uncertain')),
+      route TEXT NOT NULL CHECK(route IN ('it','people_ops','payroll','security','uncertain')),
       confidence REAL NOT NULL CHECK(confidence BETWEEN 0 AND 1), reason TEXT NOT NULL,
+      category TEXT, categoryConfidence REAL CHECK(categoryConfidence IS NULL OR categoryConfidence BETWEEN 0 AND 1),
+      sensitive REAL CHECK(sensitive IS NULL OR sensitive BETWEEN 0 AND 1), probabilities TEXT,
       uncertain INTEGER NOT NULL CHECK(uncertain IN (0,1)), durationMs INTEGER NOT NULL,
       createdAt TEXT NOT NULL
     );
@@ -70,6 +77,7 @@ export function createStore(path) {
       status TEXT NOT NULL CHECK(status IN ('queued','running','succeeded','failed')),
       attempts INTEGER NOT NULL, error TEXT, createdAt TEXT NOT NULL, updatedAt TEXT NOT NULL
     );
+    CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL, updatedAt TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS events (
       id TEXT PRIMARY KEY, type TEXT NOT NULL, entityId TEXT NOT NULL, payload TEXT NOT NULL, createdAt TEXT NOT NULL
     );
@@ -117,9 +125,14 @@ export function createStore(path) {
     for (const table of ['employees', 'policies', 'routines', 'workflows', 'tasks', 'judgments', 'approvals', 'actions', 'jobs', 'audit']) {
       result[table] = db.prepare(`SELECT * FROM ${table} ORDER BY rowid`).all();
     }
-    result.judgments = result.judgments.map(item => ({ ...item, uncertain: Boolean(item.uncertain) }));
+    result.judgments = result.judgments.map(item => ({ ...item, uncertain: Boolean(item.uncertain), probabilities: item.probabilities ? JSON.parse(item.probabilities) : null }));
     result.audit = result.audit.map(item => ({ ...item, details: JSON.parse(item.details) })).reverse();
     return result;
   }
-  return { db, transaction, insert, get, requireRecord, log, state, close: () => db.close() };
+  function setting(key, value) {
+    if (value === undefined) return db.prepare('SELECT value FROM settings WHERE key=?').get(key)?.value ?? null;
+    db.prepare('INSERT INTO settings (key,value,updatedAt) VALUES (?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value, updatedAt=excluded.updatedAt').run(key, value, now());
+    return value;
+  }
+  return { db, transaction, insert, get, requireRecord, log, state, setting, close: () => db.close() };
 }

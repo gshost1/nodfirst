@@ -5,15 +5,23 @@ import { resolve, dirname } from 'node:path';
 import { randomBytes } from 'node:crypto';
 import { createStore, AppError } from './store.mjs';
 import { createWorkflowService, startWorker } from './workflow.mjs';
-import { createLocalProvider } from './provider.mjs';
+import { createProviders, defaultProviderName } from './providers.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const personas = { coordinator: 'Jordan Lee (coordinator)', admin: 'Maya Chen (admin)' };
 const staticFiles = { '/': ['index.html', 'text/html'], '/index.html': ['index.html', 'text/html'], '/app.js': ['app.js', 'text/javascript'], '/styles.css': ['styles.css', 'text/css'], '/favicon.svg': ['favicon.svg', 'image/svg+xml'] };
 
-export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.data/daybreak.sqlite'), provider = createLocalProvider(), worker = true } = {}) {
+export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.data/daybreak-v2.sqlite'), provider, providers, worker = true } = {}) {
   const store = createStore(dbPath);
   const service = createWorkflowService(store);
+  providers ??= provider ? { [provider.name]: provider } : createProviders();
+  const saved = store.setting('provider');
+  let activeName = saved && providers[saved] && providers[saved].configured !== false ? saved : (provider ? provider.name : defaultProviderName(providers));
+  if (!providers[activeName]) activeName = Object.keys(providers).find(name => providers[name].configured !== false) || Object.keys(providers)[0];
+  const active = () => providers[activeName];
+  async function providerStatus(item) {
+    return { name: item.name, label: item.label || item.name, kind: item.kind || 'local', model: item.model, baseUrl: item.baseUrl, configured: item.configured !== false, setup: item.setup || '', active: item.name === activeName, ...await item.health() };
+  }
   const sessions = new Map();
   let stopWorker = async () => {};
   function getSession(req, res) {
@@ -63,7 +71,15 @@ export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.
       if (!url.pathname.startsWith('/api/')) throw new AppError(404, 'Page not found.');
       const session = getSession(req, res);
       if (req.method === 'GET' && url.pathname === '/api/state') return json(res, 200, { ...store.state(), session: publicSession(session) });
-      if (req.method === 'GET' && url.pathname === '/api/health') return json(res, 200, { ok: true, model: { provider: provider.name, model: provider.model, baseUrl: provider.baseUrl, ...await provider.health() } });
+      if (req.method === 'GET' && url.pathname === '/api/health') {
+        const list = await Promise.all(Object.values(providers).map(providerStatus));
+        const current = list.find(item => item.active);
+        return json(res, 200, { ok: true, model: { provider: current.name, label: current.label, model: current.model, baseUrl: current.baseUrl, available: current.available, ...(current.error ? { error: current.error } : {}) }, providers: list });
+      }
+      if (req.method === 'GET' && url.pathname === '/api/evaluation') {
+        try { return json(res, 200, JSON.parse(await readFile(resolve(root, 'docs/eval/latest.json'), 'utf8'))); }
+        catch { return json(res, 200, { runs: [] }); }
+      }
       if (req.method !== 'POST') throw new AppError(405, 'This endpoint needs a POST request.');
       if (req.headers['x-csrf-token'] !== session.csrfToken) throw new AppError(403, 'Your session changed. Refresh the page and try again.');
       const input = await body(req);
@@ -71,6 +87,15 @@ export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.
         if (!Object.hasOwn(personas, input.role)) throw new AppError(422, 'Choose coordinator or admin.');
         session.role = input.role; session.actor = personas[input.role];
         return json(res, 200, { session: publicSession(session) });
+      }
+      if (url.pathname === '/api/provider') {
+        if (session.role !== 'admin') throw new AppError(403, 'Switch to the demo admin persona to change the decision provider.');
+        if (typeof input.name !== 'string' || !Object.hasOwn(providers, input.name)) throw new AppError(422, 'Choose a listed decision provider.');
+        if (providers[input.name].configured === false) throw new AppError(409, `${providers[input.name].label || input.name} is not configured. ${providers[input.name].setup || ''}`.trim());
+        const previous = activeName;
+        activeName = input.name;
+        store.transaction(() => { store.setting('provider', activeName); store.log(session.actor, 'provider.changed', null, { from: previous, to: activeName, model: active().model }); });
+        return json(res, 200, { provider: await providerStatus(active()) });
       }
       if (url.pathname === '/api/employees') return json(res, 201, { employee: service.addEmployee(input, session.actor) });
       const route = /^\/api\/(employees|tasks|workflows|approvals)\/([^/]+)\/(onboard|complete|judgment|decision)$/.exec(url.pathname);
@@ -91,10 +116,10 @@ export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.
   server.requestTimeout = 15000;
   server.headersTimeout = 10000;
   return {
-    server, store, service, provider,
+    server, store, service, providers, get provider() { return active(); },
     async listen(port = Number(process.env.PORT || 4317)) {
       await new Promise((resolvePromise, reject) => { server.once('error', reject); server.listen(port, '127.0.0.1', resolvePromise); });
-      if (worker) stopWorker = startWorker(service, provider);
+      if (worker) stopWorker = startWorker(service, active);
       return `http://127.0.0.1:${server.address().port}`;
     },
     async close() { await new Promise(resolvePromise => server.close(resolvePromise)); await stopWorker(); store.close(); },
@@ -104,7 +129,7 @@ export function createApp({ dbPath = process.env.DAYBREAK_DB || resolve(root, '.
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const app = createApp();
   const address = await app.listen();
-  console.log(`Daybreak is ready at ${address}\nSynthetic local demo · SQLite persistence · ${app.provider.model} via local Ollama`);
+  console.log(`Daybreak is ready at ${address}\nSynthetic demo · SQLite persistence · decisions: ${app.provider.label || app.provider.name} (${app.provider.model})`);
   let closing = false;
   for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, async () => {
     if (closing) return; closing = true;

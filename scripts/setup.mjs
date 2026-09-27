@@ -3,8 +3,8 @@ import { createLocalProvider } from '../src/provider.mjs';
 
 function checkNode() {
   const [major, minor] = process.versions.node.split('.').map(Number);
-  if (major < 24 || (major === 24 && minor < 2)) {
-    throw new Error(`Node 24.2 or newer is required (found ${process.versions.node}). Install a newer Node version and rerun setup.`);
+  if (major < 22 || (major === 22 && minor < 13)) {
+    throw new Error(`Node 22.13 or newer is required (found ${process.versions.node}). Install a newer Node version and rerun setup.`);
   }
 }
 

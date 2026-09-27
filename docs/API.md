@@ -1,13 +1,15 @@
 # Daybreak implementation contract
 
-Local Node >=24.2 ESM application, built-in SQLite and HTTP, static vanilla JS UI. Root owns `src/server.mjs`, `src/store.mjs`, `src/workflow.mjs`, package/config and integration tests. UI agent owns `public/`. Provider agent owns `src/provider.mjs`, `scripts/setup.mjs`, `scripts/model-smoke.mjs`, provider tests. Fixture agent owns `src/fixtures.mjs` and `docs/HANDBOOK.md`.
+Local Node >=22.13 ESM application, built-in SQLite and HTTP, static vanilla JS UI. Root owns `src/server.mjs`, `src/store.mjs`, `src/workflow.mjs`, package/config and integration tests. UI agent owns `public/`. Provider agent owns `src/provider.mjs`, `scripts/setup.mjs`, `scripts/model-smoke.mjs`, provider tests. Fixture agent owns `src/fixtures.mjs` and `docs/HANDBOOK.md`.
 
 All domain records use camelCase keys and ISO timestamps. IDs are opaque strings. A record referenced by `workflowId` belongs to that workflow. State is persisted in `.data/daybreak.sqlite`; model weights stay in Ollama storage. All employee and handbook data is fictional.
 
 ## HTTP interface
 
 - `GET /api/state` returns `{company:{name,synthetic:true},session:{role,actor,csrfToken},employees,policies,routines,workflows,tasks,judgments,approvals,actions,jobs,audit}`. Creates an HttpOnly same-site session cookie. Default role `coordinator`. UI must send `x-csrf-token: session.csrfToken` and JSON content type on every POST.
-- `GET /api/health` returns `{ok:true,model:{provider:'ollama',model,available,baseUrl,error?}}`. Availability means installed and reachable, not a completed model invocation.
+- `GET /api/health` returns `{ok:true,model:{provider,label,model,available,baseUrl,error?},providers:[{name,label,kind,model,baseUrl,configured,setup,active,available,note?,error?}]}`. For hosted providers, availability means a credential is configured; it is verified on the first decision.
+- `POST /api/provider` body `{name}` (admin only) switches the active decision provider; unconfigured providers return 409. The choice persists and is audited as `provider.changed`.
+- `GET /api/evaluation` returns `docs/eval/latest.json` (or `{runs:[]}`).
 - `POST /api/session` body `{role:'coordinator'|'admin'}` switches demo persona; fixed server names are `Jordan Lee (coordinator)` and `Maya Chen (admin)`. Returns `{session}`. This is an explicitly labeled local demonstration switch, not production authentication.
 - `POST /api/employees` body `{name,role,location,startDate,manager,workMode:'remote'|'hybrid'|'office',exception}`. Returns `{employee}`.
 - `POST /api/employees/:id/onboard` body `{}`. Idempotently returns `{workflow}`.
@@ -23,13 +25,16 @@ All domain records use camelCase keys and ISO timestamps. IDs are opaque strings
 - Routine: `{id,name,trigger,description,version}`
 - Workflow: `{id,employeeId,routineId,status:'active'|'complete',createdAt,updatedAt}`
 - Task: `{id,workflowId,title,owner,status:'todo'|'done'|'needs_judgment'|'awaiting_review'|'approved'|'rejected',policyId,kind:'checklist'|'exception',details,createdAt}`
-- Judgment: `{id,workflowId,provider,model,route:'it'|'people_ops'|'security'|'uncertain',confidence,reason,uncertain,durationMs,createdAt}`. Confidence is model-reported and uncalibrated. `uncertain` is also forced by code below 0.75. Real provider results only; errors never create a judgment.
+- Judgment: `{id,workflowId,provider,model,route:'it'|'people_ops'|'payroll'|'security'|'uncertain',confidence,probabilities|null,category,categoryConfidence|null,sensitive,reason,uncertain,durationMs,createdAt}`. Confidence is model-reported and uncalibrated. `uncertain` is also forced by code below 0.75. Real provider results only; errors never create a judgment.
 - Approval: `{id,workflowId,taskId,judgmentId,status:'pending'|'approved'|'rejected',requestedAt,decidedAt,decidedBy,reason}`
 - Action: `{id,approvalId,workflowId,type:'local_task',title,owner,status:'created',createdAt}`. This is an internal follow-up record; no email or HRIS writes happen.
 - Job: `{id,workflowId,type:'judge_exception',status:'queued'|'running'|'succeeded'|'failed',attempts,error,createdAt,updatedAt}`
 - Audit: `{id,workflowId,actor,action,details,createdAt}`. Details is an object. Events are also persisted but need not be shown by UI.
 
 ## Provider module contract
+
+Every provider (`src/providers.mjs`, `src/provider.mjs`) exposes `{name,label,kind,model,baseUrl,configured,setup,health(),judge(case)}`, and `judge` resolves to the normalized decision from `src/decision.mjs#normalizeDecision`. The original Ollama contract follows.
+
 
 `createLocalProvider({baseUrl?,model?,timeoutMs?}={})` returns `{name:'ollama',model,baseUrl, health():Promise<{available:boolean,error?:string}>, judge({role,location,workMode,exception,policies}):Promise<{provider:'ollama',model,route,confidence,reason,uncertain,durationMs}>}`. Defaults `OLLAMA_BASE_URL || http://127.0.0.1:11434`, `OLLAMA_MODEL || qwen2.5:3b`. Enforce loopback URL (no credentials, redirects, external hosts), refuse cloud models, and verify local weights/metadata before transmitting the case. Names/dates are omitted. Treat exception text as untrusted data. Validate result schema/ranges, reject invalid responses, bounded timeout; no silent fallback.
 
